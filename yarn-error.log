@@ -1,0 +1,65 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\hp\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add browser-sync --offline
+
+PATH: 
+  C:\Python38\Scripts\;C:\Python38\;C:\Program Files (x86)\MiKTeX 2.9\miktex\bin;C:\ProgramData\Anaconda2;C:\ProgramData\Anaconda2\Library\mingw-w64\bin;C:\ProgramData\Anaconda2\Library\usr\bin;C:\ProgramData\Anaconda2\Library\bin;C:\ProgramData\Anaconda2\Scripts;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\7-Zip;C:\Program Files (x86)\Skype\Phone\;C:\WINDOWS\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk1.8.0_181\bin;C:\Users\hp\AppData\Local\Programs\Python\Python37;C:\xampp\php;C:\Program Files\Dart\dart-sdk\bin;C:\Users\hp\flutter\packages\flutter_tools;C:\Users\hp\flutter\bin;C:\Program Files (x86)\The Scripps Research Institute\Vina;C:\Program Files\MongoDB\Server\4.0\bin;C:\Gradle\gradle-5.6.2\bin;C:\ProgramData\ComposerSetup\bin;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\xamp\mysql\bin;C:\Users\hp\AppData\Local\Microsoft\WindowsApps;C:\Users\hp\AppData\Local\Programs\Microsoft VS Code\bin;C:\xampp\php\php.exe;C:\Program Files (x86)\The Scripps Research Institute\Vina;C:\xampp\mysql\bin;C:\Program Files\MongoDB\Server\4.0\bin;C:\Gradle\gradle-5.6.2\bin;C:\Users\hp\AppData\Roaming\Composer\vendor\bin;C:\xampp\php;C:\Git\bin\bash.exe;C:\Git\bin;C:\Program Files\MiKTeX 2.9\miktex\bin\x64;C:\Program Files\MiKTeX 2.9\tex\latex\00miktex;C:\Users\hp\AppData\Roaming\npm;
+
+Yarn version: 
+  1.17.3
+
+Node version: 
+  13.11.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Invariant Violation: There should only be one folder in a package cache (got  in C:\Users\hp\AppData\Local\Yarn\Cache\v4\npm-sass-1.22.8-835178085177d5a934fb0e25a0f958b4b5bbff65\node_modules)
+      at invariant (C:\Users\hp\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:2314:15)
+      at C:\Users\hp\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:60617:7
+      at Generator.next (<anonymous>)
+      at step (C:\Users\hp\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:304:30)
+      at C:\Users\hp\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:315:13
+
+npm manifest: 
+  {
+    "name": "World_Vision",
+    "version": "1.0.0",
+    "description": "",
+    "main": "gulpfile.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": ""
+    },
+    "author": "bootstrapdash",
+    "license": "ISC",
+    "homepage": "",
+    "dependencies": {
+      "@mdi/font": "^3.6.95",
+      "aos": "^2.3.4",
+      "bootstrap": "^4.3.1",
+      "jquery": "^3.4.1",
+      "popper.js": "^1.15.0"
+    },
+    "devDependencies": {
+      "browser-sync": "^2.26.7",
+      "del": "^4.1.1",
+      "gulp": "^4.0.2",
+      "gulp-concat": "^2.6.1",
+      "gulp-inject": "^5.0.2",
+      "gulp-inject-partials": "^1.0.5",
+      "gulp-replace": "^1.0.0",
+      "gulp-sass": "^4.0.2",
+      "gulp-sourcemaps": "^2.6.5",
+      "merge-stream": "^2.0.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

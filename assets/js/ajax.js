@@ -51,6 +51,8 @@ $(function(){
         }
       })
       .done((data) => {
-          
+          $.each(data, (key, album)=>{
+              
+          })
       })
 })

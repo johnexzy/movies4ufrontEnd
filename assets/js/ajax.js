@@ -1,11 +1,13 @@
 $(function(){
     $.ajax({
-        url: 'http://127.0.0.1:8090/api/music/limit/4',
-        type: 'GET'
+        url: 'http://127.0.0.1:8090/api/v1/music/limit/4',
+        type: 'GET',
+        beforeSend: () =>{
+            //do some stuff
+        }
       })
-      .done(function(data){
-          $.each(data, function( key, music){
-              
+      .done((data) => {
+          $.each(data, (key, music) => {
 
                       $("#music-dom").append(
                   `
@@ -38,7 +40,17 @@ $(function(){
                   
           })
       })
-      .fail(function(params) {
-          console.log(params[0])
+      .fail((params) => {
+          alert(params)
+      })
+      $.ajax({
+        url: 'http://127.0.0.1/8090/api/v1/album/limit/5',
+        type: 'GET',
+        beforeSend: () => {
+            // do some stuff
+        }
+      })
+      .done((data) => {
+          
       })
 })

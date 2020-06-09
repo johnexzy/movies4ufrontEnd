@@ -7,6 +7,7 @@ $(function(){
         }
       })
       .done((data) => {
+        $(".music-loader").hide()
           $.each(data, (key, music) => {
             console.log(key)
                       $("#music-dom").append(
@@ -51,6 +52,7 @@ $(function(){
         }
       })
       .done(function(albums){
+        $(".album-loader").hide()
           console.log(albums)
           albums.forEach((album, key)=> {
               

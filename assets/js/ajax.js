@@ -53,10 +53,6 @@ $(function(){
       })
       .done(function(albums){
         $(".album-loader").hide()
-          console.log(albums)
-          albums.forEach((album, key)=> {
-              
-          })
           $.each(albums, function(key, album){
               console.log(album);
               (key == 0) ?

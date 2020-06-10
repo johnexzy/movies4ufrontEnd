@@ -13,8 +13,9 @@ $(function(){
             <div class="row">
             <div class="col-sm-4 grid-margin">
               <div class="rotate-img">
+              
                 <img
-                  src="http:/127.0.0.1:8090/${album.images[0]}"
+                  src="http://127.0.0.1:8090/${album.images[0]}"
                   alt="banner"
                   class="img-fluid"
                 />
@@ -25,7 +26,7 @@ $(function(){
                 ${album.album_name}
               </h2>
               <p class="fs-13 text-muted mb-0">
-                <span class="mr-2">Release Year: </span>album.year
+                <span class="mr-2">Release Year: </span>${album.year}
               </p>
               <p class="fs-15">
                 ${album.album_details}

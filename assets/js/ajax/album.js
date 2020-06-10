@@ -40,4 +40,38 @@ $(function(){
     .fail((err)=>{
 
     })
+    $.ajax({
+        url: 'http://127.0.0.1:8090/api/v1/album/popular/6',
+        type: 'GET',
+        beforeSend: ()=>{
+
+        }
+    })
+    .done((data)=>{
+        
+        
+        $.each(data, (key, album)=>{
+            $(".show-popular").append(`
+                    <div class="mb-4">
+                        <div class="rotate-img">
+                        <img
+                            src="http://127.0.0.1:8090/${album.images[0]}"
+                            alt="banner"
+                            class="img-fluid"
+                        />
+                        </div>
+                        <h3 class="mt-3 font-weight-600">
+                        ${album.album_name}
+                        </h3>
+                        <p class="fs-13 text-muted mb-0">
+                        <span class="mr-2">Year Of Release</span>${album.year}
+                        </p>
+                    </div>
+            `)
+        })
+    })
+    .fail((err)=>{
+
+    })
+    
 })

@@ -9719,6 +9719,10 @@ h6, .h6 {
   background-color: gray;
 }
 
+.pagination .page-item .disabled.hover {
+  color: grey;
+}
+
 .pagination .page-item.active .page-link, .pagination .page-item:hover .page-link, .pagination .page-item:focus .page-link, .pagination .page-item:active .page-link {
   color: #007bff;
 }

@@ -7,6 +7,7 @@ $(function(){
         }
     })
     .done((data)=>{
+        
         $(".show-album").html("")
         $.each(data, (key, album)=>{
             $(".show-album").append(`

@@ -48,6 +48,8 @@ $(function(){
         :
         $(".pagination").append(`
             <li class="page-item">
+            <input id="pagelink" value="${data.links.prev}" type="hidden">
+
                 <a class="page-link" href="#">
                     <i class="mdi mdi-arrow-left-bold"></i>
                 </a>
@@ -65,6 +67,7 @@ $(function(){
         :
         $(".pagination").append(`
             <li class="page-item">
+            <input id="pagelink" value="${data.links.next}" type="hidden">
                 <a class="page-link" >
                     <i class="mdi mdi-arrow-right-bold"></i>
                 </a>
@@ -108,4 +111,14 @@ $(function(){
 
     })
     
+
+    //Control Pagination Using AJAX || FETCH API
+
+    $(".page-item").on("click", function(){
+        if (!$(this).find("#pagelink")) {
+            return false
+        }
+        let link = $(this).find("#pagelink").val()
+
+    })
 })

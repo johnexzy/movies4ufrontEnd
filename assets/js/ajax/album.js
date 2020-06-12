@@ -1,6 +1,6 @@
 $(function(){
     $.ajax({
-        url: 'http://127.0.0.1:8090/api/v1/album',
+        url: 'http://127.0.0.1:8090/api/v1/album/pages/1',
         type: 'GET',
         beforeSend: ()=>{
 
@@ -9,7 +9,7 @@ $(function(){
     .done((data)=>{
         
         $(".show-album").html("")
-        $.each(data, (key, album)=>{
+        $.each(data.data, (key, album)=>{
             $(".show-album").append(`
             <div class="row">
             <div class="col-sm-4 grid-margin">
@@ -36,6 +36,40 @@ $(function(){
           </div>
             `)
         })
+        $(".pagination").html("")
+        data.links.prev == null ?
+        $(".pagination").append(`
+            <li class="page-item">
+                <a class="page-link disabled" href="#">
+                    <i class="mdi mdi-arrow-left-bold"></i>
+                </a>
+            </li>
+        `)
+        :
+        $(".pagination").append(`
+            <li class="page-item">
+                <a class="page-link" href="#">
+                    <i class="mdi mdi-arrow-left-bold"></i>
+                </a>
+            </li>
+        `)
+
+        data.links.next == null ?
+        $(".pagination").append(`
+            <li class="page-item">
+                <a class="page-link disabled" href="#">
+                    <i class="mdi mdi-arrow-right-bold"></i>
+                </a>
+            </li>
+        `)
+        :
+        $(".pagination").append(`
+            <li class="page-item">
+                <a class="page-link" href="#">
+                    <i class="mdi mdi-arrow-right-bold"></i>
+                </a>
+            </li>
+        `)
     })
     .fail((err)=>{
 

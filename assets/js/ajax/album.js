@@ -1,6 +1,6 @@
 $(function(){
     $.ajax({
-        url: 'http://127.0.0.1:8090/api/v1/album/pages/1',
+        url: 'http://127.0.0.1:8090/api/v1/album/pages/2',
         type: 'GET',
         beforeSend: ()=>{
 
@@ -57,7 +57,7 @@ $(function(){
         data.links.next == null ?
         $(".pagination").append(`
             <li class="page-item">
-                <a class="page-link disabled" href="#">
+                <a class="page-link disabled">
                     <i class="mdi mdi-arrow-right-bold"></i>
                 </a>
             </li>
@@ -65,7 +65,7 @@ $(function(){
         :
         $(".pagination").append(`
             <li class="page-item">
-                <a class="page-link" href="#">
+                <a class="page-link" >
                     <i class="mdi mdi-arrow-right-bold"></i>
                 </a>
             </li>

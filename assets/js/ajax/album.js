@@ -29,11 +29,15 @@ $(function(){
               <p class="fs-13 text-muted mb-0">
                 <span class="mr-2">Release Year: </span>${album.year}
               </p>
-              <p class="fs-15">
-                ${album.album_details}
-              </p>
+              <p class="L5 mb-0">
+                    <i class="mdi mdi-artist"></i> <span class="fs-16 mr-2 text-muted">${album.artist}</span>
+                  </p>
+                  <p class="mb-0">
+                    ${album.album_details.substring(0, 400)}...
+                </p>
             </div>
           </div>
+          <hr>
             `)
         })
         // $(".pagination").html("")
@@ -140,11 +144,16 @@ $(function(){
                 <p class="fs-13 text-muted mb-0">
                     <span class="mr-2">Release Year: </span>${album.year}
                 </p>
-                <p class="fs-15">
-                    ${album.album_details}
+                <p class="L5 mb-0">
+                    <i class="mdi mdi-artist"></i> <span class="fs-16 mr-2 text-muted">${album.artist}</span>
+                  </p>
+                  <p class="mb-0">
+                    ${album.album_details.substring(0, 100)}...
                 </p>
+                
                 </div>
             </div>
+            <hr>
                 `)
             })
             data.links.prev == null ?

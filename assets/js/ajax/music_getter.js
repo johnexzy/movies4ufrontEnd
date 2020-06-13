@@ -9,7 +9,7 @@ $(function(){
     .done((data)=>{
         
         $(".show-music").html("")
-        $.each(data.data, (key, album)=>{
+        $.each(data.data, (key, music)=>{
             $(".show-music").append(`
             <div class="row">
             <div class="col-sm-4 grid-margin">
@@ -66,7 +66,7 @@ $(function(){
     .done((data)=>{
         
         
-        $.each(data, (key, album)=>{
+        $.each(data, (key, music)=>{
             $(".show-popular").append(`
                     <div class="mb-4">
                         <div class="rotate-img">
@@ -122,7 +122,7 @@ $(function(){
                 scrollTop: 0
             })
             $(".show-music").html("")
-            $.each(data.data, (key, album)=>{
+            $.each(data.data, (key, music)=>{
                 $(".show-music").append(`
                 <div class="row">
                 <div class="col-sm-4 grid-margin">

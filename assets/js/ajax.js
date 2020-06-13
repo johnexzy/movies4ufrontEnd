@@ -57,12 +57,15 @@ $(function(){
               console.log(album);
               (key == 0) ?
               $(".album-latest").append(`
+              <a href="">
               <div class="rotate-img">
                 <img src="http://127.0.0.1:8090/${album.images[0]}" alt="thumb" class="img-fluid" />
               </div>
+              
               <h2 class="mt-3 text-primary mb-2">
                 ${album.album_name}
               </h2>
+              </a>
               <p class="fs-13 mb-1 text-muted">
               10 Minutes ago
               </p>
@@ -74,9 +77,11 @@ $(function(){
               :
               $(".album-other").append(`
               <div class="border-bottom pb-3 mb-3">
+              <a href="" style="text-decoration:none">
               <h3 class="font-weight-600 mb-0">
                 ${album.album_name}
               </h3>
+              </a>
               <p class="fs-13 text-muted mb-0">
                 <span class="mr-2">Photo </span>10 Minutes ago
               </p>

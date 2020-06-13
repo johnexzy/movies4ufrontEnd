@@ -46,6 +46,9 @@ $(function(){
         $(".next").find("#pagelink").val("")
         :
         $(".next").find("#pagelink").val(`${data.links.next}`)
+
+        $(".pager").text(`Page ${data.meta.current_page} of ${data.meta.total_pages}`)
+
     })
     .fail((err)=>{
 
@@ -153,7 +156,11 @@ $(function(){
             $(".next").find("#pagelink").val("")
             :
             $(".next").find("#pagelink").val(`${data.links.next}`)
+            
+            $(".pager").text(`Page ${data.meta.current_page} of ${data.meta.total_pages}`)
             })
+        
+
         .fail((err)=>{
             console.log(err)
             alert("Something Went Wrong! Try Again")

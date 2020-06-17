@@ -1,4 +1,52 @@
 $(function(){
+  let movies = $.ajax({
+    url: 'http://127.0.0.1:8090/api/v1/videos/limit/9',
+    type: 'GET',
+    beforeSend:()=>{
+
+    }
+  })
+  .done((data)=>{
+    $.each(data, (key, video)=>{
+      key == 0 || key == 1 ? $(".first-half-newvideo").append(`
+      <div class="col-sm-6 grid-margin">
+        <div class="position-relative">
+          <div class="rotate-img">
+            <img src="127.0.0.1:8090/${video.images[0]}" alt="thumb" class="img-fluid" />
+          </div>
+          <div class="badge-positioned w-90">
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge badge-danger font-weight-bold">${video.category}</span>
+              <div class="video-icon">
+                <i class="mdi mdi-play"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `)
+    : key == 2 || key == 3 ? $(".second-half-newvideo").append(`
+    <div class="col-sm-6 grid-margin">
+      <div class="position-relative">
+        <div class="rotate-img">
+          <img src="127.0.0.1:8090/${video.images[0]}" alt="thumb" class="img-fluid" />
+        </div>
+        <div class="badge-positioned w-90">
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="badge badge-danger font-weight-bold">${video.category}</span>
+            <div class="video-icon">
+              <i class="mdi mdi-play"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `) : ''
+    })
+    
+    
+  })
+  .fail(err => alert(err))
     let music = $.ajax({
         url: 'http://127.0.0.1:8090/api/v1/music/limit/8',
         type: 'GET',

@@ -1,6 +1,6 @@
 $(function(){
   let movies = $.ajax({
-    url: 'http://127.0.0.1:8090/api/v1/videos/limit/9',
+    url: 'http://127.0.0.1:8090/api/v1/videos/9',
     type: 'GET',
     beforeSend:()=>{
 
@@ -12,7 +12,7 @@ $(function(){
       <div class="col-sm-6 grid-margin">
         <div class="position-relative">
           <div class="rotate-img">
-            <img src="127.0.0.1:8090/${video.images[0]}" alt="thumb" class="img-fluid" />
+            <img src="http://127.0.0.1:8090/${video.images[0]}" alt="thumb" class="img-fluid" />
           </div>
           <div class="badge-positioned w-90">
             <div class="d-flex justify-content-between align-items-center">
@@ -29,7 +29,7 @@ $(function(){
     <div class="col-sm-6 grid-margin">
       <div class="position-relative">
         <div class="rotate-img">
-          <img src="127.0.0.1:8090/${video.images[0]}" alt="thumb" class="img-fluid" />
+          <img src="http://127.0.0.1:8090/${video.images[0]}" alt="thumb" class="img-fluid" />
         </div>
         <div class="badge-positioned w-90">
           <div class="d-flex justify-content-between align-items-center">
@@ -41,7 +41,18 @@ $(function(){
         </div>
       </div>
     </div>
-  `) : ''
+  `) : $(".other-newvideo").append(`
+            <div class="d-flex justify-content-between align-items-center border-bottom pb-2">
+                <div class="div-w-80 mr-3">
+                  <div class="rotate-img">
+                    <img src="http://127.0.0.1:8090/${video.images[0]}" alt="thumb" class="img-fluid" />
+                  </div>
+                </div>
+                <h3 class="font-weight-600 mb-0">
+                  ${video.video_name}
+                </h3>
+            </div>
+        `)
     })
     
     

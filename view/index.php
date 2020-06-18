@@ -1,7 +1,8 @@
 <?php
+require '../Controller/Movie/getMovie.php';
 
 // use Src\Controller\ViewController\ViewController;
-
+use Controller\Movie\getMovie;
 $uri           = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uri           = explode('/', $uri);
 $requestMethod = $_SERVER['REQUEST_METHOD'];
@@ -13,10 +14,8 @@ if ($uri[2] == 'movies') {
         header("HTTP/1.1 404 Not Found");
         exit();
     }
-
-    // pass the request method and user ID to the CarouselController and process the HTTP request:
-    // $carousel = new ViewController($dbConnection, $short_url, $id, "../../", $uri[2]);
-    // echo($carousel->showView());
+    $movieView = new getMovie($short_url);
+    echo($movieView->bodyParser());
 } elseif ($uri[2] == 'news') {
     $id        = null;
     $short_url = null;

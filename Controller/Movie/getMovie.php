@@ -24,8 +24,9 @@ class getMovie{
         $size = ceil(($size / 1024) / 1024);
         $download = "";
         foreach ($data['videos'] as $key => $video) {
-            $download .= " <button type='button' class='btn btn-lg btn-block'>Download</button> ";
-            $download .= "<a href='http://127.0.0.1:8090/$video[video_url]' styl='text-decoration:none' download><button type='button' class='btn btn-dark btn-lg btn-block'>Block buttons</button></a>";
+            $download .= "<a  href='http://127.0.0.1:8090/$video[video_url]' style='text-decoration:none; color:inherit' download>
+                            <button type='button' class='btn btn-primary btn-lg btn-block'>Download</button>
+                          </a>";
         }
 
         foreach ($data['images'] as $key => $image) {

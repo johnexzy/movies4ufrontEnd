@@ -18,6 +18,7 @@ class getMovie{
 
         $indicator = "";
         $item = "";
+        $details = $data["video_details"];
         foreach ($data['images'] as $key => $image) {
             $indicator .= ($key == 0) ?
              "<li data-target='#carouselExampleIndicators' data-slide-to='$key' class='active'></li>":
@@ -195,7 +196,8 @@ class getMovie{
                     <div class="col-sm-12">
                       <div class="card" data-aos="fade-up">
                         <div class="card-body">
-                          <div class="aboutus-wrapper">
+                        <div class="row">
+                        <div class="col-sm-6">
                             <h1 class="mt-5 text-center mb-5">
                               Expendables
                             </h1>
@@ -220,7 +222,12 @@ class getMovie{
                                 </div>
                               </div>
                             </div>
+                          </div><div class="col-sm-6">
+                            $details
                           </div>
+                        </div>
+                          
+                          
                         </div>
                       </div>
                     </div>
@@ -390,9 +397,8 @@ class getMovie{
             <!-- Custom js for this page-->
             <script src="../../assets/js/demo.js"></script>
             <script src="../../assets/js/jquery.easeScroll.js"></script>
-            <script>
-            $('.carousel').on('slide.bs.carousel', function (event) { var height = $(event.relatedTarget).height(); var $innerCarousel = $(event.target).find('.carousel-inner'); $innerCarousel.animate({ height: height }); });
-            </script>
+            <script src="../../assets/js/easeCarousel.js"></script>
+            
             <!-- End custom js for this page-->
           </body>
         </html>

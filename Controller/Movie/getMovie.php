@@ -19,6 +19,15 @@ class getMovie{
         $indicator = "";
         $item = "";
         $details = $data["video_details"];
+        $name = $data["video_name"];
+        $size = (int) $data["videos"][0]["video_bytes"];
+        $size = ceil(($size / 1024) / 1024);
+        $download = "";
+        foreach ($data['videos'] as $key => $video) {
+            $download .= " <button type='button' class='btn btn-lg btn-block'>Download</button> ";
+            $download .= "<a href='http://127.0.0.1:8090/$video[video_url]' styl='text-decoration:none' download><button type='button' class='btn btn-dark btn-lg btn-block'>Block buttons</button></a>";
+        }
+
         foreach ($data['images'] as $key => $image) {
             $indicator .= ($key == 0) ?
              "<li data-target='#carouselExampleIndicators' data-slide-to='$key' class='active'></li>":
@@ -195,12 +204,13 @@ class getMovie{
                   <div class="row">
                     <div class="col-sm-12">
                       <div class="card" data-aos="fade-up">
+                      <div class="card-header">
+                        $name
+                      </div>
                         <div class="card-body">
                         <div class="row">
                         <div class="col-sm-6">
-                            <h1 class="mt-5 text-center mb-5">
-                              Expendables
-                            </h1>
+                            
                             <div class="row">
                               <div class="col-lg-12 mb-5 mb-sm-2">
                                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
@@ -222,8 +232,15 @@ class getMovie{
                                 </div>
                               </div>
                             </div>
-                          </div><div class="col-sm-6">
-                            $details
+                          </div>
+                          <div class="col-sm-6">
+                            <p class="">
+                                $details
+                            </p>
+                            <p class="">
+                                size: $size mb
+                            </p>
+                            $download
                           </div>
                         </div>
                           

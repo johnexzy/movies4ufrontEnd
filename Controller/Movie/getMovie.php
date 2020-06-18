@@ -12,4 +12,8 @@ class getMovie{
         $res = file_get_contents("http://127.0.0.1:8090/api/v1/videos/url/$this->short_url");
         return $res;
     }
+    public function bodyParser()
+    {
+        
+    }
 }

@@ -1,5 +1,5 @@
 <?php
-require '../Controller/Movie/getMovie.php';
+require '../bootstrap.php';
 
 // use Src\Controller\ViewController\ViewController;
 use Controller\Movie\getMovie;

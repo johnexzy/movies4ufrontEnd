@@ -2,6 +2,9 @@
 namespace Controller\Movie;
 
 use Logic\CheckDate;
+
+// use Logic\CheckDate;
+// require __DIR__.'../../../logic/CheckDate.php';
 class getMovie{
     private $short_url;
     public function __construct(String $short_url = null) {
@@ -48,6 +51,8 @@ class getMovie{
         }
         //comments
         foreach ($data['comments'] as $key => $coment) {
+          $time = new CheckDate(strtotime($coment["updated_at"]));
+          $time = $time->checkDay();
           $coment_section .= "<div class='comment-box'>
                                 <div class='d-flex align-items-center'>
                                     <div class='rotate-img'>
@@ -55,7 +60,7 @@ class getMovie{
                                     </div>
                                     <div>
                                         <p class='fs-12 mb-1 line-height-xs'>
-                                            $coment[updated_at]
+                                        $time
                                         </p>
                                         <p class='fs-16 font-weight-600 mb-0 line-height-xs'>
                                             $coment[name]

@@ -5,8 +5,7 @@
        
     "autoload": {
         "psr-4": {
-          "Controller\\": "Controller/",
-          "Logic\\": "logic"
+          "Src\\": "src/"
         }
       }
 }

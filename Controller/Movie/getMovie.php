@@ -144,7 +144,7 @@ class getMovie{
                                                             <textarea
                                                             class="form-control textarea"
                                                             placeholder="Comment *"
-                                                            id="message"
+                                                            id="comment"
                                                             ></textarea>
                                                         </div>
                                                     </div>
@@ -159,6 +159,7 @@ class getMovie{
                                                         aria-describedby="name"
                                                         placeholder="Name *"
                                                         />
+                                                    <input type="hidden" id="commentKey" value="$data[video_key]">
                                                     </div>
                                                     </div>
                                                     
@@ -167,11 +168,9 @@ class getMovie{
                                                 <div class="row">
                                                     <div class="col-sm-12">
                                                     <div class="form-group">
-                                                        <a
-                                                        href="#"
+                                                        <button type="button" id="handleSubmit"
                                                         class="btn btn-lg btn-dark font-weight-bold mt-3"
-                                                        >Comment</a
-                                                        >
+                                                        >Comment</button>
                                                     </div>
                                                     </div>
                                                 </div>
@@ -205,51 +204,29 @@ class getMovie{
                                                     leo.
                                                 </p>
                                                 </div>
-                                                <div class="comment-box from">
-                                                <div class="d-flex align-items-center">
-                                                    <div class="rotate-img">
-                                                    <img src="../../assets/images/faces/face3.jpg" alt="banner" class="img-fluid img-rounded mr-3">
-                                                    </div>
-                                                    <div>
-                                                    <p class="fs-12 mb-1 line-height-xs">
-                                                        24 Jul 2020
-                                                    </p>
-                                                    <p class="fs-16 font-weight-600 mb-0 line-height-xs">
-                                                        Mohsen Salehi
-                                                    </p>
-                                                    </div>
-                                                </div>
-                    
-                                                <p class="fs-12 mt-3">
-                                                    Praesent facilisis vulputate venenatis. In
-                                                    facilisis placerat arcu, in tempor neque aliquet
-                                                    quis. Integer lacinia in ligula eu sodales. Proin
-                                                    non lorem iaculis, dictum lorem quis, bibendum
-                                                    leo.
-                                                </p>
-                                                </div>
+                                                
                                                 <div class="comment-box mb-0">
-                                                <div class="d-flex align-items-center">
-                                                    <div class="rotate-img">
-                                                    <img src="../../assets/images/faces/face3.jpg" alt="banner" class="img-fluid img-rounded mr-3">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="rotate-img">
+                                                            <img src="../../assets/images/faces/face3.jpg" alt="banner" class="img-fluid img-rounded mr-3">
+                                                        </div>
+                                                        <div>
+                                                            <p class="fs-12 mb-1 line-height-xs">
+                                                                24 Jul 2020
+                                                            </p>
+                                                            <p class="fs-16 font-weight-600 mb-0 line-height-xs">
+                                                                Lucy Miller
+                                                            </p>
+                                                        </div>
                                                     </div>
-                                                    <div>
-                                                    <p class="fs-12 mb-1 line-height-xs">
-                                                        24 Jul 2020
-                                                    </p>
-                                                    <p class="fs-16 font-weight-600 mb-0 line-height-xs">
-                                                        Lucy Miller
-                                                    </p>
-                                                    </div>
-                                                </div>
                     
-                                                <p class="fs-12 mt-3">
-                                                    Praesent facilisis vulputate venenatis. In
-                                                    facilisis placerat arcu, in tempor neque aliquet
-                                                    quis. Integer lacinia in ligula eu sodales. Proin
-                                                    non lorem iaculis, dictum lorem quis, bibendum
-                                                    leo.
-                                                </p>
+                                                    <p class="fs-12 mt-3">
+                                                        Praesent facilisis vulputate venenatis. In
+                                                        facilisis placerat arcu, in tempor neque aliquet
+                                                        quis. Integer lacinia in ligula eu sodales. Proin
+                                                        non lorem iaculis, dictum lorem quis, bibendum
+                                                        leo.
+                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
@@ -427,6 +404,7 @@ class getMovie{
             <script src="../../assets/js/demo.js"></script>
             <script src="../../assets/js/jquery.easeScroll.js"></script>
             <script src="../../assets/js/easeCarousel.js"></script>
+            <script src="../../assets/js/comment.ajax.js"></script>
             
             <!-- End custom js for this page-->
           </body>

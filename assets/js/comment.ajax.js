@@ -16,20 +16,27 @@ $(document).ready(function() {
         })
         .done(function(data) {
           var comments = '';
-          $(".comment-ui").append(
-              '<li class="comment-li card">' +
-              '<div>' +
-              '<figure class="comment-avatar">' +
-              '<img src="../../assets/img/avatar.png" alt="">' +
-              '</figure>' +
-              '<address>By <a href="#">' + data[data.length - 1]['name'] + '</a>' +
-              '</address>' +
-              '<time class="comment-time"><i class="fa fa-clock"></i> Just Now </time>' +
-              '<div class="comment-content">' +
-              data[data.length - 1]['comment'] +
-              '</div>' +
-              '</div>' +
-              '</li>')
+          $(".comment-section").append(`
+            <div class="comment-box mb-0">
+                <div class="d-flex align-items-center">
+                    <div class="rotate-img">
+                        <img src="../../assets/images/faces/face3.jpg" alt="banner" class="img-fluid img-rounded mr-3">
+                    </div>
+                    <div>
+                        <p class="fs-12 mb-1 line-height-xs">
+                            ${data[data.length - 1].updated_at}
+                        </p>
+                        <p class="fs-16 font-weight-600 mb-0 line-height-xs">
+                            ${data[data.length - 1].name}
+                        </p>
+                    </div>
+                </div>
+
+                <p class="fs-12 mt-3">
+                    ${data[data.length - 1].comment}
+                </p>
+            </div>
+          `)
             // data.forEach(elem => {
             //   comments +=
             //     '<li class="comment-li card">' +

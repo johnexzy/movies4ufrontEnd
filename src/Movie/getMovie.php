@@ -3,8 +3,6 @@ namespace Src\Movie;
 
 use Src\logic\CheckDate;
 
-// use Logic\CheckDate;
-// require __DIR__.'../../../logic/CheckDate.php';
 class getMovie{
     private $short_url;
     public function __construct(String $short_url = null) {

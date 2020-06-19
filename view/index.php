@@ -1,7 +1,6 @@
 <?php
 require '../vendor/autoload.php';
 
-// use Src\Controller\ViewController\ViewController;
 use Src\Movie\getMovie;
 $uri           = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uri           = explode('/', $uri);

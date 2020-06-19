@@ -1,7 +1,7 @@
 <?php
 namespace Controller\Movie;
 
-
+use Logic\CheckDate;
 class getMovie{
     private $short_url;
     public function __construct(String $short_url = null) {
@@ -24,6 +24,7 @@ class getMovie{
         $size = ceil(($size / 1024) / 1024);
         $download = "";
         $coment_section ="";
+        $cmcount = is_countable($data["comments"]) ? count($data["comments"]) : 0 ;
 
         //videos: usually one or $data['videos][0]
         foreach ($data['videos'] as $key => $video) {
@@ -159,7 +160,7 @@ class getMovie{
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <h1 class="mt-5 text-center mb-5">
-                                            Comments
+                                            Add Your Comment
                                         </h1>
                                         <div class="col-lg-12 mb-5 mb-sm-2">
                                             <form>
@@ -205,7 +206,7 @@ class getMovie{
                                     <div class="col-sm-6">
                                         <div class="post-comment-section">
                                             <div class="comment-section">
-                                                <h5 class="font-weight-600">Comments</h5>
+                                                <h5 class="font-weight-600">Comments($cmcount)</h5>
                                                 $coment_section
                                             </div>
                                         </div>

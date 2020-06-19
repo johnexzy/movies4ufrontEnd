@@ -37,23 +37,6 @@ $(document).ready(function() {
                 </p>
             </div>
           `)
-            // data.forEach(elem => {
-            //   comments +=
-            //     '<li class="comment-li card">' +
-            //     '<div>' +
-            //     '<figure class="comment-avatar">' +
-            //     '<img src="../../assets/img/avatar.png" alt="">' +
-            //     '</figure>' +
-            //     '<address>By <a href="#">' + elem['name'] + '</a>' +
-            //     '</address>' +
-            //     '<time class="comment-time">' + elem['created_at'] + ' </time>' +
-            //     '<div class="comment-content">' +
-            //     elem['comment'] +
-            //     '</div>' +
-            //     '</div>' +
-            //     '</li>'
-            // });
-            // $(".comment-ui").html(comments);
   
           $('#comment').val("")
           $('#name').attr("disabled", "");

@@ -90,50 +90,174 @@ class getMovie{
                   <div class="row">
                     <div class="col-sm-12">
                       <div class="card" data-aos="fade-up">
-                      <div class="card-header">
-                        <p class="font-weight-bold" style="text-align:center">
-                            $name
-                        </p>
-                      </div>
-                        <div class="card-body">
-                        <div class="row">
-                        <div class="col-sm-6">
-                            
-                            <div class="row">
-                              <div class="col-lg-12 mb-5 mb-sm-2">
-                                <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-                                    <ol class="carousel-indicators">
-                                        $indicator
-                                    </ol>
-                                    <div class="carousel-inner">
-                                      $item
-                                    </div>
-                                    
-                                    <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-                                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                      <span class="sr-only">Previous</span>
-                                    </a>
-                                    <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-                                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                      <span class="sr-only">Next</span>
-                                    </a>
-                                </div>
-                              </div>
+                            <div class="card-header">
+                                <p class="font-weight-bold" style="text-align:center">
+                                    $name
+                                </p>
                             </div>
-                          </div>
-                          <div class="col-sm-6">
-                            <p class="">
-                                $details
-                            </p>
-                            <p class="">
-                                size: $size mb
-                            </p>
-                            $download
-                          </div>
-                        </div>
-                          
-                          
-                        </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        
+                                        <div class="row">
+                                        <div class="col-lg-12 mb-5 mb-sm-2">
+                                            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+                                                <ol class="carousel-indicators">
+                                                    $indicator
+                                                </ol>
+                                                <div class="carousel-inner">
+                                                $item
+                                                </div>
+                                                
+                                                <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="sr-only">Previous</span>
+                                                </a>
+                                                <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="sr-only">Next</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p class="">
+                                            $details
+                                        </p>
+                                        <p class="">
+                                            size: $size mb
+                                        </p>
+                                        $download
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <h1 class="mt-5 text-center mb-5">
+                                            Comments
+                                        </h1>
+                                        <div class="col-lg-12 mb-5 mb-sm-2">
+                                            <form>
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="form-group">
+                                                            <textarea
+                                                            class="form-control textarea"
+                                                            placeholder="Comment *"
+                                                            id="message"
+                                                            ></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <input
+                                                        type="text"
+                                                        class="form-control"
+                                                        id="name"
+                                                        aria-describedby="name"
+                                                        placeholder="Name *"
+                                                        />
+                                                    </div>
+                                                    </div>
+                                                    
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <a
+                                                        href="#"
+                                                        class="btn btn-lg btn-dark font-weight-bold mt-3"
+                                                        >Comment</a
+                                                        >
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="post-comment-section">
+                                            <div class="comment-section">
+                                                <h5 class="font-weight-600">Comments</h5>
+                                                <div class="comment-box">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="rotate-img">
+                                                    <img src="../../assets/images/faces/face2.jpg" alt="banner" class="img-fluid img-rounded mr-3">
+                                                    </div>
+                                                    <div>
+                                                    <p class="fs-12 mb-1 line-height-xs">
+                                                        24 Jul 2020
+                                                    </p>
+                                                    <p class="fs-16 font-weight-600 mb-0 line-height-xs">
+                                                        Chigusa Kisa
+                                                    </p>
+                                                    </div>
+                                                </div>
+                    
+                                                <p class="fs-12 mt-3">
+                                                    Praesent facilisis vulputate venenatis. In
+                                                    facilisis placerat arcu, in tempor neque aliquet
+                                                    quis. Integer lacinia in ligula eu sodales. Proin
+                                                    non lorem iaculis, dictum lorem quis, bibendum
+                                                    leo.
+                                                </p>
+                                                </div>
+                                                <div class="comment-box from">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="rotate-img">
+                                                    <img src="../../assets/images/faces/face3.jpg" alt="banner" class="img-fluid img-rounded mr-3">
+                                                    </div>
+                                                    <div>
+                                                    <p class="fs-12 mb-1 line-height-xs">
+                                                        24 Jul 2020
+                                                    </p>
+                                                    <p class="fs-16 font-weight-600 mb-0 line-height-xs">
+                                                        Mohsen Salehi
+                                                    </p>
+                                                    </div>
+                                                </div>
+                    
+                                                <p class="fs-12 mt-3">
+                                                    Praesent facilisis vulputate venenatis. In
+                                                    facilisis placerat arcu, in tempor neque aliquet
+                                                    quis. Integer lacinia in ligula eu sodales. Proin
+                                                    non lorem iaculis, dictum lorem quis, bibendum
+                                                    leo.
+                                                </p>
+                                                </div>
+                                                <div class="comment-box mb-0">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="rotate-img">
+                                                    <img src="../../assets/images/faces/face3.jpg" alt="banner" class="img-fluid img-rounded mr-3">
+                                                    </div>
+                                                    <div>
+                                                    <p class="fs-12 mb-1 line-height-xs">
+                                                        24 Jul 2020
+                                                    </p>
+                                                    <p class="fs-16 font-weight-600 mb-0 line-height-xs">
+                                                        Lucy Miller
+                                                    </p>
+                                                    </div>
+                                                </div>
+                    
+                                                <p class="fs-12 mt-3">
+                                                    Praesent facilisis vulputate venenatis. In
+                                                    facilisis placerat arcu, in tempor neque aliquet
+                                                    quis. Integer lacinia in ligula eu sodales. Proin
+                                                    non lorem iaculis, dictum lorem quis, bibendum
+                                                    leo.
+                                                </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        
                       </div>
                     </div>
                   </div>

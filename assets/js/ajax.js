@@ -11,9 +11,11 @@ $(function(){
       key == 0 || key == 1 ? $(".first-half-newvideo").append(`
       <div class="col-sm-6 grid-margin">
         <div class="position-relative">
-          <div class="rotate-img">
-            <img src="http://127.0.0.1:8090/${video.images[0]}" alt="thumb" class="img-fluid" />
-          </div>
+          <a href="/view/movies/${video.short_url}" style="text-decoration:none; color: inherit">
+            <div class="rotate-img">
+              <img src="http://127.0.0.1:8090/${video.images[0]}" alt="thumb" class="img-fluid" />
+            </div>
+          </a>
           <div class="badge-positioned w-90">
             <div class="d-flex justify-content-between align-items-center">
               <span class="badge badge-danger font-weight-bold">${video.category}</span>
@@ -28,9 +30,11 @@ $(function(){
     : key == 2 || key == 3 ? $(".second-half-newvideo").append(`
     <div class="col-sm-6 grid-margin">
       <div class="position-relative">
-        <div class="rotate-img">
-          <img src="http://127.0.0.1:8090/${video.images[0]}" alt="thumb" class="img-fluid" />
-        </div>
+        <a href="/view/movies/${video.short_url}" style="text-decoration:none; color: inherit">
+          <div class="rotate-img">
+            <img src="http://127.0.0.1:8090/${video.images[0]}" alt="thumb" class="img-fluid" />
+          </div>
+        </a>
         <div class="badge-positioned w-90">
           <div class="d-flex justify-content-between align-items-center">
             <span class="badge badge-danger font-weight-bold">${video.category}</span>
@@ -44,12 +48,16 @@ $(function(){
   `) : $(".other-newvideo").append(`
             <div class="d-flex justify-content-between align-items-center border-bottom pb-2">
                 <div class="div-w-80 mr-3">
-                  <div class="rotate-img">
-                    <img src="http://127.0.0.1:8090/${video.images[0]}" alt="thumb" class="img-fluid" />
-                  </div>
+                  <a href="/view/movies/${video.short_url}" style="text-decoration:none; color: inherit">
+                    <div class="rotate-img">
+                      <img src="http://127.0.0.1:8090/${video.images[0]}" alt="thumb" class="img-fluid" />
+                    </div>
+                  </a>
                 </div>
                 <h3 class="font-weight-600 mb-0">
+                  <a href="/view/${video.short_url}" style="text-decoration:none; color: inherit">
                   ${video.video_name}
+                  </a>
                 </h3>
             </div>
         `)

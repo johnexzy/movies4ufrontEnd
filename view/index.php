@@ -2,7 +2,7 @@
 require '../bootstrap.php';
 
 // use Src\Controller\ViewController\ViewController;
-use Controller\Movie\getMovie;
+use Src\Movie\getMovie;
 $uri           = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uri           = explode('/', $uri);
 $requestMethod = $_SERVER['REQUEST_METHOD'];

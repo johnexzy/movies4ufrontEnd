@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-namespace Logic;
+namespace src\logic;
 
 /**
  * Description of CheckDate

@@ -1,5 +1,5 @@
 <?php 
-namespace Controller\Album;
+namespace Src\Album;
 
 
 class getAlbum{

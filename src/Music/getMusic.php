@@ -1,5 +1,5 @@
 <?php
-namespace Controller\Music;
+namespace Src\Music;
 
 
 class getMusic{

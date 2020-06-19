@@ -1,7 +1,7 @@
 <?php
-namespace Controller\Movie;
+namespace Src\Movie;
 
-use Logic\CheckDate;
+use Src\logic\CheckDate;
 
 // use Logic\CheckDate;
 // require __DIR__.'../../../logic/CheckDate.php';

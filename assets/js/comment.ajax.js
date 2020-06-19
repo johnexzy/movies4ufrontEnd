@@ -17,14 +17,14 @@ $(document).ready(function() {
         .done(function(data) {
           var comments = '';
           $(".comment-section").append(`
-            <div class="comment-box mb-0">
+            <div class="comment-box">
                 <div class="d-flex align-items-center">
                     <div class="rotate-img">
-                        <img src="../../assets/images/faces/face3.jpg" alt="banner" class="img-fluid img-rounded mr-3">
+                        <img src="../../assets/images/avatar.png" alt="banner" class="img-fluid img-rounded mr-3">
                     </div>
                     <div>
                         <p class="fs-12 mb-1 line-height-xs">
-                            ${data[data.length - 1].updated_at}
+                            Just Now
                         </p>
                         <p class="fs-16 font-weight-600 mb-0 line-height-xs">
                             ${data[data.length - 1].name}

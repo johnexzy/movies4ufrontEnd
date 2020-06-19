@@ -23,12 +23,15 @@ class getMovie{
         $size = (int) $data["videos"][0]["video_bytes"];
         $size = ceil(($size / 1024) / 1024);
         $download = "";
+        $coment_section ="";
+
+        //videos: usually one or $data['videos][0]
         foreach ($data['videos'] as $key => $video) {
             $download .= "<a  href='http://127.0.0.1:8090/$video[video_url]' style='text-decoration:none; color:inherit' download>
                             <button type='button' class='btn btn-primary btn-lg btn-block'>Download</button>
                           </a>";
         }
-
+        //images
         foreach ($data['images'] as $key => $image) {
             $indicator .= ($key == 0) ?
              "<li data-target='#carouselExampleIndicators' data-slide-to='$key' class='active'></li>":
@@ -41,6 +44,28 @@ class getMovie{
                 <img class='d-block w-100' src='http://127.0.0.1:8090/$image' alt='slide $key'>
               </div>";
              
+        }
+        //comments
+        foreach ($data['comments'] as $key => $coment) {
+          $coment_section .= "<div class='comment-box'>
+                                <div class='d-flex align-items-center'>
+                                    <div class='rotate-img'>
+                                        <img src='../../assets/images/avatar.png' alt='banner' class='img-fluid img-rounded mr-3'>
+                                    </div>
+                                    <div>
+                                        <p class='fs-12 mb-1 line-height-xs'>
+                                            $coment[updated_at]
+                                        </p>
+                                        <p class='fs-16 font-weight-600 mb-0 line-height-xs'>
+                                            $coment[name]
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <p class='fs-12 mt-3'>
+                                    $coment[comment]
+                                </p>
+                            </div>";
         }
         return <<<EOS
         <!DOCTYPE html>
@@ -181,53 +206,7 @@ class getMovie{
                                         <div class="post-comment-section">
                                             <div class="comment-section">
                                                 <h5 class="font-weight-600">Comments</h5>
-                                                <div class="comment-box">
-                                                <div class="d-flex align-items-center">
-                                                    <div class="rotate-img">
-                                                    <img src="../../assets/images/faces/face2.jpg" alt="banner" class="img-fluid img-rounded mr-3">
-                                                    </div>
-                                                    <div>
-                                                    <p class="fs-12 mb-1 line-height-xs">
-                                                        24 Jul 2020
-                                                    </p>
-                                                    <p class="fs-16 font-weight-600 mb-0 line-height-xs">
-                                                        Chigusa Kisa
-                                                    </p>
-                                                    </div>
-                                                </div>
-                    
-                                                <p class="fs-12 mt-3">
-                                                    Praesent facilisis vulputate venenatis. In
-                                                    facilisis placerat arcu, in tempor neque aliquet
-                                                    quis. Integer lacinia in ligula eu sodales. Proin
-                                                    non lorem iaculis, dictum lorem quis, bibendum
-                                                    leo.
-                                                </p>
-                                                </div>
-                                                
-                                                <div class="comment-box mb-0">
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="rotate-img">
-                                                            <img src="../../assets/images/faces/face3.jpg" alt="banner" class="img-fluid img-rounded mr-3">
-                                                        </div>
-                                                        <div>
-                                                            <p class="fs-12 mb-1 line-height-xs">
-                                                                24 Jul 2020
-                                                            </p>
-                                                            <p class="fs-16 font-weight-600 mb-0 line-height-xs">
-                                                                Lucy Miller
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                    
-                                                    <p class="fs-12 mt-3">
-                                                        Praesent facilisis vulputate venenatis. In
-                                                        facilisis placerat arcu, in tempor neque aliquet
-                                                        quis. Integer lacinia in ligula eu sodales. Proin
-                                                        non lorem iaculis, dictum lorem quis, bibendum
-                                                        leo.
-                                                    </p>
-                                                </div>
+                                                $coment_section
                                             </div>
                                         </div>
                                         

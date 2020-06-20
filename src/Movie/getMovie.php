@@ -97,19 +97,14 @@ class getMovie{
             <div class="container-scroller">
               <!-- partial:../partials/_navbar.html -->
               
-              <div class="flash-news-banner">
+              <div class="flash-news-banner sticky-top">
                 <div class="container">
                   <div class="d-lg-flex align-items-center justify-content-between">
                     <div class="d-flex align-items-center">
-                      <span class="badge badge-dark mr-3">Flash news</span>
+                      <span class="badge badge-dark mr-3">Leccel.net</span>
                       <p class="mb-0">
-                        Lorem Ipsum has been the industry's standard dummy text ever
-                        since the 1500s.
+                        <a href="/">Home</a> / <a href="/pages/movies.html">movies</a> / <a href="#">Download</a>
                       </p>
-                    </div>
-                    <div class="d-flex">
-                      <span class="mr-3 text-danger">Wed, March 4, 2020</span>
-                      <span class="text-danger">30°C,London</span>
                     </div>
                   </div>
                 </div>
@@ -208,8 +203,9 @@ class getMovie{
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="post-comment-section">
-                                            <div class="comment-section">
-                                                <h5 class="font-weight-600">Comments($cmcount)</h5>
+                                            <i class="mdi mdi-comment"></i> 
+                                            <span class="count">($cmcount)</span>
+                                            <div class="comment-section"> 
                                                 $coment_section
                                             </div>
                                         </div>

@@ -37,7 +37,7 @@ $(document).ready(function() {
                 </p>
             </div>
           `)
-  
+          $(".comment-section").parent().find(".count").text(data.length)
           $('#comment').val("")
           $('#name').attr("disabled", "");
           $('body,html').animate({

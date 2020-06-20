@@ -13,19 +13,22 @@ $(function(){
             $(".show-video").append(`
             <div class="row">
             <div class="col-sm-4 grid-margin">
-              <div class="rotate-img">
-              
-                <img
-                  src="http://127.0.0.1:8090/${video.images[0]}"
-                  alt="banner"
-                  class="img-fluid"
-                />
-              </div>
+                <a href="../view/movies/${video.short_url}" style="text-decoration:none; color: inherit">
+                    <div class="rotate-img">
+                        <img
+                        src="http://127.0.0.1:8090/${video.images[0]}"
+                        alt="banner"
+                        class="img-fluid"
+                        />
+                    </div>
+                </a>
             </div>
             <div class="col-sm-8 grid-margin">
-              <h2 class="font-weight-600 mb-2">
-                ${video.video_name}
-              </h2>
+                <h2 class="font-weight-600 mb-2">
+                    <a href="../view/movies/${video.short_url}" style="text-decoration:none; color: inherit">
+                        ${video.video_name}
+                    </a>
+                </h2>
               
                 <p class="L5 mb-0">
                     <i class="mdi mdi-movie"></i> <span class="fs-16 mr-2 text-muted">${video.category}</span>
@@ -69,15 +72,19 @@ $(function(){
         $.each(data, (key, video)=>{
             $(".show-popular").append(`
                     <div class="mb-4">
-                        <div class="rotate-img">
-                        <img
-                            src="http://127.0.0.1:8090/${video.images[0]}"
-                            alt="banner"
-                            class="img-fluid"
-                        />
-                        </div>
+                        <a href="../view/movies/${video.short_url}" style="text-decoration:none; color: inherit">
+                            <div class="rotate-img">
+                            <img
+                                src="http://127.0.0.1:8090/${video.images[0]}"
+                                alt="banner"
+                                class="img-fluid"
+                            />
+                            </div>
+                        </a>
                         <h3 class="mt-3 font-weight-600">
-                        ${video.video_name}
+                            <a href="../view/movies/${video.short_url}" style="text-decoration:none; color: inherit">
+                                ${video.video_name}
+                            </a>
                         </h3>
                         <p class="L5 mb-0">
                             <i class="mdi mdi-movie"></i> <span class="fs-16 mr-2 text-muted">${video.category}</span>
@@ -126,18 +133,21 @@ $(function(){
                 $(".show-video").append(`
                 <div class="row">
                 <div class="col-sm-4 grid-margin">
-                <div class="rotate-img">
-                
-                    <img
-                    src="http://127.0.0.1:8090/${video.images[0]}"
-                    alt="banner"
-                    class="img-fluid"
-                    />
-                </div>
+                    <a href="../view/movies/${video.short_url}" style="text-decoration:none; color: inherit">
+                        <div class="rotate-img">
+                            <img
+                            src="http://127.0.0.1:8090/${video.images[0]}"
+                            alt="banner"
+                            class="img-fluid"
+                            />
+                        </div>
+                    </a>
                 </div>
                 <div class="col-sm-8 grid-margin">
                 <h2 class="font-weight-600 mb-2">
-                    ${video.video_name}
+                    <a href="../view/movies/${video.short_url}" style="text-decoration:none; color: inherit">
+                        ${video.video_name}
+                    </a>
                 </h2>
                 
                 <p class="L5 mb-0">

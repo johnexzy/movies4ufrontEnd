@@ -23,15 +23,16 @@ class getMusic{
         $details = $data["music_details"];
         $name = $data["music_name"];
         $download = "";
+        $url = $data["audio"]["song_url"];
         $coment_section ="";
         $cmcount = is_countable($data["comments"]) ? count($data["comments"]) : 0 ;
 
         //videos: usually one or $data['videos][0]
-        foreach ($data['audio'] as $key => $music) {
-            $download .= "<a  href='http://127.0.0.1:8090/$music[song_url]' class='btn btn-primary btn-lg btn-block' download>
+        
+            $download = "<a  href='http://127.0.0.1:8090/$url' class='btn btn-primary btn-lg btn-block' download>
                             Download
                           </a>";
-        }
+        
         //images
         foreach ($data['images'] as $key => $image) {
             $indicator .= ($key == 0) ?
@@ -102,7 +103,7 @@ class getMusic{
                     <div class="d-flex align-items-center">
                       <span class="badge badge-dark mr-3">Leccel.net</span>
                       <p class="mb-0">
-                        <a href="/">Home</a> / <a href="/pages/musics.html">music</a> / <a href="#">Download</a>
+                        <a href="/">Home</a> / <a href="/pages/music.html">music</a> / <a href="#">Download</a>
                       </p>
                     </div>
                   </div>

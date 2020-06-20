@@ -3,6 +3,8 @@ require '../vendor/autoload.php';
 
 use Src\Album\getAlbum;
 use Src\Movie\getMovie;
+use Src\Music\getMusic;
+
 $uri           = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uri           = explode('/', $uri);
 $requestMethod = $_SERVER['REQUEST_METHOD'];
@@ -27,12 +29,20 @@ elseif ($uri[2] == 'albums') {
         header("HTTP/1.1 404 Not Found");
         exit();
     }
-    
 
-    // pass the request method and user ID to the CarouselController and process the HTTP request:
-    // $news = new ViewController($dbConnection, $short_url, $id, "../../", $uri[2]);
-    // echo($news->showView());
-} else {
+}
+elseif ($uri[2] == 'music') {
+    if (isset($uri[3])) {
+        $short_url = (String)$uri[3];
+        $movieView = new getMusic($short_url);
+        echo($movieView->bodyParser());
+    } else {
+        header("HTTP/1.1 404 Not Found");
+        exit();
+    }
+
+}
+ else {
     header("HTTP/1.1 404 Not Found");
     exit();
 }

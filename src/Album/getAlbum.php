@@ -1,7 +1,7 @@
 <?php 
 namespace Src\Album;
 
-use src\logic\CheckDate;
+use Src\logic\CheckDate;
 
 
 class getAlbum{
@@ -23,12 +23,13 @@ class getAlbum{
         $details = $data["album_details"];
         $name = $data["album_name"];
         $download = "";
+        $number = is_countable($data['audio']) ? count($data['audio']) : 1;
         $coment_section ="";
         $cmcount = is_countable($data["comments"]) ? count($data["comments"]) : 0 ;
 
         //videos: usually one or $data['videos][0]
         foreach ($data['audio'] as $key => $music) {
-            $download .= "<a  href='http://127.0.0.1:8090/$music[song_url]' class='btn btn-primary btn-lg btn-block' style='text-decoration:none; color:inherit' download>
+            $download .= "<a  href='http://127.0.0.1:8090/$music[song_url]' class='btn btn-primary btn-lg btn-block' download>
                             Download ".($key + 1)."
                           </a>";
         }
@@ -102,7 +103,7 @@ class getAlbum{
                     <div class="d-flex align-items-center">
                       <span class="badge badge-dark mr-3">Leccel.net</span>
                       <p class="mb-0">
-                        <a href="/">Home</a> / <a href="/pages/movies.html">movies</a> / <a href="#">Download</a>
+                        <a href="/">Home</a> / <a href="/pages/albums.html">Albums</a> / <a href="#">Download</a>
                       </p>
                     </div>
                   </div>
@@ -148,6 +149,9 @@ class getAlbum{
                                         <p class="">
                                             $details
                                         </p>
+                                        <p>
+                                            Number of Music: $number
+                                        </p>
                                         
                                         $download
                                     </div>
@@ -180,7 +184,7 @@ class getAlbum{
                                                         aria-describedby="name"
                                                         placeholder="Name *"
                                                         />
-                                                    <input type="hidden" id="commentKey" value="$data[video_key]">
+                                                    <input type="hidden" id="commentKey" value="$data[album_key]">
                                                     </div>
                                                     </div>
                                                     

@@ -81,7 +81,7 @@ $(function(){
                   `
                     
                   <div class="border-bottom pb-3 mb-3">
-                  <a href="" style="text-decoration:none; color: inherit">
+                  <a href="/view/music/${music.short_url}" style="text-decoration:none; color: inherit">
                   <h3 class="font-weight-600 mb-0">
                     ${music.music_name}
                   </h3>
@@ -116,7 +116,7 @@ $(function(){
               
               $(".album-other").append(`
               <div class="border-bottom pb-3 mb-3">
-              <a href="" style="text-decoration:none; color:inherit">
+              <a href="/view/albums/${album.short_url}" style="text-decoration:none; color:inherit">
               <h3 class="font-weight-600 mb-0">
                 ${album.album_name}
               </h3>

@@ -55,7 +55,7 @@ $(function(){
                   </a>
                 </div>
                 <h3 class="font-weight-600 mb-0">
-                  <a href="/view/${video.short_url}" style="text-decoration:none; color: inherit">
+                  <a href="/view/movies/${video.short_url}" style="text-decoration:none; color: inherit">
                   ${video.video_name}
                   </a>
                 </h3>

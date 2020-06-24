@@ -71,7 +71,7 @@ class getAlbum{
                                 </p>
                             </div>";
         }
-        return <<<EOS
+        return <<<HTML
         <!DOCTYPE html>
         <html lang="zxx">
           <head>
@@ -261,7 +261,7 @@ class getAlbum{
           </body>
         </html>
         
-EOS;
+HTML;
 
 
     }

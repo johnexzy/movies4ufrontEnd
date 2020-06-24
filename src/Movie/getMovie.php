@@ -71,7 +71,7 @@ class getMovie{
                                 </p>
                             </div>";
         }
-        return <<<EOS
+        return <<<HTML
         <!DOCTYPE html>
         <html lang="zxx">
           <head>
@@ -260,7 +260,7 @@ class getMovie{
           </body>
         </html>
         
-EOS;
+HTML;
 
 
     }

@@ -71,7 +71,7 @@ class getMusic{
                                 </p>
                             </div>";
         }
-        return <<<EOS
+        return <<<HTML
         <!DOCTYPE html>
         <html lang="zxx">
           <head>
@@ -257,7 +257,7 @@ class getMusic{
           </body>
         </html>
         
-EOS;
+HTML;
 
 
     }

@@ -34,7 +34,7 @@ npm manifest:
       "type": "git",
       "url": ""
     },
-    "author": "bootstrapdash",
+    "author": "Leccel.net",
     "license": "ISC",
     "homepage": "",
     "dependencies": {

@@ -46,19 +46,14 @@ $(function(){
       </div>
     </div>
   `) : $(".other-newvideo").append(`
-            <div class="d-flex justify-content-between align-items-center border-bottom pb-2">
-                <div class="div-w-80 mr-3">
-                  <a href="/view/movies/${video.short_url}" style="text-decoration:none; color: inherit">
-                    <div class="rotate-img">
-                      <img src="http://127.0.0.1:8090/${video.images[0]}" alt="thumb" class="img-fluid" />
-                    </div>
-                  </a>
-                </div>
-                <h3 class="font-weight-600 mb-0">
-                  <a href="/view/movies/${video.short_url}" style="text-decoration:none; color: inherit">
+            <div class="border-bottom border-top pb-2">
+                
+                <a href="/view/movies/${video.short_url}" style="text-decoration:none; color: inherit">
+                <p class="font-weight-600 mb-0">
+                  
                   ${video.video_name}
-                  </a>
-                </h3>
+                  
+                </p></a>
             </div>
         `)
     })

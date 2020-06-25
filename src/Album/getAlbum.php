@@ -131,7 +131,7 @@ class getAlbum{
                 <div class="container">
                   <div class="d-lg-flex align-items-center justify-content-between">
                     <div class="d-flex align-items-center">
-                      <span class="badge badge-dark mr-3">Leccel.net</span>
+                      <a href="/"><span class="badge badge-dark mr-3">Leccel.net</span></a>
                       <p class="mb-0">
                         <a href="/">Home</a> / <a href="/pages/albums.html">Albums</a> / <a href="#">Download</a>
                       </p>

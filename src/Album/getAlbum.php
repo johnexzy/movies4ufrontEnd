@@ -14,7 +14,10 @@ class getAlbum{
      */
     public function is_url_exist(String $url)
     {
-      
+      $header = get_headers($url);
+      if (strpos($header[0], '404')) {
+          
+      }
     }
     public static function makeRequest($short_url)
     {

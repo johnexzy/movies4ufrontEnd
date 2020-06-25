@@ -9,10 +9,23 @@ class getAlbum{
     public function __construct(String $short_url = null) {
         $this->short_url = $short_url;
     }
+    /**
+     * checks if a url exist with status 200 and return true or false
+     */
+    public function is_url_exist(String $url)
+    {
+      
+    }
     public static function makeRequest($short_url)
     {
-        $res = file_get_contents("http://127.0.0.1:8090/api/v1/album/url/$short_url");
-        return $res;
+        if (!file_exists("http://127.0.0.1:8090/api/v1/album/url/$short_url")) {
+            echo "no";
+        }
+        
+        else {
+          return \file_get_contents("http://127.0.0.1:8090/api/v1/album/url/$short_url");
+        }
+        
     } 
     public function bodyParser()
     {

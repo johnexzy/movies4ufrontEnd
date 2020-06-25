@@ -12,17 +12,18 @@ class getAlbum{
     /**
      * checks if a url exist with status 200 and return true or false
      */
-    public function is_url_exist(String $url)
+    public static function is_url_exist(String $url)
     {
       $header = get_headers($url);
       if (strpos($header[0], '404')) {
-          
+          return false;
       }
+      return true;
     }
     public static function makeRequest($short_url)
     {
-        if (!file_exists("http://127.0.0.1:8090/api/v1/album/url/$short_url")) {
-            echo "no";
+        if (!self::is_url_exist("http://127.0.0.1:8090/api/v1/album/url/$short_url")) {
+            
         }
         
         else {

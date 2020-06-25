@@ -22,19 +22,32 @@ class getAlbum{
     }
     public static function makeRequest($short_url)
     {
-        if (!self::is_url_exist("http://127.0.0.1:8090/api/v1/album/url/$short_url")) {
-            
+        if (self::is_url_exist("http://127.0.0.1:8090/api/v1/album/url/$short_url")) {
+            return \file_get_contents("http://127.0.0.1:8090/api/v1/album/url/$short_url");
         }
         
         else {
-          return \file_get_contents("http://127.0.0.1:8090/api/v1/album/url/$short_url");
+          return \json_encode(
+            array(
+              "error" => 1
+            )
+          );
         }
         
     } 
     public function bodyParser()
     {
         $data = \json_decode(self::makeRequest($this->short_url), true);
-
+        if (isset($data["error"])) {
+          $notFound = \file_get_contents(__DIR__."\..\..\pages/404.html", true);
+          $notFound = str_replace("../assets/", "/assets/", $notFound);
+          $notFound = str_replace(".././assets/", "/assets/", $notFound);
+          $notFound = str_replace('"./', '"/pages/', $notFound);
+          file_put_contents(__DIR__."\..\..\pages/404new.html", $notFound);
+          return<<<HTML
+            $notFound
+        HTML;
+        }
         $indicator = "";
         $item = "";
         $details = $data["album_details"];
@@ -71,7 +84,7 @@ class getAlbum{
           $coment_section .= "<div class='comment-box'>
                                 <div class='d-flex align-items-center'>
                                     <div class='rotate-img'>
-                                        <img src='../../assets/images/avatar.png' alt='banner' class='img-fluid img-rounded mr-3'>
+                                        <img src='/assets/images/avatar.png' alt='banner' class='img-fluid img-rounded mr-3'>
                                     </div>
                                     <div>
                                         <p class='fs-12 mb-1 line-height-xs'>
@@ -100,13 +113,13 @@ class getAlbum{
             <!-- plugin css for this page -->
             <link
               rel="stylesheet"
-              href="../../assets/vendors/mdi/css/materialdesignicons.min.css"
+              href="/assets/vendors/mdi/css/materialdesignicons.min.css"
             />
-            <link rel="stylesheet" href="../../assets/vendors/aos/dist/aos.css/aos.css" />
+            <link rel="stylesheet" href="/assets/vendors/aos/dist/aos.css/aos.css" />
             <!-- End plugin css for this page -->
-            <link rel="shortcut icon" href="../../assets/images/favicon.png" />
+            <link rel="shortcut icon" href="/assets/images/favicon.png" />
             <!-- inject:css -->
-            <link rel="stylesheet" href="../../assets/css/style.css">
+            <link rel="stylesheet" href="/assets/css/style.css">
             <!-- endinject -->
           </head>
         
@@ -262,17 +275,17 @@ class getAlbum{
         
             <!-- partial -->
             <!-- inject:js -->
-            <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
+            <script src="/assets/vendors/js/vendor.bundle.base.js"></script>
             <!-- endinject -->
             <!-- plugin js for this page -->
         
-            <script src="../../assets/vendors/aos/dist/aos.js/aos.js"></script>
+            <script src="/assets/vendors/aos/dist/aos.js/aos.js"></script>
             <!-- End plugin js for this page -->
             <!-- Custom js for this page-->
-            <script src="../../assets/js/demo.js"></script>
-            <script src="../../assets/js/jquery.easeScroll.js"></script>
-            <script src="../../assets/js/easeCarousel.js"></script>
-            <script src="../../assets/js/comment.ajax.js"></script>
+            <script src="/assets/js/demo.js"></script>
+            <script src="/assets/js/jquery.easeScroll.js"></script>
+            <script src="/assets/js/easeCarousel.js"></script>
+            <script src="/assets/js/comment.ajax.js"></script>
             
             <!-- End custom js for this page-->
           </body>

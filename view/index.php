@@ -37,12 +37,16 @@ elseif ($uri[2] == 'music') {
         $movieView = new getMusic($short_url);
         echo($movieView->bodyParser());
     } else {
-        header("HTTP/1.1 404 Not Found");
-        exit();
+        $notFound = \file_get_contents(__DIR__."\..\pages/404new.html", true);
+          echo <<<HTML
+            $notFound
+        HTML;
     }
 
 }
  else {
-    header("HTTP/1.1 404 Not Found");
-    exit();
+    $notFound = \file_get_contents(__DIR__."\..\pages/404new.html", true);
+          echo <<<HTML
+            $notFound
+        HTML;
 }

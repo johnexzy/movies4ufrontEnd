@@ -8,10 +8,30 @@ class getMovie{
     public function __construct(String $short_url = null) {
         $this->short_url = $short_url;
     }
+    /**
+     * checks if a url exist with status 200 and return true or false
+     */
+    public static function is_url_exist(String $url)
+    {
+      $header = get_headers($url);
+      if (strpos($header[0], '404')) {
+          return false;
+      }
+      return true;
+    }
     public static function makeRequest($short_url)
     {
-        $res = file_get_contents("http://127.0.0.1:8090/api/v1/videos/url/$short_url");
-        return $res;
+        if (self::is_url_exist("http://127.0.0.1:8090/api/v1/videos/url/$short_url")) {
+            return \file_get_contents("http://127.0.0.1:8090/api/v1/videos/url/$short_url");
+        }
+        
+        else {
+          return \json_encode(
+            array(
+              "error" => 1
+            )
+          );
+        }
     } 
     public function bodyParser()
     {

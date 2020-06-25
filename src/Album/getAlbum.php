@@ -39,11 +39,7 @@ class getAlbum{
     {
         $data = \json_decode(self::makeRequest($this->short_url), true);
         if (isset($data["error"])) {
-          $notFound = \file_get_contents(__DIR__."\..\..\pages/404.html", true);
-          $notFound = str_replace("../assets/", "/assets/", $notFound);
-          $notFound = str_replace(".././assets/", "/assets/", $notFound);
-          $notFound = str_replace('"./', '"/pages/', $notFound);
-          file_put_contents(__DIR__."\..\..\pages/404new.html", $notFound);
+          $notFound = \file_get_contents(__DIR__."\..\..\pages/404new.html", true);
           return<<<HTML
             $notFound
         HTML;

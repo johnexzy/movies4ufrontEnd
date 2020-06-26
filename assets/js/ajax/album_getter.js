@@ -127,7 +127,7 @@ $(function(){
         .done((data)=>{
             $("body, html").animate({
                 scrollTop: 0
-            })
+            }, 2000)
             $(".show-album").html("")
             $.each(data.data, (key, album)=>{
                 $(".show-album").append(`

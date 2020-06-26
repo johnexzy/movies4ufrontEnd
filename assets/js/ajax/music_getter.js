@@ -127,7 +127,7 @@ $(function(){
         .done((data)=>{
             $("body, html").animate({
                 scrollTop: 0
-            })
+            }, 2000)
             $(".show-music").html("")
             $.each(data.data, (key, music)=>{
                 $(".show-music").append(`

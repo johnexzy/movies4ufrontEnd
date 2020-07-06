@@ -126,10 +126,31 @@ class getMovie{
                 <div class="container">
                   <div class="d-lg-flex align-items-center justify-content-between">
                     <div class="d-flex align-items-center">
-                      <a href="/"><span class="badge badge-dark mr-3">Leccel.net</span></a>
+                      <a href="/"><img src="/assets/images/LECCEL3.png" alt="LECCEL.NET" srcset=""></a>
                       <p class="mb-0">
-                        <a href="/">Home</a> / <a href="/pages/movies.html">movies</a> / <a href="#">Download</a>
-                      </p>
+                          Get the Latest Movies, Music, Albums Series and more
+                        </p>
+                      </div>
+                      <div class="d-flex mt-3">
+
+                        <ul class="social-media mb-3">
+                          <li>
+                            <a href="#" class=" text-decoration-none">
+                              Advertise With Us
+                            </a>
+                          </li>
+                          <li>
+                            <a href="https://www.instagram.com/leccel_net" target="_blank">
+                              <i class="mdi mdi-instagram"></i>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="https://twitter.com/Leccel_net" target="_blank">
+                              <i class="mdi mdi-twitter"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -138,6 +159,11 @@ class getMovie{
                 <div class="container">
                   <div class="row">
                     <div class="col-sm-12">
+                    <div class="mb-3">
+                      <a href="/" class="mb-1 font-weight-bold pad2x text-decoration-none">Home</a> &RightArrow; 
+                      <a href="/pages/movies.html" class="mb-1 font-weight-bold pad2x text-decoration-none">Movies</a>&RightArrow;
+                      <a href="#" class="mb-1 font-weight-bold pad2x text-decoration-none">Download</a>
+                    </div>
                       <div class="card" data-aos="fade-up">
                             <div class="card-header">
                                 <p class="font-weight-bold" style="text-align:center">

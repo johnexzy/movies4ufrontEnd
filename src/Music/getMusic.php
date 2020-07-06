@@ -128,8 +128,29 @@ class getMusic{
                     <div class="d-flex align-items-center">
                       <a href="/"><img src="/assets/images/LECCEL3.png" alt="LECCEL.NET" srcset=""></a>
                       <p class="mb-0">
-                        <a href="/">Home</a> / <a href="/pages/music.html">music</a> / <a href="#">Download</a>
+                        Get the Latest Movies, Music, Albums Series and more
                       </p>
+                    </div>
+                    <div class="d-flex mt-3">
+
+                      <ul class="social-media mb-3">
+                        <li>
+                          <a href="#" class=" text-decoration-none">
+                            Advertise With Us
+                          </a>
+                        </li>
+                        <li>
+                          <a href="https://www.instagram.com/leccel_net" target="_blank">
+                            <i class="mdi mdi-instagram"></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a href="https://twitter.com/Leccel_net" target="_blank">
+                            <i class="mdi mdi-twitter"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
                     </div>
                   </div>
                 </div>
@@ -245,30 +266,30 @@ class getMusic{
             <!-- container-scroller ends -->
             <!-- partial:../partials/_footer.html -->
             <div class="d-flex align-items-center justify-content-center pad2x">
-        <p class="mt-2"> 
-          <a href="/pages/aboutus.html">About Us </a> | <a href="/pages/contactus.html">Contact Us</a>
-        </p>
-      </div>
+              <p class="mt-2"> 
+                <a href="/pages/aboutus.html">About Us </a> | <a href="/pages/contactus.html">Contact Us</a>
+              </p>
+            </div>
       <!-- partial:partials/_footer.html -->
       <footer>
-                  
-                  <div class="footer-bottom">
-                    <div class="container">
-                      <div class="row">
-                        <div class="col-sm-12">
-                          <div class="d-sm-flex justify-content-between align-items-center">
-                            <div class="fs-14 font-weight-600">
-                              © 2020 @ <a href="https://www.leccel.net" target="_blank" class="text-white"> Leccel.net</a>. All rights reserved.
-                            </div>
-                            <div class="fs-14 font-weight-600">
-                              Developed by <a href="https://github.com/johnexzy" target="_blank" class="text-white">Johnexzy</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+        
+        <div class="footer-bottom">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="d-sm-flex justify-content-between align-items-center">
+                  <div class="fs-14 font-weight-600">
+                    © 2020 @ <a href="https://www.leccel.net" target="_blank" class="text-white"> Leccel.net</a>. All rights reserved.
                   </div>
-                </footer>
+                  <div class="fs-14 font-weight-600">
+                    Developed by <a href="https://github.com/johnexzy" target="_blank" class="text-white">Johnexzy</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
         
             <!-- partial -->
             <!-- inject:js -->

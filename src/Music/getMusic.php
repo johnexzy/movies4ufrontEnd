@@ -159,6 +159,11 @@ class getMusic{
                 <div class="container">
                   <div class="row">
                     <div class="col-sm-12">
+                    <div class="mb-3">
+                      <a href="/" class="mb-1 font-weight-bold pad2x text-decoration-none">Home</a> &RightArrow; 
+                      <a href="/pages/music.html" class="mb-1 font-weight-bold pad2x text-decoration-none">Music</a>&RightArrow;
+                      <a href="#" class="mb-1 font-weight-bold pad2x text-decoration-none">Download</a>
+                    </div>
                       <div class="card" data-aos="fade-up">
                             <div class="card-header">
                                 <p class="font-weight-bold" style="text-align:center">

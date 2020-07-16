@@ -13,7 +13,7 @@ $(function(){
         <div class="position-relative">
           <a href="/view/movies/${video.short_url}" style="text-decoration:none; color: inherit">
             <div class="rotate-img">
-              <img src="http://127.0.0.1:8090/${video.images[0]}" alt="thumb" class="img-fluid" />
+              <img src="http://127.0.0.1:8090/${video.images[0]}" alt="thumb" style="border-radius:10px" class="img-fluid" />
             </div>
           </a>
           <div class="badge-positioned w-90">
@@ -32,7 +32,7 @@ $(function(){
       <div class="position-relative">
         <a href="/view/movies/${video.short_url}" style="text-decoration:none; color: inherit">
           <div class="rotate-img">
-            <img src="http://127.0.0.1:8090/${video.images[0]}" alt="thumb" class="img-fluid" />
+            <img src="http://127.0.0.1:8090/${video.images[0]}" alt="thumb" style="border-radius:10px" class="img-fluid" />
           </div>
         </a>
         <div class="badge-positioned w-90">
@@ -46,14 +46,24 @@ $(function(){
       </div>
     </div>
   `) : $(".other-newvideo").append(`
-            <div class="border-bottom border-top pb-2">
-                
-                <a href="/view/movies/${video.short_url}" style="text-decoration:none; color: inherit">
-                <p class="font-weight-600 mb-0">
-                  
-                  ${video.video_name}
-                  
-                </p></a>
+            
+            <div
+              class="d-flex justify-content-between align-items-center border-bottom pb-2"
+              id="movieLink"
+            >
+              <input type="hidden" value="/view/movies/${video.short_url}">
+              <div class="div-w-80 mr-3">
+                <div class="rotate-img">
+                  <img
+                    src="http://127.0.0.1:8090/${video.images[0]}"
+                    alt="thumb"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+              <h3 class="font-weight-600 mb-0">
+                ${video.video_name}
+              </h3>
             </div>
         `)
     })

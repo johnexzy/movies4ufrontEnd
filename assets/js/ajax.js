@@ -48,11 +48,11 @@ $(function(){
   `) : $(".other-newvideo").append(`
             
             <div
-              class="d-flex justify-content-between align-items-center border-bottom pb-2"
-              id="movieLink"
+              class="d-flex justify-content-between align-items-center border-bottom pb-2  movieLink" 
+              style="cursor:pointer"
             >
               <input type="hidden" value="/view/movies/${video.short_url}">
-              <div class="div-w-80 mr-3">
+              <div class="div-w-80 mr-3" id="">
                 <div class="rotate-img">
                   <img
                     src="http://127.0.0.1:8090/${video.images[0]}"
@@ -67,8 +67,10 @@ $(function(){
             </div>
         `)
     })
-    
-    
+    $(".movieLink").on("click", function(){
+      let link = $(this).find("input").val();
+      window.location = link
+    })
   })
   .fail(err => alert(err))
     let music = $.ajax({

@@ -29,12 +29,13 @@ $(function () {
                 ${series.series_name}
               </h2>
               
-              <div class="fs-13 mb-2">
-                <span class="mr-2">Total Season: </span><b>${series.series.length}</b>
-              </div>
+              
               <p class="mb-0">
                 ${series.series_details}...
               </p>
+              <div class="fs-13 mb-2">
+                <span class="mr-2">Total Season: </span><b>${series.series.length}</b>
+              </div>
             </div>
           </div>
         `)
@@ -42,7 +43,7 @@ $(function () {
     })
 
   let movies = $.ajax({
-    url: 'http://127.0.0.1:8090/api/v1/videos/9',
+    url: 'http://127.0.0.1:8090/api/v1/videos/limit/10',
     type: 'GET'
   })
     .done((data) => {

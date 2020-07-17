@@ -1,14 +1,14 @@
 $(function () {
   fetch("http://127.0.0.1:8090/api/v1/series/")
     .then(function (res) {
-      console.log(res.json())
-    })
-    .then(function(text){
-      console.log(text)
+       console.log(res.json())
+      
     })
     .catch(function(err){
       alert(err)
     })
+
+  
   let movies = $.ajax({
     url: 'http://127.0.0.1:8090/api/v1/videos/9',
     type: 'GET',

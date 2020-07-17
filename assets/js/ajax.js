@@ -10,7 +10,7 @@ $(function () {
   //   })
 
   let series = $.ajax({
-    url: 'http://127.0.0.1:8090/api/v1/series/',
+    url: 'http://127.0.0.1:8090/api/v1/series/limit/4',
     type: 'GET'
   })
     .done((data) => {

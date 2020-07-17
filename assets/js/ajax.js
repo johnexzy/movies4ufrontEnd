@@ -1,20 +1,48 @@
+
 $(function () {
-  fetch("http://127.0.0.1:8090/api/v1/series/")
-    .then(function (res) {
-       console.log(res.json())
-      
-    })
-    .catch(function(err){
-      alert(err)
+  // fetch("http://127.0.0.1:8090/api/v1/series/")
+  //   .then(function (res) {
+  //      console.log(res.json())
+
+  //   })
+  //   .catch(function(err){
+  //     alert(err)
+  //   })
+
+  let series = $.ajax({
+    url: 'http://127.0.0.1:8090/api/v1/series/',
+    type: 'GET'
+  })
+    .done((data) => {
+      $.each(data, function(key, series){
+        $(".series").append(`
+          <div class="row">
+            <div class="col-sm-4 grid-margin">
+              <div class="position-relative">
+                <div class="rotate-img">
+                  <img src="http://127.0.0.1:8090/${series.images[0]}" alt="thumb" class="img-fluid" />
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-8  grid-margin">
+              <h2 class="mb-2 font-weight-600">
+                ${series.series_name}
+              </h2>
+              <div class="fs-13 mb-2">
+                <span class="mr-2">Photo </span>10 Minutes ago
+              </div>
+              <p class="mb-0">
+                ${series.series_details}...
+              </p>
+            </div>
+          </div>
+        `)
+      })
     })
 
-  
   let movies = $.ajax({
     url: 'http://127.0.0.1:8090/api/v1/videos/9',
-    type: 'GET',
-    beforeSend: () => {
-
-    }
+    type: 'GET'
   })
     .done((data) => {
       $.each(data, (key, video) => {

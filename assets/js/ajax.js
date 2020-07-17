@@ -16,7 +16,7 @@ $(function () {
     .done((data) => {
       $.each(data, function(key, series){
         $(".series").append(`
-          <div class="row">
+          <div class="row border-bottom mb-3">
             <div class="col-sm-4 grid-margin">
               <div class="position-relative">
                 <div class="rotate-img">
@@ -28,9 +28,6 @@ $(function () {
               <h2 class="mb-2 font-weight-600">
                 ${series.series_name}
               </h2>
-              <div class="fs-13 mb-2">
-                <span class="mr-2">Photo </span>10 Minutes ago
-              </div>
               <p class="mb-0">
                 ${series.series_details}...
               </p>

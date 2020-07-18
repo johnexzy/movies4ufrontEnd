@@ -4,6 +4,7 @@ require '../vendor/autoload.php';
 use Src\Album\getAlbum;
 use Src\Movie\getMovie;
 use Src\Music\getMusic;
+use Src\Series\getSeries;
 
 $uri           = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uri           = explode('/', $uri);
@@ -56,8 +57,8 @@ elseif ($uri[2] == 'music') {
 elseif ($uri[2] == 'series') {
     if (isset($uri[3])  && strlen($uri[3]) > 3) {
         $short_url = (String)$uri[3];
-        $seriesView = new getMusic($short_url);
-        echo($movieView->bodyParser());
+        $seriesView = new getSeries($short_url);
+        echo($seriesView->bodyParser());
     } else {
           echo <<<HTML
             $notFound

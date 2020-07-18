@@ -16,6 +16,7 @@ $(function () {
     .done((data) => {
       $.each(data, function(key, series){
         $(".series").append(`
+        <a href="/view/series/${series.short_url}" style="text-decoration:none; color:inherit">
           <div class="row  ${key !==3 ? "border-bottom mb-3": ""} ">
             <div class="col-sm-4 grid-margin">
               <div class="position-relative">
@@ -37,7 +38,7 @@ $(function () {
                 <span class="mr-2">Total Season: </span><b>${series.series.length}</b>
               </div>
             </div>
-          </div>
+          </div></a>
         `)
       })
     })

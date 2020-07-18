@@ -53,11 +53,11 @@ class getSeries{
         $cmcount = is_countable($data["comments"]) ? count($data["comments"]) : 0 ;
 
         //videos: usually one or $data['videos][0]
-        
-            // $download = "<a  href='http://127.0.0.1:8090/$url' class='btn btn-primary btn-lg btn-block' download>
-            //                 Download
-            //               </a>";
-        
+        foreach ($data['series'] as $key => $season) {
+            $download .= <<<HTML
+            
+        HTML;
+        }
         //images
         foreach ($data['images'] as $key => $image) {
             $indicator .= ($key == 0) ?
@@ -197,9 +197,15 @@ class getSeries{
                                   </div>
                               </div>
                               <div class="col-sm-6">
-                                  <p class="">
+                                  <!-- <p class="">
                                       $details
-                                  </p>
+                                  </p> -->
+                                  <fieldset class="jumbotron-fluid">
+                                      <legend>About</legend>
+                                      <p>
+                                          $details
+                                      </p>
+                                  </fieldset>
                                   $download
                               </div>
                           </div>

@@ -53,10 +53,10 @@ elseif ($uri[2] == 'music') {
     }
 
 }
-elseif ($uri[2] == 'music') {
+elseif ($uri[2] == 'series') {
     if (isset($uri[3])  && strlen($uri[3]) > 3) {
         $short_url = (String)$uri[3];
-        $movieView = new getMusic($short_url);
+        $seriesView = new getMusic($short_url);
         echo($movieView->bodyParser());
     } else {
           echo <<<HTML

@@ -48,15 +48,15 @@ class getSeries{
         $details = $data["series_details"];
         $name = $data["series_name"];
         $download = "";
-        $url = $data["audio"][0]["song_url"];
+        // $url = $data["audio"][0]["song_url"];
         $coment_section ="";
         $cmcount = is_countable($data["comments"]) ? count($data["comments"]) : 0 ;
 
         //videos: usually one or $data['videos][0]
         
-            $download = "<a  href='http://127.0.0.1:8090/$url' class='btn btn-primary btn-lg btn-block' download>
-                            Download
-                          </a>";
+            // $download = "<a  href='http://127.0.0.1:8090/$url' class='btn btn-primary btn-lg btn-block' download>
+            //                 Download
+            //               </a>";
         
         //images
         foreach ($data['images'] as $key => $image) {
@@ -162,7 +162,7 @@ class getSeries{
               <div class="mb-3">
                 <a href="/" class="mb-1 font-weight-bold pad2x text-decoration-none">Home</a> &RightArrow; 
                 <a href="/pages/series.html" class="mb-1 font-weight-bold pad2x text-decoration-none">Series</a>&RightArrow;
-                <a href="#" class="mb-1 font-weight-bold pad2x text-decoration-none">Download</a>
+                <a href="#" class="mb-1 font-weight-bold pad2x text-decoration-none">$data[series_name]</a>
               </div>
                 <div class="card" data-aos="fade-up">
                       <div class="card-header">

@@ -5,9 +5,11 @@ use Src\logic\CheckDate;
 
 
 class getSeason{
-    private $short_url;
-    public function __construct(String $short_url = null) {
+    private $short_url, $series_key;
+    public function __construct(String $short_url = null, $series_key) {
         $this->short_url = $short_url;
+        $this->series_key = $series_key;
+        
     }
     /**
      * checks if a url exist with status 200 and return bool
@@ -21,10 +23,10 @@ class getSeason{
       }
       return true;
     }
-    public static function makeRequest($short_url)
+    public static function makeRequest($short_url, $key)
     {
-        if (self::is_url_exist("http://127.0.0.1:8090/api/v1/series/url/$short_url")) {
-          return \file_get_contents("http://127.0.0.1:8090/api/v1/series/url/$short_url");
+        if (self::is_url_exist("http://127.0.0.1:8090/api/v1/season/$key/$short_url")) {
+          return \file_get_contents("http://127.0.0.1:8090/api/v1/season/$key/$short_url");
       }
       
       else {
@@ -37,26 +39,25 @@ class getSeason{
     } 
     public function bodyParser()
     {
-        $data = \json_decode(self::makeRequest($this->short_url), true);
+        $data = \json_decode(self::makeRequest($this->short_url, $this->series_key), true);
         if (isset($data["error"])) {
-          $notFound = \file_get_contents(__DIR__."\..\..\pages/404new.html", true);
+          $notFound = \file_get_contents(__DIR__."\..\..\..\pages/404new.html", true);
           return<<<HTML
             $notFound
         HTML;
         }
         $indicator = "";
         $item = "";
-        $details = $data["series_details"];
-        $name = $data["series_name"];
+        $name = $data["season_name"];
         $download = "";
         // $url = $data["audio"][0]["song_url"];
         $coment_section ="";
         $cmcount = is_countable($data["comments"]) ? count($data["comments"]) : 0 ;
 
         //videos: usually one or $data['videos][0]
-        foreach ($data['series'] as $key => $season) {
+        foreach ($data['episodes'] as $key => $season) {
             $download .= <<<HTML
-            <a href="/view/series/$name/$season[short_url]">
+            <a href="/view/season/$name/$season[short_url]">
               <p style="background:grey; color:#fff; border-radius:2px; cursor:pointer" class="p-2">
                 $season[season_name]
               </p>
@@ -109,7 +110,7 @@ class getSeason{
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-      <title>Leccel::$data[series_name]</title>
+      <title>Leccel::$data[season_name]</title>
       <!-- plugin css for this page -->
       <link
         rel="stylesheet"
@@ -166,7 +167,7 @@ class getSeason{
               <div class="col-sm-12">
               <div class="mb-3">
                 <a href="/" class="mb-1 font-weight-bold pad2x text-decoration-none">Home</a> &RightArrow; 
-                <a href="/pages/series.html" class="mb-1 font-weight-bold pad2x text-decoration-none">Series</a>&RightArrow;
+                <a href="/pages/series.html" class="mb-1 font-weight-bold pad2x text-decoration-none">season</a>&RightArrow;
                 <a href="#" class="mb-1 font-weight-bold pad2x text-decoration-none">$data[series_name]</a>
               </div>
                 <div class="card" data-aos="fade-up">
@@ -242,7 +243,7 @@ class getSeason{
                                                   aria-describedby="name"
                                                   placeholder="Name *"
                                                   />
-                                              <input type="hidden" id="commentKey" value="$data[series_key]">
+                                              <input type="hidden" id="commentKey" value="$data[season_key]">
                                               </div>
                                               </div>
                                               

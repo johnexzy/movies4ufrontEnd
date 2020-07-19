@@ -56,7 +56,7 @@ class getSeries{
         //videos: usually one or $data['videos][0]
         foreach ($data['series'] as $key => $season) {
             $download .= <<<HTML
-            <a href="/view/series/$name/$season[short_url]">
+            <a href="/view/series/$season[series_key]/$season[short_url]">
               <p style="background:grey; color:#fff; border-radius:2px; cursor:pointer" class="p-2">
                 $season[season_name]
               </p>

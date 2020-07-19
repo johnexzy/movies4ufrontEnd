@@ -5,10 +5,10 @@ use Src\logic\CheckDate;
 
 
 class getSeason{
-    private $short_url, $series_key;
-    public function __construct(String $short_url = null, $series_key) {
+    private $short_url, $series_name;
+    public function __construct(String $short_url = null, $series_name) {
         $this->short_url = $short_url;
-        $this->series_key = $series_key;
+        $this->series_name = $series_name;
         
     }
     /**
@@ -23,10 +23,10 @@ class getSeason{
       }
       return true;
     }
-    public static function makeRequest($short_url, $key)
+    public static function makeRequest($short_url, $series_name)
     {
-        if (self::is_url_exist("http://127.0.0.1:8090/api/v1/season/$key/$short_url")) {
-          return \file_get_contents("http://127.0.0.1:8090/api/v1/season/$key/$short_url");
+        if (self::is_url_exist("http://127.0.0.1:8090/api/v1/season/$series_name/$short_url")) {
+          return \file_get_contents("http://127.0.0.1:8090/api/v1/season/$series_name/$short_url");
       }
       
       else {
@@ -39,7 +39,7 @@ class getSeason{
     } 
     public function bodyParser()
     {
-        $data = \json_decode(self::makeRequest($this->short_url, $this->series_key), true);
+        $data = \json_decode(self::makeRequest($this->short_url, $this->series_name), true);
         if (isset($data["error"])) {
           $notFound = \file_get_contents(__DIR__."\..\..\..\pages/404new.html", true);
           return<<<HTML
@@ -48,35 +48,21 @@ class getSeason{
         }
         $indicator = "";
         $item = "";
-        $name = $data["season_name"];
+        $name = $data["series_name"];
         $download = "";
         // $url = $data["audio"][0]["song_url"];
         $coment_section ="";
         $cmcount = is_countable($data["comments"]) ? count($data["comments"]) : 0 ;
 
         //videos: usually one or $data['videos][0]
-        foreach ($data['episodes'] as $key => $season) {
+        foreach ($data['episodes'] as $key => $episode) {
             $download .= <<<HTML
-            <a href="/view/season/$name/$season[short_url]">
+            <a href="/view/season/$name/$data[season_name]/$episode[ep_name]">
               <p style="background:grey; color:#fff; border-radius:2px; cursor:pointer" class="p-2">
-                $season[season_name]
+                $episode[ep_name]
               </p>
             </a>
         HTML;
-        }
-        //images
-        foreach ($data['images'] as $key => $image) {
-            $indicator .= ($key == 0) ?
-             "<li data-target='#carouselExampleIndicators' data-slide-to='$key' class='active'></li>":
-             "<li data-target='#carouselExampleIndicators' data-slide-to='$key'></li>";
-            $item .= ($key == 0) ?
-             "<div class='carousel-item active'>
-                <img class='d-block w-100' src='http://127.0.0.1:8090/$image' alt='slide $key'>
-              </div>":
-             "<div class='carousel-item'>
-                <img class='d-block w-100' src='http://127.0.0.1:8090/$image' alt='slide $key'>
-              </div>";
-             
         }
         //comments
         foreach ($data['comments'] as $key => $coment) {
@@ -114,13 +100,13 @@ class getSeason{
       <!-- plugin css for this page -->
       <link
         rel="stylesheet"
-        href="../../assets/vendors/mdi/css/materialdesignicons.min.css"
+        href="/assets/vendors/mdi/css/materialdesignicons.min.css"
       />
-      <link rel="stylesheet" href="../../assets/vendors/aos/dist/aos.css/aos.css" />
+      <link rel="stylesheet" href="/assets/vendors/aos/dist/aos.css/aos.css" />
       <!-- End plugin css for this page -->
-      <link rel="shortcut icon" href="../../assets/images/favicon.png" />
+      <link rel="shortcut icon" href="/assets/images/favicon.png" />
       <!-- inject:css -->
-      <link rel="stylesheet" href="../../assets/css/style.css">
+      <link rel="stylesheet" href="/assets/css/style.css">
       <!-- endinject -->
     </head>
   
@@ -167,51 +153,20 @@ class getSeason{
               <div class="col-sm-12">
               <div class="mb-3">
                 <a href="/" class="mb-1 font-weight-bold pad2x text-decoration-none">Home</a> &RightArrow; 
-                <a href="/pages/series.html" class="mb-1 font-weight-bold pad2x text-decoration-none">season</a>&RightArrow;
+                <a href="/pages/series.html" class="mb-1 font-weight-bold pad2x text-decoration-none">Series</a>&RightArrow;
                 <a href="#" class="mb-1 font-weight-bold pad2x text-decoration-none">$data[series_name]</a>
+                <a href="#" class="mb-1 font-weight-bold pad2x text-decoration-none">$data[season_name]</a>
               </div>
                 <div class="card" data-aos="fade-up">
                       <div class="card-header">
                           <p class="font-weight-bold" style="text-align:center">
-                              $name
+                              $name."_".$data[season_name]
                           </p>
                       </div>
                       <div class="card-body">
                           <div class="row">
                               <div class="col-sm-6">
                                   
-                                  <div class="row">
-                                  <div class="col-lg-12 mb-5 mb-sm-2">
-                                      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-                                          <ol class="carousel-indicators">
-                                              $indicator
-                                          </ol>
-                                          <div class="carousel-inner">
-                                          $item
-                                          </div>
-                                          
-                                          <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-                                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                          <span class="sr-only">Previous</span>
-                                          </a>
-                                          <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-                                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                          <span class="sr-only">Next</span>
-                                          </a>
-                                      </div>
-                                  </div>
-                                  </div>
-                              </div>
-                              <div class="col-sm-6">
-                                  <!-- <p class="">
-                                      $details
-                                  </p> -->
-                                  <fieldset class="jumbotron-fluid">
-                                      <legend>About</legend>
-                                      <p>
-                                          $details
-                                      </p>
-                                  </fieldset>
                                   $download
                               </div>
                           </div>

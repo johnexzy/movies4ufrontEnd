@@ -55,11 +55,13 @@ elseif ($uri[2] == 'music') {
 
 }
 elseif ($uri[2] == 'series') {
-    if (isset($uri[3])  && !isset($uri[4]) && strlen($uri[3]) > 4) {
+    if (count($uri) == 4 && strlen($uri[3]) > 4) {
         $short_url = (String)$uri[3];
         $seriesView = new getSeries($short_url);
         echo($seriesView->bodyParser());
     } elseif (count($uri) == 5) {
+        $series_name = $uri[3];
+        $season_url = $uri[4];
         
     } else {
           echo <<<HTML

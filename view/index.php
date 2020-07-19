@@ -4,6 +4,7 @@ require '../vendor/autoload.php';
 use Src\Album\getAlbum;
 use Src\Movie\getMovie;
 use Src\Music\getMusic;
+use Src\Season\getSeason;
 use Src\Series\getSeries;
 
 $uri           = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -60,9 +61,10 @@ elseif ($uri[2] == 'series') {
         $seriesView = new getSeries($short_url);
         echo($seriesView->bodyParser());
     } elseif (count($uri) == 5) {
-        $series_name = $uri[3];
+        $series_key = $uri[3];
         $season_url = $uri[4];
-        
+        $seasonView = new getSeason($short_url, $season_url);
+        echo($seasonView->bodyParser());
     } else {
           echo <<<HTML
             $notFound

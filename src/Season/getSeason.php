@@ -69,7 +69,7 @@ class getSeason{
           $coment_section .= "<div class='comment-box'>
                                 <div class='d-flex align-items-center'>
                                     <div class='rotate-img'>
-                                        <img src='../../assets/images/avatar.png' alt='banner' class='img-fluid img-rounded mr-3'>
+                                        <img src='/assets/images/avatar.png' alt='banner' class='img-fluid img-rounded mr-3'>
                                     </div>
                                     <div>
                                         <p class='fs-12 mb-1 line-height-xs'>
@@ -155,10 +155,10 @@ class getSeason{
                 <a href="#" class="mb-1 font-weight-bold pad2x text-decoration-none">$data[series_name]</a>&RightArrow;
                 <a href="#" class="mb-1 font-weight-bold pad2x text-decoration-none">$data[season_name]</a>
               </div>
-                <div class="card">
+                <div class="card"  data-aos="fade-up">
                       <div class="card-header">
                           <p class="font-weight-bold" style="text-align:center">
-                              $name."_".$data[season_name]
+                              $name - $data[season_name]
                           </p>
                       </div>
                       <div class="card-body">
@@ -263,17 +263,17 @@ class getSeason{
         
       <!-- partial -->
       <!-- inject:js -->
-      <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
+      <script src="/assets/vendors/js/vendor.bundle.base.js"></script>
       <!-- endinject -->
       <!-- plugin js for this page -->
   
-      <script src="../../assets/vendors/aos/dist/aos.js/aos.js"></script>
+      <script src="/assets/vendors/aos/dist/aos.js/aos.js"></script>
       <!-- End plugin js for this page -->
       <!-- Custom js for this page-->
-      <script src="../../assets/js/demo.js"></script>
-      <script src="../../assets/js/jquery.easeScroll.js"></script>
-      <script src="../../assets/js/easeCarousel.js"></script>
-      <script src="../../assets/js/comment.ajax.js"></script>
+      <script src="/assets/js/demo.js"></script>
+      <script src="/assets/js/jquery.easeScroll.js"></script>
+      <script src="/assets/js/easeCarousel.js"></script>
+      <script src="/assets/js/comment.ajax.js"></script>
       
       <!-- End custom js for this page-->
     </body>

@@ -79,7 +79,7 @@ class getMusic{
           $coment_section .= "<div class='comment-box'>
                                 <div class='d-flex align-items-center'>
                                     <div class='rotate-img'>
-                                        <img src='../../assets/images/avatar.png' alt='banner' class='img-fluid img-rounded mr-3'>
+                                        <img src='/assets/images/avatar.png' alt='banner' class='img-fluid img-rounded mr-3'>
                                     </div>
                                     <div>
                                         <p class='fs-12 mb-1 line-height-xs'>
@@ -108,13 +108,13 @@ class getMusic{
       <!-- plugin css for this page -->
       <link
         rel="stylesheet"
-        href="../../assets/vendors/mdi/css/materialdesignicons.min.css"
+        href="/assets/vendors/mdi/css/materialdesignicons.min.css"
       />
-      <link rel="stylesheet" href="../../assets/vendors/aos/dist/aos.css/aos.css" />
+      <link rel="stylesheet" href="/assets/vendors/aos/dist/aos.css/aos.css" />
       <!-- End plugin css for this page -->
-      <link rel="shortcut icon" href="../../assets/images/favicon.png" />
+      <link rel="shortcut icon" href="/assets/images/favicon.png" />
       <!-- inject:css -->
-      <link rel="stylesheet" href="../../assets/css/style.css">
+      <link rel="stylesheet" href="/assets/css/style.css">
       <!-- endinject -->
     </head>
   
@@ -298,17 +298,17 @@ class getMusic{
         
       <!-- partial -->
       <!-- inject:js -->
-      <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
+      <script src="/assets/vendors/js/vendor.bundle.base.js"></script>
       <!-- endinject -->
       <!-- plugin js for this page -->
   
-      <script src="../../assets/vendors/aos/dist/aos.js/aos.js"></script>
+      <script src="/assets/vendors/aos/dist/aos.js/aos.js"></script>
       <!-- End plugin js for this page -->
       <!-- Custom js for this page-->
-      <script src="../../assets/js/demo.js"></script>
-      <script src="../../assets/js/jquery.easeScroll.js"></script>
-      <script src="../../assets/js/easeCarousel.js"></script>
-      <script src="../../assets/js/comment.ajax.js"></script>
+      <script src="/assets/js/demo.js"></script>
+      <script src="/assets/js/jquery.easeScroll.js"></script>
+      <script src="/assets/js/easeCarousel.js"></script>
+      <script src="/assets/js/comment.ajax.js"></script>
       
       <!-- End custom js for this page-->
     </body>

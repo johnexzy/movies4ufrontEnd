@@ -10,7 +10,8 @@ class getSeries{
         $this->short_url = $short_url;
     }
     /**
-     * checks if a url exist with status 200 and return true or false
+     * checks if a url exist with status 200 and return bool
+     * @return boolean
      */
     public static function is_url_exist(String $url)
     {

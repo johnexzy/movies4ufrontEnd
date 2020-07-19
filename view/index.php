@@ -61,9 +61,9 @@ elseif ($uri[2] == 'series') {
         $seriesView = new getSeries($short_url);
         echo($seriesView->bodyParser());
     } elseif (count($uri) == 5) {
-        $series_key = $uri[3];
+        $series_name = $uri[3];
         $season_url = $uri[4];
-        $seasonView = new getSeason($short_url, $season_url);
+        $seasonView = new getSeason($season_url, $series_name);
         echo($seasonView->bodyParser());
     } else {
           echo <<<HTML

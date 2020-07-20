@@ -2,6 +2,7 @@
 require '../vendor/autoload.php';
 
 use Src\Album\getAlbum;
+use Src\Episode\getEpisode;
 use Src\Movie\getMovie;
 use Src\Music\getMusic;
 use Src\Season\getSeason;
@@ -67,7 +68,9 @@ elseif ($uri[2] == 'series') {
         echo($seasonView->bodyParser());
     } elseif (count($uri) == 6) {
         $series_name = $uri[3];
-        $epi_url = $uri[5];
+        $ep_url = $uri[5];
+        $ep_view = new getEpisode($ep_url, $series_name);
+        echo($ep_view->bodyParser());
     } else {
           echo <<<HTML
             $notFound

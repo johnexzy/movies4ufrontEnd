@@ -45,8 +45,8 @@ class getEpisode{
         }
         $indicator = "";
         $item = "";
-        $details = $data["video_details"];
-        $name = $data["video_name"];
+        $details = $data["ep_details"];
+        $name = str_replace("_", " ", $data["ep_name"]);
         $size = (int) $data["videos"][0]["video_bytes"];
         $size = ceil(($size / 1024) / 1024);
         $download = "";
@@ -235,7 +235,7 @@ class getEpisode{
                                                         aria-describedby="name"
                                                         placeholder="Name *"
                                                         />
-                                                    <input type="hidden" id="commentKey" value="$data[video_key]">
+                                                    <input type="hidden" id="commentKey" value="$data[ep_key]">
                                                     </div>
                                                     </div>
                                                     

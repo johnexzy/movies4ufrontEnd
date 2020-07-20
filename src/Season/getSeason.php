@@ -47,6 +47,7 @@ class getSeason{
         HTML;
         }
         $name = $data["series_name"];
+        $seasonName = str_replace(" ", "-", $data["season_name"]);
         $download = "";
         // $url = $data["audio"][0]["song_url"];
         $coment_section ="";
@@ -55,7 +56,7 @@ class getSeason{
         //videos: usually one or $data['videos][0]
         foreach ($data['episodes'] as $key => $episode) {
             $download .= <<<HTML
-            <a href="/view/season/$name/$data[season_name]/$episode[ep_name]">
+            <a href="/view/series/$name/$seasonName/$episode[ep_name]">
               <p style="background:grey; color:#fff; border-radius:2px; cursor:pointer" class="p-2">
                 $episode[ep_name]
               </p>

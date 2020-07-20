@@ -65,6 +65,9 @@ elseif ($uri[2] == 'series') {
         $season_url = $uri[4];
         $seasonView = new getSeason($season_url, $series_name);
         echo($seasonView->bodyParser());
+    } elseif (count($uri) == 6) {
+        $series_name = $uri[3];
+        echo 6;
     } else {
           echo <<<HTML
             $notFound

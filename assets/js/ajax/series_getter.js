@@ -133,7 +133,7 @@ $(function(){
                 $(".show-video").append(`
                 <div class="row">
                 <div class="col-sm-4 grid-margin">
-                    <a href="/view/movies/${series.short_url}" style="text-decoration:none; color: inherit">
+                    <a href="/view/series/${series.short_url}" style="text-decoration:none; color: inherit">
                         <div class="rotate-img">
                             <img
                             src="http://127.0.0.1:8090/${series.images[0]}"
@@ -145,7 +145,7 @@ $(function(){
                 </div>
                 <div class="col-sm-8 grid-margin">
                     <h2 class="font-weight-600 mb-2">
-                        <a href="/view/movies/${series.short_url}" style="text-decoration:none; color: inherit">
+                        <a href="/view/series/${series.short_url}" style="text-decoration:none; color: inherit">
                             ${series.series_name}
                         </a>
                     </h2>

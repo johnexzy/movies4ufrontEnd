@@ -9,14 +9,14 @@ $(function(){
     .done((data)=>{
         
         $(".show-video").html("")
-        $.each(data.data, (key, video)=>{
+        $.each(data.data, (key, series)=>{
             $(".show-video").append(`
             <div class="row">
             <div class="col-sm-4 grid-margin">
-                <a href="../view/movies/${video.short_url}" style="text-decoration:none; color: inherit">
+                <a href="/view/movies/${series.short_url}" style="text-decoration:none; color: inherit">
                     <div class="rotate-img">
                         <img
-                        src="http://127.0.0.1:8090/${video.images[0]}"
+                        src="http://127.0.0.1:8090/${series.images[0]}"
                         alt="banner"
                         class="img-fluid"
                         />
@@ -25,16 +25,16 @@ $(function(){
             </div>
             <div class="col-sm-8 grid-margin">
                 <h2 class="font-weight-600 mb-2">
-                    <a href="../view/movies/${video.short_url}" style="text-decoration:none; color: inherit">
-                        ${video.video_name}
+                    <a href="/view/movies/${series.short_url}" style="text-decoration:none; color: inherit">
+                        ${series.series_name}
                     </a>
                 </h2>
               
                 <p class="L5 mb-0">
-                    <i class="mdi mdi-movie"></i> <span class="fs-16 mr-2 text-muted">${video.category}</span>
+                    <i class="mdi mdi-movie"></i> Total Seasons<span class="fs-16 mr-2 text-muted">${series.series.length}</span>
                 </p>
                 <p class="mb-0">
-                    ${video.video_details.substring(0, 400)}...
+                    ${series.series_details.substring(0, 400)}...
                 </p>
             </div>
           </div>
@@ -59,43 +59,43 @@ $(function(){
 
     })
     
-    $.ajax({
-        url: 'http://127.0.0.1:8090/api/v1/videos/popular/6',
-        type: 'GET',
-        beforeSend: ()=>{
+    // $.ajax({
+    //     url: 'http://127.0.0.1:8090/api/v1/videos/popular/6',
+    //     type: 'GET',
+    //     beforeSend: ()=>{
 
-        }
-    })
-    .done((data)=>{
+    //     }
+    // })
+    // .done((data)=>{
         
         
-        $.each(data, (key, video)=>{
-            $(".show-popular").append(`
-                    <div class="mb-4">
-                        <a href="../view/movies/${video.short_url}" style="text-decoration:none; color: inherit">
-                            <div class="rotate-img">
-                            <img
-                                src="http://127.0.0.1:8090/${video.images[0]}"
-                                alt="banner"
-                                class="img-fluid"
-                            />
-                            </div>
-                        </a>
-                        <h3 class="mt-3 font-weight-600">
-                            <a href="../view/movies/${video.short_url}" style="text-decoration:none; color: inherit">
-                                ${video.video_name}
-                            </a>
-                        </h3>
-                        <p class="L5 mb-0">
-                            <i class="mdi mdi-movie"></i> <span class="fs-16 mr-2 text-muted">${video.category}</span>
-                        </p>
-                    </div>
-            `)
-        })
-    })
-    .fail((err)=>{
+    //     $.each(data, (key, video)=>{
+    //         $(".show-popular").append(`
+    //                 <div class="mb-4">
+    //                     <a href="/view/movies/${video.short_url}" style="text-decoration:none; color: inherit">
+    //                         <div class="rotate-img">
+    //                         <img
+    //                             src="http://127.0.0.1:8090/${video.images[0]}"
+    //                             alt="banner"
+    //                             class="img-fluid"
+    //                         />
+    //                         </div>
+    //                     </a>
+    //                     <h3 class="mt-3 font-weight-600">
+    //                         <a href="/view/movies/${video.short_url}" style="text-decoration:none; color: inherit">
+    //                             ${video.video_name}
+    //                         </a>
+    //                     </h3>
+    //                     <p class="L5 mb-0">
+    //                         <i class="mdi mdi-movie"></i> <span class="fs-16 mr-2 text-muted">${video.category}</span>
+    //                     </p>
+    //                 </div>
+    //         `)
+    //     })
+    // })
+    // .fail((err)=>{
 
-    });
+    // });
     
     //Control Pagination Using AJAX || FETCH API
 
@@ -116,12 +116,12 @@ $(function(){
         $(".show-video").html(`
                     <div class="album-loader">
                         <div class="d-flex justify-content-center">
-                            <img src="../assets/images/loader copy.gif" alt="">
+                            <img src="/assets/images/loader copy.gif" alt="">
                         </div>
                     </div>
                 `)
         $.ajax({
-            url: `http://127.0.0.1:8090/api/v1/videos/${link}`,
+            url: `http://127.0.0.1:8090/api/v1/series/${link}`,
             type: 'GET',
         })
         .done((data)=>{
@@ -133,7 +133,7 @@ $(function(){
                 $(".show-video").append(`
                 <div class="row">
                 <div class="col-sm-4 grid-margin">
-                    <a href="../view/movies/${video.short_url}" style="text-decoration:none; color: inherit">
+                    <a href="/view/movies/${video.short_url}" style="text-decoration:none; color: inherit">
                         <div class="rotate-img">
                             <img
                             src="http://127.0.0.1:8090/${video.images[0]}"
@@ -145,7 +145,7 @@ $(function(){
                 </div>
                 <div class="col-sm-8 grid-margin">
                 <h2 class="font-weight-600 mb-2">
-                    <a href="../view/movies/${video.short_url}" style="text-decoration:none; color: inherit">
+                    <a href="/view/movies/${video.short_url}" style="text-decoration:none; color: inherit">
                         ${video.video_name}
                     </a>
                 </h2>

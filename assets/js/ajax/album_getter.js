@@ -13,7 +13,7 @@ $(function(){
             $(".show-album").append(`
             <div class="row">
             <div class="col-sm-4 grid-margin">
-                <a href="../view/albums/${album.short_url}" style="text-decoration:none; color: inherit">
+                <a href="/view/albums/${album.short_url}" style="text-decoration:none; color: inherit">
                     <div class="rotate-img">
                         <img
                         src="http://127.0.0.1:8090/${album.images[0]}"
@@ -25,7 +25,7 @@ $(function(){
             </div>
             <div class="col-sm-8 grid-margin">
               <h2 class="font-weight-600 mb-2">
-                <a href="../view/albums/${album.short_url}" style="text-decoration:none; color: inherit">
+                <a href="/view/albums/${album.short_url}" style="text-decoration:none; color: inherit">
                     ${album.album_name}
                 </a>
               </h2>
@@ -74,7 +74,7 @@ $(function(){
         $.each(data, (key, album)=>{
             $(".show-popular").append(`
                     <div class="mb-4">
-                        <a href="../view/albums/${album.short_url}" style="text-decoration:none; color: inherit">
+                        <a href="/view/albums/${album.short_url}" style="text-decoration:none; color: inherit">
                             <div class="rotate-img">
                             <img
                                 src="http://127.0.0.1:8090/${album.images[0]}"
@@ -116,7 +116,7 @@ $(function(){
         $(".show-album").html(`
                     <div class="album-loader">
                         <div class="d-flex justify-content-center">
-                            <img src="./assets/images/loader copy.gif" alt="">
+                            <img src="/assets/images/loader copy.gif" alt="">
                         </div>
                     </div>
                 `)
@@ -133,7 +133,7 @@ $(function(){
                 $(".show-album").append(`
                 <div class="row">
                 <div class="col-sm-4 grid-margin">
-                    <a href="../view/albums/${album.short_url}" style="text-decoration:none; color: inherit">
+                    <a href="/view/albums/${album.short_url}" style="text-decoration:none; color: inherit">
                         <div class="rotate-img">
                             <img
                             src="http://127.0.0.1:8090/${album.images[0]}"
@@ -145,7 +145,7 @@ $(function(){
                 </div>
                 <div class="col-sm-8 grid-margin">
                 <h2 class="font-weight-600 mb-2">
-                    <a href="../view/albums/${album.short_url}" style="text-decoration:none; color: inherit">
+                    <a href="/view/albums/${album.short_url}" style="text-decoration:none; color: inherit">
                         ${album.album_name}
                     </a>
                 </h2>

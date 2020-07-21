@@ -51,23 +51,23 @@ $(function () {
       $(".movie-loader").hide()
       $.each(data, (key, video) => {
         key == 0 || key == 1 ? $(".first-half-newvideo").append(`
-      <div class="col-sm-6 grid-margin">
-        <div class="position-relative">
-          <a href="/view/movies/${video.short_url}" style="text-decoration:none; color: inherit">
-            <div class="rotate-img">
-              <img src="http://127.0.0.1:8090/${video.images[0]}" alt="thumb" style="border-radius:10px" class="img-fluid" />
-            </div>
-          </a>
-          <div class="badge-positioned w-90">
-            <div class="d-flex justify-content-between align-items-center">
-              <span class="badge badge-danger font-weight-bold">${video.category}</span>
-              <div class="video-icon">
-                <i class="mdi mdi-play"></i>
+        <div class="col-sm-6 grid-margin">
+          <div class="position-relative">
+            <a href="/view/movies/${video.short_url}" style="text-decoration:none; color: inherit">
+              <div class="rotate-img">
+                <img src="http://127.0.0.1:8090/${video.images[0]}" alt="thumb" style="border-radius:10px" class="img-fluid" />
+              </div>
+            </a>
+            <div class="badge-positioned w-90">
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="badge badge-danger font-weight-bold">${video.category}</span>
+                <div class="video-icon">
+                  <i class="mdi mdi-play"></i>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
     `)
           : key == 2 || key == 3 ? $(".second-half-newvideo").append(`
     <div class="col-sm-6 grid-margin">

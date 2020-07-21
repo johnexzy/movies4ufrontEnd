@@ -48,6 +48,7 @@ $(function () {
     type: 'GET'
   })
     .done((data) => {
+      $(".movie-loader").hide()
       $.each(data, (key, video) => {
         key == 0 || key == 1 ? $(".first-half-newvideo").append(`
       <div class="col-sm-6 grid-margin">

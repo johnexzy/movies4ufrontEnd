@@ -116,7 +116,7 @@ $(function(){
         $(".show-music").html(`
                     <div class="album-loader">
                         <div class="d-flex justify-content-center">
-                            <img src="/assets/images/loader copy.gif" alt="">
+                            <img src="/assets/images/loader.gif" alt="">
                         </div>
                     </div>
                 `)

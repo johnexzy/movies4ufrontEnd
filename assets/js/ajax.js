@@ -14,6 +14,7 @@ $(function () {
     type: 'GET'
   })
     .done((data) => {
+      $(".series-loader").hide()
       $.each(data, function(key, series){
         $(".series").append(`
         <a href="/view/series/${series.short_url}" style="text-decoration:none; color:inherit">

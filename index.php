@@ -71,7 +71,7 @@ $albums = json_decode(file_get_contents("http://127.0.0.1:8090/api/v1/album/limi
           </div>
         </div>
       </div>
-      <div class="content-wrapper" style="background-color: #000;">
+      <div class="content-wrapper">
         <div class="container">
           <!-- <div class="row" data-aos="fade-up">
             <div class="col-xl-8 stretch-card grid-margin">

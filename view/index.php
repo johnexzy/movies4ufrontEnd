@@ -1,12 +1,13 @@
 <?php
 require '../vendor/autoload.php';
 
+use Src\Search\Search;
 use Src\Album\getAlbum;
-use Src\Episode\getEpisode;
 use Src\Movie\getMovie;
 use Src\Music\getMusic;
 use Src\Season\getSeason;
 use Src\Series\getSeries;
+use Src\Episode\getEpisode;
 
 $uri           = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uri           = explode('/', $uri);
@@ -77,6 +78,11 @@ elseif ($uri[2] == 'series') {
         HTML;
     }
 
+}
+elseif($uri[2] == "search" && count($uri) > 3){
+    $query = (String)$uri[3];
+    $searchView = new Search($query);
+    echo($searchView->bodyParser());
 }
 else {
           echo <<<HTML

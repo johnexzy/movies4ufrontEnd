@@ -9518,35 +9518,146 @@ a.text-dark:hover, a.text-dark:focus {
 /*-------------------------------------------------------------------*/
 /* === Core Styles === */
 /* Cards */
+/* Cards */
 .card {
   box-shadow: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   -ms-box-shadow: none;
-  border: none;
 }
 
 .card .card-body {
   padding: 2rem 2rem;
 }
 
-.card.card-hover {
-  transition: box-shadow 0.25s ease, transform 0.25s ease;
-}
-
-.card.card-hover:hover {
-  box-shadow: 0 1rem 2.5rem rgba(22, 28, 45, 0.1), 0 0.5rem 1rem -0.75rem rgba(22, 28, 45, 0.1);
-  transform: translate3d(0, -3px, 0);
+.card .card-body + .card-body {
+  padding-top: 1rem;
 }
 
 .card .card-title {
+  color: #000000;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  font-size: .875rem;
+  font-weight: bold;
+}
+
+.card .card-subtitle {
+  color: #818181;
+  font-weight: 400;
+  margin-top: 0.625rem;
+  margin-bottom: 0.625rem;
+}
+
+.card .card-description {
+  margin-bottom: .875rem;
+  font-weight: 400;
+  color: #76838f;
+}
+
+.card.card-outline-success {
+  border: 1px solid #3e8177;
+}
+
+.card.card-outline-primary {
+  border: 1px solid #470116ea;
+}
+
+.card.card-outline-warning {
+  border: 1px solid #f5a623;
+}
+
+.card.card-outline-danger {
+  border: 1px solid #d1011c;
+}
+
+.card.card-rounded {
+  border-radius: 5px;
+}
+
+.card.card-faded {
+  background: #b5b0b2;
+  border-color: #b5b0b2;
+}
+
+.card.card-circle-progress {
+  color: #ffffff;
+  text-align: center;
+}
+
+.card.card-img-holder {
+  position: relative;
+}
+
+.card.card-img-holder .card-img-absolute {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+}
+
+.card.card-weather .weather-daily .weather-day {
+  opacity: .5;
+  font-weight: 900;
+}
+
+.card.card-weather .weather-daily i {
   font-size: 20px;
-  font-weight: 600;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.5;
-  letter-spacing: normal;
-  margin-bottom: 20px;
+}
+
+.card.card-weather .weather-daily .weather-temp {
+  margin-top: .5rem;
+  margin-bottom: 0;
+  opacity: .5;
+  font-size: .75rem;
+}
+
+.card-inverse-primary {
+  background: rgba(71, 1, 22, 0.2);
+  border: 1px solid rgba(64, 1, 20, 0.924235);
+  color: rgba(52, 1, 16, 0.937412);
+}
+
+.card-inverse-secondary {
+  background: rgba(58, 58, 58, 0.2);
+  border: 1px solid #353535;
+  color: #2c2c2c;
+}
+
+.card-inverse-success {
+  background: rgba(62, 129, 119, 0.2);
+  border: 1px solid #39776d;
+  color: #2f625a;
+}
+
+.card-inverse-info {
+  background: rgba(77, 124, 255, 0.2);
+  border: 1px solid #4772eb;
+  color: #3b5ec2;
+}
+
+.card-inverse-warning {
+  background: rgba(245, 166, 35, 0.2);
+  border: 1px solid #e19920;
+  color: #ba7e1b;
+}
+
+.card-inverse-danger {
+  background: rgba(209, 1, 28, 0.2);
+  border: 1px solid #c0011a;
+  color: #9f0115;
+}
+
+.card-inverse-light {
+  background: rgba(248, 248, 248, 0.2);
+  border: 1px solid #e4e4e4;
+  color: #bcbcbc;
+}
+
+.card-inverse-dark {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid black;
+  color: black;
 }
 
 @font-face {

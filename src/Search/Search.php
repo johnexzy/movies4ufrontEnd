@@ -46,6 +46,19 @@ class Search{
         $seriesHtml = "";
         $moviesHtml = "";
         foreach ($data["data"] as $key => $group) {
+          //Music
+          if ($group["group"] == "music") {
+            foreach ($group["data"] as $key => $music) {
+              
+            }
+          }
+          //Series
+          if ($group["group"] == "series") {
+            foreach ($group["data"] as $key => $music) {
+              
+            }
+          }
+          //Movies
           if ($group["group"] == "music") {
             foreach ($group["data"] as $key => $music) {
               

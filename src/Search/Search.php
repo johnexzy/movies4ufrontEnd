@@ -1,7 +1,7 @@
 <?php 
 namespace Src\Search;
 
-
+use Src\Components\Layout;
 
 class Search{
     private $queryString;
@@ -48,7 +48,9 @@ class Search{
         foreach ($data["data"] as $key => $group) {
           //Music
           if ($group["group"] == "music") {
+            $musicCount = 0;
             foreach ($group["data"] as $key => $music) {
+              $musicCount = $key + 1;
               $image = $music["images"][0];
               $musicHtml .=<<<HTML
                 <div class="row">
@@ -81,13 +83,40 @@ class Search{
           }
           //Series
           if ($group["group"] == "series") {
-            foreach ($group["data"] as $key => $music) {
-              
+            $seriesCount = 0;
+            foreach ($group["data"] as $key => $series) {
+              $seriesCount = $key +1;
+              $image = $series["images"][0];
+              $seriesHtml .=<<<HTML
+                <div class="row">
+                  <div class="col-sm-4 grid-margin">
+                      <a href="/view/series/$series[short_url]" style="text-decoration:none; color: inherit">
+                          <div class="rotate-img">
+                              <img
+                              src="http://127.0.0.1:8090/$image"
+                              alt="banner"
+                              class="img-fluid"
+                              />
+                          </div>
+                      </a>
+                  </div>
+                  <div class="col-sm-8 grid-margin">
+                      <h2 class="font-weight-600 mb-2">
+                          <a href="/view/series/$series[short_url]" style="text-decoration:none; color: inherit">
+                              $series[series_name]
+                          </a>
+                      </h2>
+                  </div>
+                </div>
+                <hr>
+              HTML;
             }
           }
           //Movies
           if ($group["group"] == "movies") {
+            $movieCount = 0;
             foreach ($group["data"] as $key => $movie) {
+              $movieCount = $key + 1;
               $image = $movie["images"][0];
               $moviesHtml .=<<<HTML
                 <div class="row">
@@ -119,6 +148,7 @@ class Search{
             }
           }
         }
+        $nav = Layout::navBar();
         return <<<HTML
           <!DOCTYPE html>
           <html lang="zxx">
@@ -140,45 +170,15 @@ class Search{
             <body>
               <div class="container-scroller">
                 <div class="main-panel">
-                  <div class="flash-news-banner">
-                    <div class="container">
-                      <div class="d-lg-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                          <a href="/">
-                            <img src="/assets/images/LECCEL3.png" alt="LECCEL.NET" srcset="">
-                          </a>
-                          <p class="mb-0">
-                            Get the Latest Movies, Music, Albums Series and more
-                          </p>
-                        </div>
-                        <div class="d-flex mt-3">
-                          <ul class="social-media mb-3">
-                            <li>
-                              <a href="/pages/contactus.html" class=" text-decoration-none">
-                                Advertise With Us
-                              </a>
-                            </li>
-                            <li>
-                              <a href="https://www.instagram.com/leccel_net" target="_blank">
-                                <i class="mdi mdi-instagram"></i>
-                              </a>
-                            </li>
-                            <li>
-                              <a href="https://twitter.com/Leccel_net" target="_blank">
-                                <i class="mdi mdi-twitter"></i>
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <!-- NavBar -->
+                  $nav
+                  <!-- NavBar Ends -->
                   <div class="content-wrapper">
                     <div class="container">
                       <div class="col-sm-12">
                         <div class="mb-3">
                           <a href="/" class="mb-1 font-weight-bold pad2x text-decoration-none">Home</a> &RightArrow; 
-                          <a href="#" class="mb-1 font-weight-bold pad2x text-decoration-none">Search Result</a>
+                          <a href="#" class="mb-1 font-weight-bold pad2x text-decoration-none">Search Result for ($this->queryString) </a>
                         </div>
                         <div class="row">
                           <div class="col-md-12 grid-margin stretch-card">
@@ -186,24 +186,24 @@ class Search{
                               <div class="card-body dashboard-tabs p-0">
                                 <ul class="nav nav-tabs px-1" role="tablist">
                                   <li class="nav-item">
-                                    <a class="nav-link active" id="overview-tab" data-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Music</a>
+                                    <a class="nav-link active" id="overview-tab" data-toggle="tab" href="#music" role="tab" aria-controls="music" aria-selected="true">Music ($musicCount)</a>
                                   </li>
                                   <li class="nav-item">
-                                    <a class="nav-link" id="sales-tab" data-toggle="tab" href="#sales" role="tab" aria-controls="sales" aria-selected="false">Movies</a>
+                                    <a class="nav-link" id="sales-tab" data-toggle="tab" href="#movies" role="tab" aria-controls="movies" aria-selected="false">Movies ($movieCount)</a>
                                   </li>
                                   <li class="nav-item">
-                                    <a class="nav-link" id="purchases-tab" data-toggle="tab" href="#purchases" role="tab" aria-controls="purchases" aria-selected="false">TV Series</a>
+                                    <a class="nav-link" id="purchases-tab" data-toggle="tab" href="#series" role="tab" aria-controls="series" aria-selected="false">TV Series ($seriesCount)</a>
                                   </li>
                                 </ul>
                                 <div class="tab-content py-3 px-5">
-                                  <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+                                  <div class="tab-pane fade show active" id="music" role="tabpanel" aria-labelledby="music-tab">
                                     $musicHtml
                                   </div>
-                                  <div class="tab-pane fade" id="sales" role="tabpanel" aria-labelledby="sales-tab">
+                                  <div class="tab-pane fade" id="movies" role="tabpanel" aria-labelledby="movies-tab">
                                     $moviesHtml
                                   </div>
-                                  <div class="tab-pane fade" id="purchases" role="tabpanel" aria-labelledby="purchases-tab">
-                                    
+                                  <div class="tab-pane fade" id="series" role="tabpanel" aria-labelledby="series-tab">
+                                    $seriesHtml
                                   </div>
                                 </div>
                               </div>

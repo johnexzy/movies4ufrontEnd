@@ -12,7 +12,7 @@ use Src\Episode\getEpisode;
 $uri           = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uri           = explode('/', $uri);
 $requestMethod = $_SERVER['REQUEST_METHOD'];
-$notFound = \file_get_contents(__DIR__."\..\pages/404new.html", true);
+$notFound = \file_get_contents(__DIR__."/../pages/404new.html", true);
 
 /**
  ** View Router**
@@ -81,7 +81,7 @@ elseif ($uri[2] == 'series') {
 }
 elseif($uri[2] == "search" && count($uri) > 3){
     $query = (String)$uri[3];
-    $searchView = new Search($query);
+    $searchView = new Search(($query));
     echo($searchView->bodyParser());
 }
 else {

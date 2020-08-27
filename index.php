@@ -1,8 +1,11 @@
 <?php
+
 $movies = json_decode(file_get_contents("http://127.0.0.1:8090/api/v1/videos/limit/10"), true);
 $series = json_decode(file_get_contents("http://127.0.0.1:8090/api/v1/series/limit/10"), true);
 $audios =  json_decode(file_get_contents("http://127.0.0.1:8090/api/v1/music/limit/10"), true);
 
+//trending music
+$TrendingMusic = json_decode(file_get_contents("http://127.0.0.1:8090/api/v1/music/popular/10"), true);
 
 $firstmovie = "";
 $secondMovie = "";
@@ -86,68 +89,108 @@ foreach ($movies as $i=>$movie) {
       
 
       <!-- partial -->
-      <div class="flash-news-banner">
+      <div class="flash-news-banner sticky-top">
         <div class="container">
-          <div class="d-lg-flex align-items-center justify-content-between">
-            <div class="d-flex align-items-center">
-                <a href="/">
-                  <img src="/assets/images/LECCEL3.png" alt="">
-                </a>
-              
-              <p class="mb-0">
-                Get the Latest Movies, Music, Albums Series and more
-              </p>
+            <div class="d-lg-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                    <a href="/">
+                        <img src="/assets/images/LECCEL3.png" alt="">
+                    </a>
+                </div>
+                <div class="d-flex mt-3">
+                    <ul class="social-media mb-3">
+                        <li>
+                            <a href="/pages/contactus.html" class=" text-decoration-none">
+                                Advertise With Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/leccel_net" target="_blank">
+                                <i class="mdi mdi-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/Leccel_net" target="_blank">
+                                <i class="mdi mdi-twitter"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="d-flex mt-3">
-
-              <ul class="social-media mb-3">
-                
-                <li>
-                  <a href="/pages/contactus.html" class=" text-decoration-none">
-                    Advertise With Us
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.instagram.com/leccel_net" target="_blank">
-                    <i class="mdi mdi-instagram"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://twitter.com/Leccel_net" target="_blank">
-                    <i class="mdi mdi-twitter"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
         </div>
       </div>
       <div class="content-wrapper">
         <div class="container">
-          <div class="form-group">
+          <div class="form-group" data-aos="fade-down">
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search here">
+              <input type="text" class="form-control searchInput" placeholder="Search here">
               <div class="input-group-append">
-                <button class="btn btn-sm btn-info" type="button">Search</button>
+                <button class="btn btn-sm btn-info btn-icon-text searchButton" type="button">
+                  <i class="mdi mdi-search-web btn-icon-append"></i>  
+                  Search
+                </button>
               </div>
             </div>
           </div>
           <div class="row" data-aos="fade-up">
-            <div class="col-lg-3 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h2>Category</h2>
-                  <ul class="vertical-menu">
-                    <li><a href="pages/music.html">MUSIC</a></li>
-                    <li><a href="pages/movies.html">MOVIES</a></li>
-                    <li><a href="pages/series.html">SERIES</a></li>
-                    <li><a href="pages/albums.html">ALBUMS</a></li>
-                  </ul>
+            <div class="col-lg-4 grid-margin stretch-card">
+              <div class="row" >
+                <div class="col-sm-12 grid-margin" data-aos="fade-left">
+                  <div class="card">
+                    <div class="card-header font-weight-bold">
+                      <i class="mdi mdi-menu mr-4"></i> Category
+                    </div>
+                    <div class="card-body">
+                      
+                      <ul class="vertical-menu text-dark">
+                        <li><a href="pages/music.html"><i class="mdi mdi mdi-music mr-2"></i> MUSIC</a></li>
+                        <li><a href="pages/movies.html"><i class="mdi mdi mdi-video mr-2"></i> MOVIES</a></li>
+                        <li><a href="pages/series.html"><i class="mdi mdi mdi-movie mr-2"></i> SERIES</a></li>
+                        <li><a href="pages/albums.html"><i class="mdi mdi mdi-album mr-2"></i> ALBUMS</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-12 grid-margin stretch-card"  data-aos="fade-right">
+                  <div class="card shadow-lg">
+                    <div class="card-header font-weight-bold">
+                    <i class="mdi mdi-trending-up" ></i> Trending Music 
+                    </div>
+                    <div class="card-body">
+                      <?php
+                        foreach ($TrendingMusic as $key => $music) {
+                          $short_url = $music["short_url"];
+                          echo<<<HTML
+                              <div
+                                  class="d-flex justify-content-start border-bottom mb-4 mt-4" 
+                                  style="cursor:pointer"
+                                  >
+                                  <input type="hidden" value="/view/music/$short_url">
+                                  <a 
+                                    class="h3 font-weight-200 mb-0" 
+                                    href="/view/music/$short_url"
+                                    style="text-decoration:none; color: inherit"
+                                    ><i class="mdi mdi-star-circle text-danger"></i>
+                                      <h4 class=" d-inline font-weight-200 mb-0">
+                                          $music[music_name]
+                                      </h4>
+                                      <p class="L5 mb-0">
+                                        <i class="mdi mdi-artist"></i>
+                                        <span class="fs-16 mr-2 text-muted ml-1">$music[artist]</span>
+                                      </p>
+                                  </a>
+                              </div>
+                          HTML;
+                        }
+                      ?>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+              
             
-            <div class="col-lg-9 stretch-card grid-margin">
+            <div class="col-lg-8 stretch-card grid-margin" data-aos="fade-down">
             <div class="card stretch-card">
                 <div class="card-header">
                   <div class="d-flex justify-content-between align-items-center">
@@ -175,7 +218,7 @@ foreach ($movies as $i=>$movie) {
                               $short_url = $music["short_url"];
                                 echo<<<HTML
                                     <div
-                                        class="d-flex justify-content-start border-bottom" 
+                                        class="d-flex justify-content-start border-bottom mb-4 mt-4" 
                                         style="cursor:pointer"
                                         >
                                         <input type="hidden" value="/view/music/$short_url">
@@ -215,14 +258,7 @@ foreach ($movies as $i=>$movie) {
               
             </div>
           </div>
-          <div class="form-group" data-aos="fade-up">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search Movie ">
-              <div class="input-group-append">
-                <button class="btn btn-sm btn-info" type="button">Search</button>
-              </div>
-            </div>
-          </div>
+          
           <div class="row" data-aos="fade-up">
           
             <div class="col-sm-12 grid-margin">
@@ -293,7 +329,7 @@ foreach ($movies as $i=>$movie) {
           </div>
           <!--Tv Series -->
           <div class="row" data-aos="fade-up">
-            <div class="col-sm-12">
+            <div class="col-sm-12 grid-margin">
             <div class="card">
                 <div class="card-header">
                   <div class="d-flex justify-content-between align-items-center">

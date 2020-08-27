@@ -2,6 +2,7 @@
 namespace Src\Music;
 
 use Src\logic\CheckDate;
+use Src\Components\Layout;
 
 
 class getMusic{
@@ -55,7 +56,7 @@ class getMusic{
         //videos: usually one or $data['videos][0]
         
             $download = "<a  href='http://127.0.0.1:8090/$url' class='btn btn-primary btn-lg btn-block' download>
-                            Download
+                            Download MP3
                           </a>";
         
         //images
@@ -96,6 +97,7 @@ class getMusic{
                                 </p>
                             </div>";
         }
+        $nav = Layout::navBar();
         return <<<HTML
   <!DOCTYPE html>
   <html lang="zxx">
@@ -121,40 +123,9 @@ class getMusic{
     <body>
       <div class="container-scroller">
         <!-- partial:../partials/_navbar.html -->
-        
-        <div class="flash-news-banner sticky-top">
-          <div class="container">
-            <div class="d-lg-flex align-items-center justify-content-between">
-              <div class="d-flex align-items-center">
-                <a href="/"><img src="/assets/images/LECCEL3.png" alt="LECCEL.NET" srcset=""></a>
-                <p class="mb-0">
-                  Get the Latest Movies, Music, Albums Series and more
-                </p>
-              </div>
-              <div class="d-flex mt-3">
-
-                <ul class="social-media mb-3">
-                  <li>
-                    <a href="#" class=" text-decoration-none">
-                      Advertise With Us
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.instagram.com/leccel_net" target="_blank">
-                      <i class="mdi mdi-instagram"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://twitter.com/Leccel_net" target="_blank">
-                      <i class="mdi mdi-twitter"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <!-- NavBar -->
+        $nav
+        <!-- NavBar Ends -->
         <div class="content-wrapper">
           <div class="container">
             <div class="row">
@@ -197,9 +168,12 @@ class getMusic{
                                   </div>
                               </div>
                               <div class="col-sm-6">
-                                  <p class="">
-                                      $details
-                                  </p>
+                                <b>Download $name MP3</b>
+                                <hr>
+                                <p style="line-height:2.5">
+                                    
+                                    $details
+                                </p>
                                   $download
                               </div>
                           </div>

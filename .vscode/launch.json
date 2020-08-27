@@ -1,0 +1,38 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "name": "Launch localhost",
+            "url": "http://localhost:3003",
+            "webRoot": "C:\\Users\\hp\\Downloads\\world_time\\urbanui-world-time-0477e81579c7"
+        },
+        
+        {
+            "name": "Launch Chrome",
+            "request": "launch",
+            "type": "pwa-chrome",
+            "url": "http://localhost:3003",
+            "webRoot": "C:\\Users\\hp\\Downloads\\world_time\\urbanui-world-time-0477e81579c7"
+        },
+        {
+            "name": "Attach to Chrome",
+            "port": 3003,
+            "request": "attach",
+            "type": "pwa-chrome",
+            "webRoot": "${workspaceFolder}"
+        },
+
+        {
+            "name": "Listen for XDebug",
+            "type": "php",
+            "request": "launch",
+            "port": 3003
+        },
+    ]
+}

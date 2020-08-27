@@ -9844,6 +9844,11 @@ h6, .h6 {
   line-height: 1;
   font-weight: 400;
   border-radius: 4px;
+  /* Buttons with icon and text */
+}
+
+.btn i {
+  font-size: 1.25rem;
 }
 
 .btn.btn-sm, .btn-group-sm > .btn {
@@ -9881,6 +9886,20 @@ h6, .h6 {
 
 .btn:focus {
   outline: none;
+}
+
+.btn.btn-icon-text .btn-icon-prepend {
+  margin-right: .5rem;
+}
+
+.btn.btn-icon-text .btn-icon-append {
+  margin-left: .5rem;
+}
+
+.btn.btn-social-icon {
+  width: 50px;
+  height: 50px;
+  padding: 0;
 }
 
 .btn-outline-primary {
@@ -10510,7 +10529,7 @@ header .navbar-bottom .navbar-toggler {
 
 .flash-news-banner {
   background: #ffffff;
-  padding: 20px 0px;
+  padding: 5px 0px 0px 0px;
 }
 
 .flash-news-banner span {
@@ -10523,7 +10542,7 @@ header .navbar-bottom .navbar-toggler {
 }
 
 .content-wrapper {
-  background: #000000;
+  background: #c0b6b6f1;
   padding: 60px 0;
 }
 

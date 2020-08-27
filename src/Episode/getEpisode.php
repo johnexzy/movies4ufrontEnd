@@ -1,6 +1,7 @@
 <?php
 namespace Src\Episode;
 
+use Src\Components\Layout;
 use Src\logic\CheckDate;
 
 class getEpisode{
@@ -97,6 +98,7 @@ class getEpisode{
                                 </p>
                             </div>";
         }
+        $nav = Layout::navBar();
         return <<<HTML
         <!DOCTYPE html>
         <html lang="zxx">
@@ -123,39 +125,9 @@ class getEpisode{
             <div class="container-scroller">
               <!-- partial:../partials/_navbar.html -->
               
-              <div class="flash-news-banner sticky-top">
-                <div class="container">
-                  <div class="d-lg-flex align-items-center justify-content-between">
-                    <div class="d-flex align-items-center">
-                      <a href="/"><img src="/assets/images/LECCEL3.png" alt="LECCEL.NET" srcset=""></a>
-                      <p class="mb-0">
-                          Get the Latest Movies, Music, Albums Series and more
-                        </p>
-                      </div>
-                      <div class="d-flex mt-3">
-
-                        <ul class="social-media mb-3">
-                          <li>
-                            <a href="#" class=" text-decoration-none">
-                              Advertise With Us
-                            </a>
-                          </li>
-                          <li>
-                            <a href="https://www.instagram.com/leccel_net" target="_blank">
-                              <i class="mdi mdi-instagram"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="https://twitter.com/Leccel_net" target="_blank">
-                              <i class="mdi mdi-twitter"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <!-- NavBar -->
+              $nav
+              <!-- NavBar Ends -->
               <div class="content-wrapper">
                 <div class="container">
                   <div class="row">

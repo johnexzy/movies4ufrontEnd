@@ -132,33 +132,33 @@ $(function(){
             $.each(data.data, (key, series)=>{
                 $(".show-video").append(`
                 <div class="row">
-                <div class="col-sm-4 grid-margin">
-                    <a href="/view/series/${series.short_url}" style="text-decoration:none; color: inherit">
-                        <div class="rotate-img">
-                            <img
-                            src="http://127.0.0.1:8090/${series.images[0]}"
-                            alt="banner"
-                            class="img-fluid"
-                            />
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-8 grid-margin">
-                    <h2 class="font-weight-600 mb-2">
+                    <div class="col-sm-4 grid-margin">
                         <a href="/view/series/${series.short_url}" style="text-decoration:none; color: inherit">
-                            ${series.series_name}
+                            <div class="rotate-img">
+                                <img
+                                src="http://127.0.0.1:8090/${series.images[0]}"
+                                alt="banner"
+                                class="img-fluid"
+                                />
+                            </div>
                         </a>
-                    </h2>
-                  
-                    <p class="L5 mb-0">
-                        <i class="mdi mdi-movie"></i> Total Seasons: <span class="fs-16 mr-2 text-muted">${series.series.length}</span>
-                    </p>
-                    <p class="mb-0">
-                        ${series.series_details.substring(0, 400)}...
-                    </p>
+                    </div>
+                    <div class="col-sm-8 grid-margin">
+                        <h2 class="font-weight-600 mb-2">
+                            <a href="/view/series/${series.short_url}" style="text-decoration:none; color: inherit">
+                                ${series.series_name}
+                            </a>
+                        </h2>
+                    
+                        <p class="L5 mb-0">
+                            <i class="mdi mdi-movie"></i> Total Seasons: <span class="fs-16 mr-2 text-muted">${series.series.length}</span>
+                        </p>
+                        <p class="mb-0">
+                            ${series.series_details.substring(0, 400)}...
+                        </p>
+                    </div>
                 </div>
-              </div>
-              <hr>
+                <hr>
                 `)
             })
             data.links.prev == null ?

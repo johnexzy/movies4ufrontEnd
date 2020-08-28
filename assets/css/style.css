@@ -10574,25 +10574,25 @@ header .navbar-bottom .navbar-toggler {
 }
 
 .content-wrapper .vertical-menu li a {
+  background-color: #e8eff4;
+  margin: 3px auto;
   font-size: 16px;
-  font-weight: normal;
+  font-weight: 600;
   font-stretch: normal;
   font-style: normal;
   line-height: 1.31;
   letter-spacing: normal;
-  color: #ababac;
-  padding: 10.5px 0;
+  color: #000000;
+  padding: 10.5px;
   display: block;
 }
 
 .content-wrapper .vertical-menu li a:hover, .content-wrapper .vertical-menu li a:focus, .content-wrapper .vertical-menu li a.active {
+  background-color: #e6e9ed;
   text-decoration: none;
   color: #000000;
-  font-weight: 600;
-}
-
-.content-wrapper .vertical-menu li:last-child a {
-  padding-bottom: 0;
+  font-weight: normal;
+  box-shadow: inset 1px 1px 2px 1px rgba(0, 0, 0, 0.175);
 }
 
 .content-wrapper .badge-positioned {

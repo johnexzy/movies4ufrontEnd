@@ -77,7 +77,7 @@
   }
 }
 .content-wrapper {
-  background: #c0b6b6f1;
+  background: theme-color(primary);
   padding: 60px 0;
   .banner-content {
     position: absolute;
@@ -121,7 +121,7 @@
           text-decoration: none;
           color: theme-color(dark);
           font-weight: normal;
-          box-shadow: inset 1px 1px 2px 1px rgba(0, 0, 0, 0.175)
+          box-shadow: inset 1px 1px 2px 1px #47011661
         }
       }
       

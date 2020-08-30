@@ -80,7 +80,7 @@ elseif ($uri[2] == 'series') {
 
 }
 elseif($uri[2] == "search" && count($uri) > 3){
-    $query = (String)$uri[3];
+    $query = (String) $uri[3];
     $searchView = new Search(($query));
     echo($searchView->bodyParser());
 }

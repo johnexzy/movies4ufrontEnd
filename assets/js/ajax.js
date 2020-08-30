@@ -6,7 +6,7 @@ $(".movieLink").on("click", function () {
 $(".searchButton").on("click", function(){
   if ($(".searchInput").val().length > 3) {
     let link = encodeURI($(".searchInput").val())
-    window.location = `/view/search/${$(".searchInput").val()}`
+    window.location = encodeURI(`http://localhost:3003/view/search/${link}`)
     return false;
   }
   alert("Search Value too small")

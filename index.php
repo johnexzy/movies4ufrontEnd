@@ -1,5 +1,8 @@
 <?php
 
+use Src\Components\Layout;
+
+require "vendor/autoload.php";
 $movies = json_decode(file_get_contents("http://127.0.0.1:8090/api/v1/videos/limit/10"), true);
 $series = json_decode(file_get_contents("http://127.0.0.1:8090/api/v1/series/limit/10"), true);
 $audios =  json_decode(file_get_contents("http://127.0.0.1:8090/api/v1/music/limit/10"), true);
@@ -29,7 +32,7 @@ foreach ($movies as $i=>$movie) {
                 <div class="d-flex justify-content-between align-items-center">
                     <span class="badge badge-danger font-weight-bold">$cat</span>
                     <div class="video-icon">
-                    <i class="mdi mdi-play"></i>
+                    <a href="/view/movies/$short_url" style="text-decoration:none; color: inherit"><i class="mdi mdi-play"></i></a>
                     </div>
                 </div>
                 </div>
@@ -60,6 +63,7 @@ foreach ($movies as $i=>$movie) {
   }
     
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -89,36 +93,10 @@ foreach ($movies as $i=>$movie) {
       
 
       <!-- partial -->
-      <div class="flash-news-banner sticky-top">
-        <div class="container">
-            <div class="d-lg-flex align-items-center justify-content-between">
-                <div class="d-flex align-items-center">
-                    <a href="/">
-                        <img src="/assets/images/LECCEL3.png" alt="">
-                    </a>
-                </div>
-                <div class="d-flex mt-3">
-                    <ul class="social-media mb-3">
-                        <li>
-                            <a href="/pages/contactus.html" class=" text-decoration-none">
-                                Advertise With Us
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/leccel_net" target="_blank">
-                                <i class="mdi mdi-instagram"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/Leccel_net" target="_blank">
-                                <i class="mdi mdi-twitter"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-      </div>
+      <!-- NavBar -->
+      <?=Layout::navBar(); ?>
+      <!-- NavBar Ends -->
+
       <div class="content-wrapper">
         <div class="container">
           <div class="form-group" data-aos="fade-down">
@@ -190,13 +168,13 @@ foreach ($movies as $i=>$movie) {
             </div>
               
             
-            <div class="col-lg-8 stretch-card grid-margin" data-aos="fade-down">
+            <div class="col-lg-8 stretch-card grid-margin" data-aos="fade-up">
             <div class="card stretch-card">
                 <div class="card-header">
                   <div class="d-flex justify-content-between align-items-center">
                   
                     <div class="card-title">
-                      Latest Music
+                      <i class="mdi mdi-chart-line"></i> Latest Music
                     </div>
                     <a 
                       class="mb-2 btn btn-outline-light btn-primary btn-info"
@@ -259,7 +237,7 @@ foreach ($movies as $i=>$movie) {
             </div>
           </div>
           
-          <div class="row" data-aos="fade-up">
+          <div class="row" data-aos="fade-right">
           
             <div class="col-sm-12 grid-margin">
               <div class="card">
@@ -328,7 +306,7 @@ foreach ($movies as $i=>$movie) {
             </div>
           </div>
           <!--Tv Series -->
-          <div class="row" data-aos="fade-up">
+          <div class="row" data-aos="fade-left">
             <div class="col-sm-12 grid-margin">
             <div class="card">
                 <div class="card-header">
@@ -397,35 +375,9 @@ foreach ($movies as $i=>$movie) {
       <!-- main-panel ends -->
       <!-- container-scroller ends -->
       
-          
-      <div class="d-flex align-items-center justify-content-center pad2x">
-        <p class="mt-2"> 
-          <a href="/pages/aboutus.html">About Us </a> | <a href="/pages/contactus.html">Contact Us</a>
-        </p>
-      </div>
-      <!-- partial:partials/_footer.html -->
-      <footer>
-        <div class="footer-bottom">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-12">
-                <img src="/assets/images/LECCEL1.png" alt="">
-                <div class="d-sm-flex justify-content-between align-items-center">
-                  <div class="fs-14 font-weight-600">
-                    © 2020 @ <a href="https://www.leccel.net" target="_blank" class="text-white"> Leccel.net</a>. All
-                    rights reserved.
-                  </div>
-                  <div class="fs-14 font-weight-600">
-                    Developed by <a href="https://github.com/johnexzy" target="_blank" class="text-white">Johnexzy</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-
-      <!-- partial -->
+      <!-- begin footer -->
+      <?=Layout::footer() ?>
+      <!-- end footer -->
     </div>
   </div>
   <!-- inject:js -->

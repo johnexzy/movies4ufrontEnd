@@ -49,7 +49,7 @@ class getMusic{
         $details = $data["music_details"];
         $name = $data["music_name"];
         $download = "";
-        $url = $data["audio"][0]["song_url"];
+        $url = str_replace(".", "/", $data["audio"][0]["song_url"]);
         $coment_section ="";
         $cmcount = is_countable($data["comments"]) ? count($data["comments"]) : 0 ;
 

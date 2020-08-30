@@ -55,7 +55,7 @@ class getMovie{
 
         //videos: usually one or $data['videos][0]
         foreach ($data['videos'] as $key => $video) {
-            $download .= "<a  href='http://127.0.0.1:8090/$video[video_url]' style='text-decoration:none; color:inherit' download>
+            $download .= "<a  href='http://127.0.0.1:8090/".str_replace(".", "/", $video["video_url"])."' style='text-decoration:none; color:inherit' download>
                             <button type='button' class='btn btn-primary btn-lg btn-block'>Download</button>
                           </a>";
         }

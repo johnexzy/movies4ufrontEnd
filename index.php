@@ -129,7 +129,7 @@ foreach ($movies as $i=>$movie) {
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-12 grid-margin stretch-card"  data-aos="fade-right">
+                <div class="col-sm-12 grid-margin stretch-card"  data-aos="fade-down">
                   <div class="card shadow-lg">
                     <div class="card-header font-weight-bold">
                     <i class="mdi mdi-trending-up" ></i> Trending Music 

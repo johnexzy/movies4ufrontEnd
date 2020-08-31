@@ -216,6 +216,7 @@ class getSeason{
       </div>
       <!-- partial:partials/_footer.html -->
       $footer
+      
       <script src="/assets/js/comment.ajax.js"></script>
       
       <!-- End custom js for this page-->

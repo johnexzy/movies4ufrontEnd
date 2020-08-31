@@ -262,6 +262,7 @@ class getMusic{
       <!-- partial -->
       <!-- inject:js -->
       
+      <script src="/assets/js/easeCarousel.js"></script>
       <script src="/assets/js/comment.ajax.js"></script>
       
       <!-- End custom js for this page-->

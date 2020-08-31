@@ -72,6 +72,8 @@ foreach ($movies as $i=>$movie) {
   <!-- Required meta tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="title" content="Leccel.net">
+  <meta name="description" content="Get the latest movies, music and series for free. Best Movie Plug">
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Leccel</title>
   <!-- plugin css for this page -->

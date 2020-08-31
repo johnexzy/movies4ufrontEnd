@@ -10,32 +10,28 @@ class Layout
      */
     public static function navBar(){
         return <<<HTML
-            <div class="flash-news-banner sticky-top">
-                <div class="container">
-                    <div class="d-lg-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
+            <div class="flash-news-banner sticky-top" style="background:#ffffff;">
+                <div class="" >
+                    <div class="">
+                        <div class="d-flex justify-content-between">
                             <a href="/">
                                 <img src="/assets/images/LECCEL3.png" alt="">
                             </a>
+                            <div class="form-group" data-aos="fade-down">
+                                <div class="input-group">
+                                    <input type="text" class="form-control searchInput border-info" style="border-radius:20px 10px 10px 20px; height:40px; " placeholder="Search here">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-sm btn-info btn-icon-text searchButton text-center" style="border-radius:0 20px 20px 0; margin-left:-20px; z-index:1000; width:60px" type="button">
+                                        <i class="mdi mdi-search-web"></i> 
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="d-flex mt-3">
-                            <ul class="social-media mb-3">
-                                <li>
-                                    <a href="/pages/contactus.html" class=" text-decoration-none">
-                                        Advertise With Us
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.instagram.com/leccel_net" target="_blank">
-                                        <i class="mdi mdi-instagram"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://twitter.com/Leccel_net" target="_blank">
-                                        <i class="mdi mdi-twitter"></i>
-                                    </a>
-                                </li>
-                            </ul>
+                        <div class="d-block text-center justify-content-center border-top">
+                            <div class="d-flex">
+                                
+                            </div>
                         </div>
                     </div>
                 </div>

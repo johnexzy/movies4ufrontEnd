@@ -15,10 +15,10 @@ $(function() {
   function scrollHeader() {
     // adding sticky class
     if (window.pageYOffset > 130) {
-      $(header).addClass("fixed-top");
+      $(header).addClass("sticky");
     } else {
       // removing sticky class
-      $(header).removeClass("fixed-top");
+      $(header).removeClass("sticky");
     }
   }
 

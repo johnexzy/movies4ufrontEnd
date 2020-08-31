@@ -10444,6 +10444,23 @@ header .navbar-bottom .navbar-toggler {
   }
 }
 
+.menu-bottom {
+  background: #e0e0e0b5;
+  height: 64px;
+}
+
+.menu-bottom div ul li {
+  background: #4d7cff;
+}
+
+.menu-bottom div ul li a {
+  color: #fff;
+}
+
+.menu-bottom div ul li:hover {
+  background: #6c6c6d;
+}
+
 .banner-top-thumb-wrap {
   padding: 22px 0;
   border-bottom: 1px solid #e6e7e8;

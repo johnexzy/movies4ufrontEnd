@@ -26,21 +26,21 @@ class Layout
                                 </div>
                             </div>
                         </div>
-                        <div class="d-block text-center border-top menu-bottom" style="background:#e0e0e0b5">
+                        <div class="d-block text-center border-top menu-bottom">
                             <div class="d-flex justify-content-center">
-                                <ul class="d-flex flex-flow text-white">
-                                    <li class="d-inline p-2 m-2 shadow" style="background:#4d7cff">
-                                        <a href="/pages/music.html" class="text-white">
+                                <ul class="d-flex flex-flow">
+                                    <li class="d-inline p-2 m-2 shadow">
+                                        <a href="/pages/music.html">
                                             <i class="mdi mdi-24px mdi-music"></i>
                                         </a>
                                     </li>
-                                    <li class="d-inline p-2 m-2 shadow" style="background:#4d7cff">
-                                        <a href="/pages/movies.html" class="text-white">
+                                    <li class="d-inline p-2 m-2 shadow">
+                                        <a href="/pages/movies.html">
                                             <i class="mdi mdi-24px mdi-video"></i>
                                         </a>
                                     </li>
-                                    <li class="d-inline p-2 m-2 shadow" style="background:#4d7cff">
-                                        <a href="/pages/series.html" class="text-white">
+                                    <li class="d-inline p-2 m-2 shadow">
+                                        <a href="/pages/series.html">
                                             <i class="mdi mdi-24px mdi-movie"></i>
                                         </a>
                                     </li>

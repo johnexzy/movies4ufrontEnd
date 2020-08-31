@@ -248,3 +248,20 @@ header {
     color: $white;
   }
 }
+.menu-bottom{
+  background:#e0e0e0b5; 
+  height: 64px;
+  div{
+    ul{
+      li{
+        background:#4d7cff;
+        a{
+          color: #fff;
+        }
+        &:hover{
+          background: #6c6c6d
+        }
+      }
+    }
+  }
+}

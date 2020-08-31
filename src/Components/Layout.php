@@ -26,7 +26,7 @@ class Layout
                                 </div>
                             </div>
                         </div>
-                        <div class="d-block text-center border-top fixed-top" style="background:#e0e0e0b5">
+                        <div class="d-block text-center border-top menu-bottom" style="background:#e0e0e0b5">
                             <div class="d-flex justify-content-center">
                                 <ul class="d-flex flex-flow text-white">
                                     <li class="d-inline p-2 m-2 shadow" style="background:#4d7cff">

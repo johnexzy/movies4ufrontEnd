@@ -10,15 +10,15 @@ $(function() {
     scrollHeader();
   };
   // Get the header
-  var header = $(".navbar-bottom");
+  var header = $(".menu-bottom");
   var body = $("body");
   function scrollHeader() {
     // adding sticky class
     if (window.pageYOffset > 130) {
-      $(header).addClass("sticky");
+      $(header).addClass("fixed-top");
     } else {
       // removing sticky class
-      $(header).removeClass("sticky");
+      $(header).removeClass("fixed-top");
     }
   }
 

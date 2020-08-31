@@ -49,7 +49,16 @@ class getMusic{
         $details = $data["music_details"];
         $name = $data["music_name"];
         $download = "";
-        $url = str_replace(".", "/", $data["audio"][0]["song_url"]);
+        $url = $data["audio"][0]["song_url"];
+        $player = "<audio
+         src='http://127.0.0.1:8090/$url' 
+         style='margin: 5px;
+         display: inline;
+         border: 1px solid;
+         background: #f1f3f4;
+         height: 33px;'
+          controls></audio>";
+        $url = str_replace(".", "/", $url);
         $coment_section ="";
         $cmcount = is_countable($data["comments"]) ? count($data["comments"]) : 0 ;
 
@@ -98,6 +107,7 @@ class getMusic{
                             </div>";
         }
         $nav = Layout::navBar();
+        $footer = Layout::footer();
         return <<<HTML
   <!DOCTYPE html>
   <html lang="zxx">
@@ -176,7 +186,11 @@ class getMusic{
                                 </p>
                                   $download
                               </div>
+                              
+                              
                           </div>
+                          <p class="m-4">PLAY ONLINE?</p>
+                          $player
                           <div class="row">
                               <div class="col-sm-6">
                                   <h1 class="mt-5 text-center mb-5">
@@ -244,44 +258,10 @@ class getMusic{
       </div>
       <!-- container-scroller ends -->
       <!-- partial:../partials/_footer.html -->
-      <div class="d-flex align-items-center justify-content-center pad2x">
-        <p class="mt-2"> 
-          <a href="/pages/aboutus.html">About Us </a> | <a href="/pages/contactus.html">Contact Us</a>
-        </p>
-      </div>
-      <!-- partial:partials/_footer.html -->
-      <footer>
-        
-        <div class="footer-bottom">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-12">
-                <div class="d-sm-flex justify-content-between align-items-center">
-                  <div class="fs-14 font-weight-600">
-                    © 2020 @ <a href="https://www.leccel.net" target="_blank" class="text-white"> Leccel.net</a>. All rights reserved.
-                  </div>
-                  <div class="fs-14 font-weight-600">
-                    Developed by <a href="https://github.com/johnexzy" target="_blank" class="text-white">Johnexzy</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-        
+      $footer
       <!-- partial -->
       <!-- inject:js -->
-      <script src="/assets/vendors/js/vendor.bundle.base.js"></script>
-      <!-- endinject -->
-      <!-- plugin js for this page -->
-  
-      <script src="/assets/vendors/aos/dist/aos.js/aos.js"></script>
-      <!-- End plugin js for this page -->
-      <!-- Custom js for this page-->
-      <script src="/assets/js/demo.js"></script>
-      <script src="/assets/js/jquery.easeScroll.js"></script>
-      <script src="/assets/js/easeCarousel.js"></script>
+      
       <script src="/assets/js/comment.ajax.js"></script>
       
       <!-- End custom js for this page-->

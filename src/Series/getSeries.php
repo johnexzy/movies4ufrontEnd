@@ -1,6 +1,7 @@
 <?php 
 namespace Src\Series;
 
+use Src\Components\Layout;
 use Src\logic\CheckDate;
 
 
@@ -101,6 +102,8 @@ class getSeries{
                                 </p>
                             </div>";
         }
+        $nav = Layout::navBar();
+        $footer = Layout::footer();
         return <<<HTML
   <!DOCTYPE html>
   <html lang="zxx">
@@ -126,40 +129,9 @@ class getSeries{
     <body>
       <div class="container-scroller">
         <!-- partial:../partials/_navbar.html -->
-        
-        <div class="flash-news-banner sticky-top">
-          <div class="container">
-            <div class="d-lg-flex align-items-center justify-content-between">
-              <div class="d-flex align-items-center">
-                <a href="/"><img src="/assets/images/LECCEL3.png" alt="LECCEL.NET" srcset=""></a>
-                <p class="mb-0">
-                  Get the Latest Movies, Music, Albums Series and more
-                </p>
-              </div>
-              <div class="d-flex mt-3">
-
-                <ul class="social-media mb-3">
-                  <li>
-                    <a href="#" class=" text-decoration-none">
-                      Advertise With Us
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.instagram.com/leccel_net" target="_blank">
-                      <i class="mdi mdi-instagram"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://twitter.com/Leccel_net" target="_blank">
-                      <i class="mdi mdi-twitter"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <!-- NavBar begin -->
+        $nav
+        <!-- NavBar Ends -->
         <div class="content-wrapper">
           <div class="container">
             <div class="row">
@@ -287,38 +259,7 @@ class getSeries{
         </p>
       </div>
       <!-- partial:partials/_footer.html -->
-      <footer>
-        
-        <div class="footer-bottom">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-12">
-                <div class="d-sm-flex justify-content-between align-items-center">
-                  <div class="fs-14 font-weight-600">
-                    © 2020 @ <a href="https://www.leccel.net" target="_blank" class="text-white"> Leccel.net</a>. All rights reserved.
-                  </div>
-                  <div class="fs-14 font-weight-600">
-                    Developed by <a href="https://github.com/johnexzy" target="_blank" class="text-white">Johnexzy</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-        
-      <!-- partial -->
-      <!-- inject:js -->
-      <script src="/assets/vendors/js/vendor.bundle.base.js"></script>
-      <!-- endinject -->
-      <!-- plugin js for this page -->
-  
-      <script src="/assets/vendors/aos/dist/aos.js/aos.js"></script>
-      <!-- End plugin js for this page -->
-      <!-- Custom js for this page-->
-      <script src="/assets/js/demo.js"></script>
-      <script src="/assets/js/jquery.easeScroll.js"></script>
-      <script src="/assets/js/easeCarousel.js"></script>
+      $footer
       <script src="/assets/js/comment.ajax.js"></script>
       
       <!-- End custom js for this page-->

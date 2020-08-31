@@ -391,8 +391,7 @@ foreach ($movies as $i=>$movie) {
   <!-- Custom js for this page-->
   <script src="/assets/js/demo.js"></script>
   <script src="/assets/js/jquery.easeScroll.js"></script>
-  <script src="/assets/js/ajax.js" ></script>
-  <script src="/assets/utils.js" ></script>
+  <script src="/assets/js/util.js" ></script>
   <!-- End custom js for this page-->
 </body>
 

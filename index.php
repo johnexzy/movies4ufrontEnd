@@ -308,7 +308,7 @@ foreach ($movies as $i=>$movie) {
             </div>
           </div>
           <!--Tv Series -->
-          <div class="row" data-aos="fade-left">
+          <div class="row" data-aos="fade-right">
             <div class="col-sm-12 grid-margin">
             <div class="card">
                 <div class="card-header">

@@ -29,18 +29,18 @@ class Layout
                         <div class="d-block text-center border-top menu-bottom">
                             <div class="d-flex justify-content-center">
                                 <ul class="d-flex flex-flow">
-                                    <li class="d-inline m-2 shadow">
-                                        <a class="m-2" href="/pages/music.html">
+                                    <li class="d-inline p-2 m-2 shadow">
+                                        <a href="/pages/music.html">
                                             <i class="mdi mdi-24px mdi-music"></i>
                                         </a>
                                     </li>
-                                    <li class="d-inline m-2 shadow">
-                                        <a class="m-2" href="/pages/movies.html">
+                                    <li class="d-inline p-2 m-2 shadow">
+                                        <a href="/pages/movies.html">
                                             <i class="mdi mdi-24px mdi-video"></i>
                                         </a>
                                     </li>
-                                    <li class="d-inline m-2 shadow">
-                                        <a class="m-2" href="/pages/series.html">
+                                    <li class="d-inline p-2 m-2 shadow">
+                                        <a href="/pages/series.html">
                                             <i class="mdi mdi-24px mdi-movie"></i>
                                         </a>
                                     </li>

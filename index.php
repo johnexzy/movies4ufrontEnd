@@ -100,9 +100,7 @@ foreach ($movies as $i=>$movie) {
       <!-- NavBar Ends -->
 
       <div class="content-wrapper">
-        <div class="container">
-
-        </div>
+        
         <div class="container">
           <div class="d-flex justify-content-center text-light text-center m-3" data-aos="fade-down">
             <h3 class="text-uppercase font-weight-600 shadow">
@@ -381,9 +379,11 @@ foreach ($movies as $i=>$movie) {
           </div>
         </div>
       </div>
+    
       <!-- main-panel ends -->
+    </div>
       <!-- container-scroller ends -->
-      
+  </div>
       <!-- begin footer -->
       <?=Layout::footer() ?>
       <!-- end footer -->

@@ -11,42 +11,42 @@ class Layout
     public static function navBar(){
         return <<<HTML
             <div class="flash-news-banner" style="background:#ffffff; margin-top:-5px">
-                        <div class="d-flex justify-content-between mt-2">
-                            <a href="/">
-                                <img src="/assets/images/LECCEL3.png" alt="">
-                            </a>
-                            <div class="form-group" data-aos="fade-down">
-                                <div class="input-group">
-                                    <input type="text" class="form-control searchInput border-info shadow" style="border-radius:20px 10px 10px 20px; height:40px; " placeholder="Search here">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-sm btn-info btn-icon-text searchButton text-center" style="border-radius:0 20px 20px 0; margin-left:-20px; z-index:1000; width:60px" type="button">
-                                        <i class="mdi mdi-search-web"></i> 
-                                        </button>
-                                    </div>
-                                </div>
+                <div class="d-flex justify-content-between mt-2">
+                    <a href="/">
+                        <img src="/assets/images/LECCEL3.png" alt="">
+                    </a>
+                    <div class="form-group" data-aos="fade-down">
+                        <div class="input-group">
+                            <input type="text" class="form-control searchInput border-info shadow" style="border-radius:20px 10px 10px 20px; height:40px; " placeholder="Search here">
+                            <div class="input-group-append">
+                                <button class="btn btn-sm btn-info btn-icon-text searchButton text-center" style="border-radius:0 20px 20px 0; margin-left:-20px; z-index:1000; width:60px" type="button">
+                                <i class="mdi mdi-search-web"></i> 
+                                </button>
                             </div>
                         </div>
-                        <div class="d-block text-center border-top menu-bottom">
-                            <div class="d-flex justify-content-center">
-                                <ul class="d-flex flex-flow">
-                                    <li class="d-inline p-2 m-2 shadow">
-                                        <a href="/pages/music.html">
-                                            <i class="mdi mdi-24px mdi-music"></i>
-                                        </a>
-                                    </li>
-                                    <li class="d-inline p-2 m-2 shadow">
-                                        <a href="/pages/movies.html">
-                                            <i class="mdi mdi-24px mdi-video"></i>
-                                        </a>
-                                    </li>
-                                    <li class="d-inline p-2 m-2 shadow">
-                                        <a href="/pages/series.html">
-                                            <i class="mdi mdi-24px mdi-movie"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                    </div>
+                </div>
+                <div class="d-block text-center border-top menu-bottom">
+                    <div class="d-flex justify-content-center">
+                        <ul class="d-flex flex-flow">
+                            <li class="d-inline p-2 m-2 shadow">
+                                <a href="/pages/music.html">
+                                    <i class="mdi mdi-24px mdi-music"></i>
+                                </a>
+                            </li>
+                            <li class="d-inline p-2 m-2 shadow">
+                                <a href="/pages/movies.html">
+                                    <i class="mdi mdi-24px mdi-video"></i>
+                                </a>
+                            </li>
+                            <li class="d-inline p-2 m-2 shadow">
+                                <a href="/pages/series.html">
+                                    <i class="mdi mdi-24px mdi-movie"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         HTML;
     }

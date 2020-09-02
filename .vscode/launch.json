@@ -25,7 +25,8 @@
             "port": 3003,
             "request": "attach",
             "type": "pwa-chrome",
-            "webRoot": "${workspaceFolder}"
+            "url": "http://localhost:3003",
+            "webRoot": "C:\\Users\\hp\\Downloads\\world_time\\urbanui-world-time-0477e81579c7"
         },
 
         {

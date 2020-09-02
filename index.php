@@ -107,9 +107,9 @@ foreach ($movies as $i=>$movie) {
               Get the Latest Movies, Music and Series for Free on Leccel.net
             </h3>
           </div>
-          <div class="row" data-aos="fade-up">
+          <div class="row">
             <div class="col-lg-4 grid-margin stretch-card">
-              <div class="row" >
+              <div class="row">
                 <div class="col-sm-12 grid-margin" data-aos="fade-left">
                   <div class="card">
                     <div class="card-header font-weight-bold">
@@ -165,8 +165,8 @@ foreach ($movies as $i=>$movie) {
             </div>
               
             
-            <div class="col-lg-8  grid-margin" data-aos="fade-up">
-            <div class="card ">
+            <div class="col-lg-8  grid-margin" data-aos="fade-down">
+              <div class="card ">
                 <div class="card-header">
                   <div class="d-flex justify-content-between align-items-center">
                   
@@ -196,7 +196,7 @@ foreach ($movies as $i=>$movie) {
                                     <div class="col-md-4 grid-margin stretch-card">
                                       <div class="card card-rounded shadow music">
                                         <a href="/view/music/$short_url"
-                                           class="text-decoration-none">
+                                            class="text-decoration-none">
                                             <div class="card-img-holder">
                                               <img src="http://127.0.0.1:8090/$image" alt="" class="card-img">
                                             </div>

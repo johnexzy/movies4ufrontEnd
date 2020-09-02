@@ -4,9 +4,10 @@ namespace Src\Search;
 use Src\Components\Layout;
 
 class Search{
-    private $queryString;
+    private $queryString, $query;
     public function __construct(String $queryString = null) {
         $this->queryString = $queryString;
+        $this->query = urldecode($queryString);
     }
     /**
      * checks if a url exist with status 200 and return true or false
@@ -158,7 +159,7 @@ class Search{
               <meta charset="UTF-8" />
               <meta name="viewport" content="width=device-width, initial-scale=1.0" />
               <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-              <title>Leccel::$this->queryString</title>
+              <title>Leccel::$this->query</title>
               <!-- plugin css for this page -->
               <link rel="stylesheet" href="/./assets/vendors/mdi/css/materialdesignicons.min.css" />
               <link rel="stylesheet" href="/assets/vendors/aos/dist/aos.css/aos.css" />
@@ -177,9 +178,9 @@ class Search{
                   <div class="content-wrapper">
                     <div class="container">
                       <div class="col-sm-12">
-                        <div class="mb-3">
-                          <a href="/" class="mb-1 font-weight-bold pad2x text-decoration-none">Home</a> &RightArrow; 
-                          <a href="#" class="mb-1 font-weight-bold pad2x text-decoration-none">Search Result for ($this->queryString) </a>
+                        <div class="mb-3 text-light">
+                          <a href="/" class="mb-1 font-weight-bold pad2x text-decoration-none text-light">Home</a> &RightArrow; 
+                          <a href="#" class="mb-1 font-weight-bold pad2x text-decoration-none text-light">Search Result for ($this->query) </a>
                         </div>
                         <div class="row">
                           <div class="col-md-12 grid-margin stretch-card">
@@ -211,8 +212,8 @@ class Search{
                             </div>
                           </div>
                         </div>
-                        <div class="d-block align-content-center">
-                          <a href="https://www.google.com/search?q=site%3A{https://leccel.net}+{$this->queryString}" class="btn btn-primary">ADVANCED SEARCH</a>
+                        <div class="d-flex justify-content-center align-content-center mt-5 mb-0">
+                          <a href="https://www.google.com/search?q=site%3A{https://leccel.net}+{$this->queryString}" class="btn btn-info">TRY ADVANCED SEARCH</a>
                         </div>
                       </div>
                     </div>

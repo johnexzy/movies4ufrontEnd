@@ -5,7 +5,7 @@ use Src\Components\Layout;
 require "vendor/autoload.php";
 $movies = json_decode(file_get_contents("http://127.0.0.1:8090/api/v1/videos/limit/10"), true);
 $series = json_decode(file_get_contents("http://127.0.0.1:8090/api/v1/series/limit/10"), true);
-$audios =  json_decode(file_get_contents("http://127.0.0.1:8090/api/v1/music/limit/10"), true);
+$audios =  json_decode(file_get_contents("http://127.0.0.1:8090/api/v1/music/limit/9"), true);
 
 //trending music
 $TrendingMusic = json_decode(file_get_contents("http://127.0.0.1:8090/api/v1/music/popular/10"), true);
@@ -101,16 +101,13 @@ foreach ($movies as $i=>$movie) {
 
       <div class="content-wrapper">
         <div class="container">
-          <div class="form-group" data-aos="fade-down">
-            <div class="input-group">
-              <input type="text" class="form-control searchInput" placeholder="Search here">
-              <div class="input-group-append">
-                <button class="btn btn-sm btn-info btn-icon-text searchButton" type="button">
-                  <i class="mdi mdi-search-web btn-icon-append"></i>  
-                  Search
-                </button>
-              </div>
-            </div>
+
+        </div>
+        <div class="container">
+          <div class="d-flex justify-content-center text-light text-center m-3" data-aos="fade-down">
+            <h3 class="text-uppercase font-weight-600 shadow">
+              Get the Latest Movies, Music and Series for Free on Leccel.net
+            </h3>
           </div>
           <div class="row" data-aos="fade-up">
             <div class="col-lg-4 grid-margin stretch-card">
@@ -123,10 +120,10 @@ foreach ($movies as $i=>$movie) {
                     <div class="card-body">
                       
                       <ul class="vertical-menu text-dark">
-                        <li><a href="pages/music.html"><i class="mdi mdi mdi-music mr-2"></i> MUSIC</a></li>
-                        <li><a href="pages/movies.html"><i class="mdi mdi mdi-video mr-2"></i> MOVIES</a></li>
-                        <li><a href="pages/series.html"><i class="mdi mdi mdi-movie mr-2"></i> SERIES</a></li>
-                        <li><a href="pages/albums.html"><i class="mdi mdi mdi-album mr-2"></i> ALBUMS</a></li>
+                        <li class="shadow"><a href="pages/music.html"><i class="mdi mdi mdi-music mr-2"></i> MUSIC</a></li>
+                        <li class="shadow"><a href="pages/movies.html"><i class="mdi mdi mdi-video mr-2"></i> MOVIES</a></li>
+                        <li class="shadow"><a href="pages/series.html"><i class="mdi mdi mdi-movie mr-2"></i> SERIES</a></li>
+                        <li class="shadow"><a href="pages/albums.html"><i class="mdi mdi mdi-album mr-2"></i> ALBUMS</a></li>
                       </ul>
                     </div>
                   </div>
@@ -170,8 +167,8 @@ foreach ($movies as $i=>$movie) {
             </div>
               
             
-            <div class="col-lg-8 stretch-card grid-margin" data-aos="fade-up">
-            <div class="card stretch-card">
+            <div class="col-lg-8  grid-margin" data-aos="fade-up">
+            <div class="card ">
                 <div class="card-header">
                   <div class="d-flex justify-content-between align-items-center">
                   
@@ -191,46 +188,56 @@ foreach ($movies as $i=>$movie) {
                   <div class="row">
                     
                     <div class="col-xl-12">
-                      
+                      <div class="row">
                         <?php
                             foreach ($audios as $music) {
                               $image = $music["images"][0];
                               $short_url = $music["short_url"];
+                              $commentCount = count($music["comments"]);
                                 echo<<<HTML
-                                    <div
-                                        class="d-flex justify-content-start border-bottom mb-4 mt-4" 
-                                        style="cursor:pointer"
-                                        >
-                                        <input type="hidden" value="/view/music/$short_url">
-                                        <a 
-                                          class="div-w-80 mr-3 text-decoration-none" 
-                                          href="/view/music/$short_url"
-                                          >
-                                            <div class="rotate-img">
-                                            <img
-                                                src="http://127.0.0.1:8090/$image"
-                                                alt="thumb"
-                                                class="img-fluid"
-                                            />
+                                    <div class="col-md-4 grid-margin stretch-card">
+                                      <div class="card card-rounded shadow music">
+                                        <a href="/view/music/$short_url"
+                                           class="text-decoration-none">
+                                            <div class="card-img-holder">
+                                              <img src="http://127.0.0.1:8090/$image" alt="" class="card-img">
                                             </div>
                                         </a>
+                                        
+                                        <div class="card-body p-2" style="background:#eee;">
                                         <a 
-                                          class="h3 font-weight-200 mb-0" 
+                                          class="h3 mb-0" 
                                           href="/view/music/$short_url"
                                           style="text-decoration:none; color: inherit"
                                           >
-                                          <h3 class="font-weight-200 mb-0">
-                                              Download - $music[music_name]
+                                            <h3 class="font-weight-200 mb-2" style="color:#561529">
+                                              (Download MP3) - $music[music_name]
                                             </h3>
-                                            <p class="L5 mb-0">
-                                              <i class="mdi mdi-artist"></i>
-                                              <span class="fs-16 mr-2 text-muted ml-1">$music[artist]</span>
-                                            </p>
-                                        </a>
+                                            </a>
+                                            <div class="d-flex justify-content-between">
+                                              <p class="d-inline L5 mb-0">
+                                                <i class="mdi mdi-artist"></i>
+                                                <a 
+                                                  href="/view/search/$music[artist]"
+                                                  target="_blank" 
+                                                  class="fs-15 text-muted text-decoration-none">
+                                                  $music[artist]
+                                                  </a>
+                                              </p>
+                                              <p class="d-inline mb-0">
+                                                <i class="mdi mdi-comment"></i>($commentCount)
+                                              </p>
+                                            </div>
+                                        </div>
+                                      </div>
                                     </div>
                                 HTML;
                             }
                           ?>
+                      </div>
+                      <div class="d-flex justify-content-center align-content-center mt-5 mb-0">
+                        <a href="/pages/music.html" class="btn btn-info shadow">ALL MUSIC</a>
+                      </div>
                     </div>
                   </div>
                 </div>

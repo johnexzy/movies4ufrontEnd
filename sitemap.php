@@ -6,7 +6,6 @@ echo<<<HTML
     $movies = json_decode(file_get_contents("http://127.0.0.1:8090/api/v1/videos/"), true);
     $series = json_decode(file_get_contents("http://127.0.0.1:8090/api/v1/series/"), true);
     $audios =  json_decode(file_get_contents("http://127.0.0.1:8090/api/v1/music/"), true);
-    $albums = json_decode(file_get_contents("http://127.0.0.1:8090/api/v1/album/"), true);
 ?>
     
         <urlset
@@ -46,40 +45,47 @@ echo<<<HTML
             </url>
             <?php
                 foreach ($movies as $key => $movie) {
+                    $short = strip_tags(preg_replace("/&(?!#?[a-z0-9]+;)/", "&amp;", $movie["short_url"]));
                     ?>
                         <url>
-                            <loc>https://leccel.net/view/movies/<?=$movie["short_url"]?></loc>
-                            <lastmod><?=date(DATE_W3C, strtotime($movie["updated_at"])) ?></lastmod>
+                            <loc>https://leccel.net/view/movies/<?=
+                            <<<XML
+                            $short
+                            XML;
+                            ?></loc>
+                            <lastmod><?=date(DATE_W3C, strtotime($movie["created_at"])) ?></lastmod>
                             <priority>0.60</priority>
                         </url>
                     <?php
                 }
                 foreach ($series as $key => $serie) {
+                    $short = strip_tags(preg_replace("/&(?!#?[a-z0-9]+;)/", "&amp;", $serie["short_url"]));
                     ?>
                         <url>
-                            <loc>https://leccel.net/view/series/<?=$serie["short_url"]?></loc>
-                            <lastmod><?=date(DATE_W3C, strtotime($serie["updated_at"])) ?></lastmod>
+                            <loc>https://leccel.net/view/series/<?=
+                            <<<XML
+                            $short
+                            XML;
+                            ?></loc>
+                            <lastmod><?=date(DATE_W3C, strtotime($serie["created_at"])) ?></lastmod>
                             <priority>0.60</priority>
                         </url>
                     <?php
                 }
                 foreach ($audios as $key => $music) {
+                    $short = strip_tags(preg_replace("/&(?!#?[a-z0-9]+;)/", "&amp;", $music["short_url"]));
                     ?>
                         <url>
-                            <loc>https://leccel.net/view/music/<?=$music["short_url"]?></loc>
-                            <lastmod><?=date(DATE_W3C, strtotime($music["updated_at"])) ?></lastmod>
+                            <loc>https://leccel.net/view/music/<?=
+                            <<<XML
+                            $short
+                            XML;
+                            ?></loc>
+                            <lastmod><?=date(DATE_W3C, strtotime($music["created_at"])) ?></lastmod>
                             <priority>0.60</priority>
                         </url>
                     <?php
                 }
-                foreach ($albums as $key => $album) {
-                    ?>
-                        <url>
-                            <loc>https://leccel.net/view/albums/<?=$album["short_url"]?></loc>
-                            <lastmod><?=date(DATE_W3C, strtotime($album["updated_at"])) ?></lastmod>
-                            <priority>0.60</priority>
-                        </url>
-                    <?php
-                }
+                
                 ?>
         </urlset>

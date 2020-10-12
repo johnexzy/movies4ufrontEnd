@@ -1,23 +1,36 @@
 $(function(){
-  $(".movieLink").on("click", function () {
-    let link = $(this).find("input").val();
-    window.location = link
-  })
-  
-  $(".searchButton").on("click", function(){
+  /**
+   * Submits the search query
+   */
+  function submitSearch() {
     if ($(".searchInput").val().length > 3) {
-      window.location = encodeURI(`http://localhost:3003/view/search/${$(".searchInput").val()}`)
+      let query = $(".searchInput").val();
+      query = query.trim();
+      
+      window.location = encodeURI(`/view/search/${query}`)
       return false;
     }
     alert("Search Value too small")
-    $(".searchInput").focus()
+    $(".searchInput").trigger('focus');
     return false
-  })
-  $(".music").hover(function(){
-    $(this).removeClass("shadow")
+  }
+  
+  $(".searchInput").on("keydown", function(event){
     
-  }, function(){
-    $(this).addClass("shadow")
+    if (event.key == "Enter") {
+      submitSearch()
+    }
   })
-
+  $(".searchButton").on("click", function(){
+    submitSearch();
+  })
 })
+function hoverShadow() {
+  $(".music").hover(function(){
+      $(this).removeClass("shadow")
+      
+    }, function(){
+      $(this).addClass("shadow")
+    })
+}
+hoverShadow()

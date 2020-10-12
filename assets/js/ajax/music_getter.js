@@ -11,36 +11,45 @@ $(function(){
         $(".show-music").html("")
         $.each(data.data, (key, music)=>{
             $(".show-music").append(`
-            <div class="row">
-            <div class="col-sm-4 grid-margin">
-                <a href="/view/music/${music.short_url}" style="text-decoration:none; color: inherit">
-                    <div class="rotate-img">
-                        <img
-                        src="http://127.0.0.1:8090/${music.images[0]}"
-                        alt="banner"
-                        class="img-fluid"
-                        />
-                    </div>
-                </a>
-            </div>
-            <div class="col-sm-8 grid-margin">
-                <h2 class="font-weight-600 mb-2">
-                    <a href="/view/music/${music.short_url}" style="text-decoration:none; color: inherit">
-                        ${music.music_name}
+                <div class="col-md-4 grid-margin stretch-card">
+                    <div class="card card-rounded shadow music">
+                    <a href="/view/music/${music.short_url}"
+                        class="text-decoration-none">
+                        <div class="card-img-holder">
+                            <img src="http://127.0.0.1:8090/${music.images[0]}" alt="" class="card-img">
+                        </div>
                     </a>
-                </h2>
-              
-                <p class="L5 mb-0">
-                    <i class="mdi mdi-artist"></i> <span class="fs-16 mr-2 text-muted">${music.artist}</span>
-                </p>
-                <p class="mb-0">
-                    ${music.music_details.substring(0, 400)}...
-                </p>
-            </div>
-          </div>
-          <hr>
+                    
+                    <div class="card-body p-2" style="background:#eee;">
+                    <a 
+                        class="h3 mb-0" 
+                        href="/view/music/${music.short_url}"
+                        style="text-decoration:none; color: inherit"
+                        >
+                        <h3 class="font-weight-200 mb-2" style="color:#561529">
+                            (Download MP3) - ${music.music_name}
+                        </h3>
+                        </a>
+                        <div class="d-flex justify-content-between">
+                            <p class="d-inline L5 mb-0">
+                                <i class="mdi mdi-artist"></i>
+                                <a 
+                                    href="/view/search/${music.artist}"
+                                    target="_blank" 
+                                    class="fs-15 text-muted text-decoration-none">
+                                    ${music.artist}
+                                    </a>
+                            </p>
+                            <p class="d-inline mb-0">
+                            <i class="mdi mdi-comment"></i>(${music.comments.length})
+                            </p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
             `)
         })
+        hoverShadow()
         // $(".pagination").html("")
         data.links.prev == null ?
         $(".prev").find("#pagelink").val("")
@@ -60,7 +69,7 @@ $(function(){
     })
     
     $.ajax({
-        url: 'http://127.0.0.1:8090/api/v1/music/popular/6',
+        url: 'http://127.0.0.1:8090/api/v1/music/popular/20',
         type: 'GET',
         beforeSend: ()=>{
 
@@ -71,27 +80,26 @@ $(function(){
         
         $.each(data, (key, music)=>{
             $(".show-popular").append(`
-                    <div class="mb-4">
-                        <a href="/view/music/${music.short_url}" style="text-decoration:none; color: inherit">
-                            <div class="rotate-img">
-                                <img
-                                    src="http://127.0.0.1:8090/${music.images[0]}"
-                                    alt="banner"
-                                    class="img-fluid"
-                                />
-                            </div>
-                        </a>                            
-                        <h3 class="mt-3 font-weight-600">
-                            <a href="/view/music/${music.short_url}" style="text-decoration:none; color: inherit">
-                                ${music.music_name}
-                            </a>               
-                        </h3>
-                        <p class="L5 mb-0">
-                            <i class="mdi mdi-artist"></i> <span class="fs-16 mr-2 text-muted">${music.artist}</span>
-                        </p>
+                
+                <a 
+                class="h3 font-weight-200 mb-1" 
+                href="/view/music/${music.short_url}"
+                style="text-decoration:none; color: inherit"
+                >
+                    <div
+                    class="d-flex justify-content-start border-bottom mt-2 mb-2 shadow" 
+                    style="cursor:pointer"
+                    >
+                        <h4 class=" d-inline font-weight-200 mb-0">
+                            <img src="http://127.0.0.1:8090/${music.images[0]}" style="width:60px; height:60px" alt="" class="card-img d-inline">
+                            <p class="d-inline ml-1 font-weight-bold text-primary">Download (MP3) - ${music.music_name}</p>
+                        </h4>
+                    
                     </div>
+                </a>
             `)
         })
+        hoverShadow()
     })
     .fail((err)=>{
 
@@ -131,37 +139,45 @@ $(function(){
             $(".show-music").html("")
             $.each(data.data, (key, music)=>{
                 $(".show-music").append(`
-                <div class="row">
-                <div class="col-sm-4 grid-margin">
-                    <a href="/view/music/${music.short_url}" style="text-decoration:none; color: inherit">
-                        <div class="rotate-img">
-                            <img
-                            src="http://127.0.0.1:8090/${music.images[0]}"
-                            alt="banner"
-                            class="img-fluid"
-                            />
-                    </a>                    
-                </div>
-                </div>
-                <div class="col-sm-8 grid-margin">
-                <h2 class="font-weight-600 mb-2">
-                    <a href="/view/music/${music.short_url}" style="text-decoration:none; color: inherit"> 
-                        ${music.music_name}
-                    </a>
-                </h2>
-                
-                <p class="L5 mb-0">
-                    <i class="mdi mdi-artist"></i> <span class="fs-16 mr-2 text-muted">${music.artist}</span>
-                  </p>
-                  <p class="mb-0">
-                    ${music.music_details.substring(0, 100)}...
-                </p>
-                
-                </div>
-            </div>
-            <hr>
+                    <div class="col-md-4 grid-margin stretch-card">
+                        <div class="card card-rounded shadow music">
+                        <a href="/view/music/${music.short_url}"
+                            class="text-decoration-none">
+                            <div class="card-img-holder">
+                                <img src="http://127.0.0.1:8090/${music.images[0]}" alt="" class="card-img">
+                            </div>
+                        </a>
+                        
+                        <div class="card-body p-2" style="background:#eee;">
+                        <a 
+                            class="h3 mb-0" 
+                            href="/view/movies/${music.short_url}"
+                            style="text-decoration:none; color: inherit"
+                            >
+                            <h3 class="font-weight-200 mb-2" style="color:#561529">
+                                (Download MP3) - ${music.music_name}
+                            </h3>
+                            </a>
+                            <div class="d-flex justify-content-between">
+                                <p class="d-inline L5 mb-0">
+                                    <i class="mdi mdi-artist"></i>
+                                    <a 
+                                        href="/view/search/${music.artist}"
+                                        target="_blank" 
+                                        class="fs-15 text-muted text-decoration-none">
+                                        ${music.artist}
+                                        </a>
+                                </p>
+                                <p class="d-inline mb-0">
+                                <i class="mdi mdi-comment"></i>(${music.comments.length})
+                                </p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
                 `)
             })
+            hoverShadow()
             data.links.prev == null ?
             $(".prev").find("#pagelink").val("")
             :

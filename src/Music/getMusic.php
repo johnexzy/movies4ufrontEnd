@@ -39,7 +39,7 @@ class getMusic{
     {
         $data = \json_decode(self::makeRequest($this->short_url), true);
         if (isset($data["error"])) {
-          $notFound = \file_get_contents(__DIR__."\..\..\pages/404new.html", true);
+          $notFound = \file_get_contents(__DIR__."/../../pages/404new.html", true);
           return<<<HTML
             $notFound
         HTML;
@@ -48,17 +48,20 @@ class getMusic{
         $item = "";
         $details = $data["music_details"];
         $name = $data["music_name"];
+        $dataimg = $data["images"][0];
+        $dataUrl = $this->short_url;
         $download = "";
         $url = $data["audio"][0]["song_url"];
-        $player = "<audio
+        $player = "<audio class='d-block'
          src='http://127.0.0.1:8090/$url' 
          style='margin: 5px;
          display: inline;
          border: 1px solid;
          background: #f1f3f4;
-         height: 33px;'
+         height: 33px;
+         '
           controls></audio>";
-        $url = str_replace(".", "/", $url);
+        
         $coment_section ="";
         $cmcount = is_countable($data["comments"]) ? count($data["comments"]) : 0 ;
 
@@ -117,6 +120,24 @@ class getMusic{
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta http-equiv="X-UA-Compatible" content="ie=edge" />
       <title>Leccel::$name</title>
+      <!-- Primary Meta Tags -->
+
+<meta name="title" content="Leccel::$name">
+<meta name="description" content="$details">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://leccel.net/view/music/$dataUrl">
+<meta property="og:title" content="Leccel::$name">
+<meta property="og:description" content="$details">
+<meta property="og:image" content="http://127.0.0.1:8090/$dataimg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://leccel.net/view/music/$dataUrl">
+<meta property="twitter:title" content="Leccel::$name">
+<meta property="twitter:description" content="$details">
+<meta property="twitter:image" content="https://leccel.net/assets/images/LECCEL1.png">
       <!-- plugin css for this page -->
       <link
         rel="stylesheet"
@@ -189,8 +210,14 @@ class getMusic{
                               
                               
                           </div>
-                          <p class="m-4">PLAY ONLINE?</p>
-                          $player
+                          <div class="row">
+                            <p class="m-4 d-block">PLAY ONLINE?</p>
+                            <div class="embed-responsive">
+                            $player
+                            </div>
+                            
+                          </div>
+                          
                           <div class="row">
                               <div class="col-sm-6">
                                   <h1 class="mt-5 text-center mb-5">

@@ -4,3 +4,6 @@ urbanui-world-time-0477e81579c7/
 vendor/
 build/
 /nbproject/private/
+yarn-error.log
+assets/images
+error_log

@@ -1,6 +1,9 @@
 node_modules/
 package-lock.json
+yarn-error.log
+error_log
 urbanui-world-time-0477e81579c7/
 vendor/
 build/
 /nbproject/private/
+images/

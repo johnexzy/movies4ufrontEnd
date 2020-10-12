@@ -27,23 +27,33 @@ class Layout
                     </div>
                 </div>
                 <div class="d-block text-center border-top menu-bottom">
-                    <div class="d-flex justify-content-center">
-                        <ul class="d-flex flex-flow">
-                            <li class="d-inline p-2 m-2 shadow">
-                                <a href="/pages/music.html">
-                                    <i class="mdi mdi-24px mdi-music"></i>
+                    <div class="d-flex justify-content-center" >
+                        <ul class="d-flex flex-flow" style="margin-left:-30px">
+                            <li class="d-inline pt-2 pl-2 pr-2 pb-0 ml-1 mb-1 mr-1 shadow" style="width:62px; height:62px;">
+                                <a href="/" class="text-decoration-none">
+                                    <i class=" d-block mdi mdi-24px mdi-home"></i>
+                                    <p class="font-weight-bold text-uppercase">Home</p>
                                 </a>
                             </li>
-                            <li class="d-inline p-2 m-2 shadow">
-                                <a href="/pages/movies.html">
-                                    <i class="mdi mdi-24px mdi-video"></i>
+                            <li class="d-inline pt-2 pl-2 pr-2 pb-0 ml-1 mb-1 mr-1 shadow" style="width:62px; height:62px;">
+                                <a href="/pages/music.html" class="text-decoration-none">
+                                    <i class=" d-block mdi mdi-24px mdi-music-note"></i>
+                                    <p class="font-weight-bold text-uppercase">Music</p>
                                 </a>
                             </li>
-                            <li class="d-inline p-2 m-2 shadow">
-                                <a href="/pages/series.html">
-                                    <i class="mdi mdi-24px mdi-movie"></i>
+                            <li class="d-inline pt-2 pl-2 pr-2 pb-0 ml-1 mb-1 mr-1 shadow" style="width:62px; height:62px;">
+                                <a href="/pages/movies.html" class="text-decoration-none">
+                                    <i class=" d-block mdi mdi-24px mdi-video"></i>
+                                    <p class="font-weight-bold text-uppercase">Movies</p>
                                 </a>
                             </li>
+                            <li class="d-inline pt-2 pl-2 pr-2 pb-0 ml-1 mb-1 mr-1 shadow" style="width:62px; height:62px;">
+                                <a href="/pages/series.html" class="text-decoration-none">
+                                    <i class=" d-block mdi mdi-24px mdi-movie"></i>
+                                    <p class="font-weight-bold text-uppercase">Series</p>
+                                </a>
+                            </li>
+                            
                         </ul>
                     </div>
                 </div>

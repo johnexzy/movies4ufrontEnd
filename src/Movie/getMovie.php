@@ -38,7 +38,7 @@ class getMovie{
     {
         $data = \json_decode(self::makeRequest($this->short_url), true);
         if (isset($data["error"])) {
-          $notFound = \file_get_contents(__DIR__."\..\..\pages/404new.html", true);
+          $notFound = \file_get_contents(__DIR__."/../../pages/404new.html", true);
           return<<<HTML
             $notFound
         HTML;
@@ -55,7 +55,7 @@ class getMovie{
 
         //videos: usually one or $data['videos][0]
         foreach ($data['videos'] as $key => $video) {
-            $download .= "<a  href='http://127.0.0.1:8090/".str_replace(".", "/", $video["video_url"])."' style='text-decoration:none; color:inherit' download>
+            $download .= "<a  href='http://127.0.0.1:8090/$video[video_url]' style='text-decoration:none; color:inherit' download>
                             <button type='button' class='btn btn-primary btn-lg btn-block'>Download</button>
                           </a>";
         }
@@ -246,11 +246,7 @@ class getMovie{
             </div>
             <!-- container-scroller ends -->
             <!-- partial:../partials/_footer.html -->
-            <div class="d-flex align-items-center justify-content-center pad2x">
-        <p class="mt-2"> 
-          <a href="/pages/aboutus.html">About Us </a> | <a href="/pages/contactus.html">Contact Us</a>
-        </p>
-      </div>
+            
       <!-- partial:partials/_footer.html -->
       $footer
       

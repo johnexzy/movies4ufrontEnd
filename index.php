@@ -8,7 +8,7 @@ $series = json_decode(file_get_contents("http://127.0.0.1:8090/api/v1/series/lim
 $audios =  json_decode(file_get_contents("http://127.0.0.1:8090/api/v1/music/limit/9"), true);
 
 //trending music
-$TrendingMusic = json_decode(file_get_contents("http://127.0.0.1:8090/api/v1/music/popular/10"), true);
+$TrendingMusic = json_decode(file_get_contents("http://127.0.0.1:8090/api/v1/music/popular/5"), true);
 
 $firstmovie = "";
 $secondMovie = "";
@@ -72,10 +72,26 @@ foreach ($movies as $i=>$movie) {
   <!-- Required meta tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="title" content="Leccel.net">
-  <meta name="description" content="Get the latest movies, music and series for free. Best Movie Plug">
+  <!-- Primary Meta Tags -->
+<title>Leccel</title>
+<meta name="title" content="Leccel">
+<meta name="description" content="Get the latest movies, music and series for free. Best Movie Plug">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://leccel.net/">
+<meta property="og:title" content="Leccel">
+<meta property="og:description" content="Get the latest movies, music and series for free. Best Movie Plug">
+<meta property="og:image" content="https://leccel.net/assets/images/LECCEL1.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://leccel.net">
+<meta property="twitter:title" content="Leccel">
+<meta property="twitter:description" content="Get the latest movies, music and series for free. Best Movie Plug">
+<meta property="twitter:image" content="https://leccel.net/assets/images/LECCEL1.png">
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Leccel</title>
+  
   <!-- plugin css for this page -->
   <link rel="stylesheet" href="/assets/vendors/mdi/css/materialdesignicons.min.css" />
   <link rel="stylesheet" href="assets/vendors/aos/dist/aos.css/aos.css" />
@@ -86,6 +102,7 @@ foreach ($movies as $i=>$movie) {
   <!-- inject:css -->
   <link rel="stylesheet" href="assets/css/style.css">
   <!-- endinject -->
+<script data-ad-client="ca-pub-8373811857243589" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 
 <body >
@@ -102,31 +119,16 @@ foreach ($movies as $i=>$movie) {
       <div class="content-wrapper">
         
         <div class="container">
-          <div class="d-flex justify-content-center text-light text-center m-3" data-aos="fade-down">
+          <div class="d-flex justify-content-center text-light text-center m-3" data-aos="fade-down"><!--
             <h3 class="text-uppercase font-weight-600 shadow">
               Get the Latest Movies, Music and Series for Free on Leccel.net
-            </h3>
+            </h3>-->
           </div>
           <div class="row">
             <div class="col-lg-4 grid-margin stretch-card">
-              <div class="row">
-                <div class="col-sm-12 grid-margin" data-aos="fade-left">
-                  <div class="card">
-                    <div class="card-header font-weight-bold">
-                      <i class="mdi mdi-menu mr-4"></i> Category
-                    </div>
-                    <div class="card-body">
-                      
-                      <ul class="vertical-menu text-dark">
-                        <li class="shadow"><a href="pages/music.html"><i class="mdi mdi mdi-music mr-2"></i> MUSIC</a></li>
-                        <li class="shadow"><a href="pages/movies.html"><i class="mdi mdi mdi-video mr-2"></i> MOVIES</a></li>
-                        <li class="shadow"><a href="pages/series.html"><i class="mdi mdi mdi-movie mr-2"></i> SERIES</a></li>
-                        <li class="shadow"><a href="pages/albums.html"><i class="mdi mdi mdi-album mr-2"></i> ALBUMS</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-12 grid-margin stretch-card"  data-aos="fade-down">
+              <!-- <div class="row">
+                
+                <div class="col-sm-12 grid-margin stretch-card"  data-aos="fade-down"> -->
                   <div class="card shadow-lg">
                     <div class="card-header font-weight-bold">
                     <i class="mdi mdi-trending-up" ></i> Trending Music 
@@ -135,24 +137,22 @@ foreach ($movies as $i=>$movie) {
                       <?php
                         foreach ($TrendingMusic as $key => $music) {
                           $short_url = $music["short_url"];
+                          $image = $music["images"][0];
                           echo<<<HTML
                               <div
-                                  class="d-flex justify-content-start border-bottom mb-4 mt-4" 
+                                  class="d-flex justify-content-start border-bottom mt-2" 
                                   style="cursor:pointer"
                                   >
                                   <input type="hidden" value="/view/music/$short_url">
                                   <a 
-                                    class="h3 font-weight-200 mb-0" 
+                                    class="h3 font-weight-200 mb-1" 
                                     href="/view/music/$short_url"
                                     style="text-decoration:none; color: inherit"
                                     ><i class="mdi mdi-star-circle text-danger"></i>
                                       <h4 class=" d-inline font-weight-200 mb-0">
-                                          $music[music_name]
+                                        <img src="http://127.0.0.1:8090/$image" style="width:60px; height:60px" alt="" class="card-img d-inline">
+                                        <p class="d-inline ml-1">$music[music_name]</p>
                                       </h4>
-                                      <p class="L5 mb-0">
-                                        <i class="mdi mdi-artist"></i>
-                                        <span class="fs-16 mr-2 text-muted ml-1">$music[artist]</span>
-                                      </p>
                                   </a>
                               </div>
                           HTML;
@@ -160,8 +160,8 @@ foreach ($movies as $i=>$movie) {
                       ?>
                     </div>
                   </div>
-                </div>
-              </div>
+                <!-- </div>
+              </div> -->
             </div>
               
             
@@ -171,7 +171,7 @@ foreach ($movies as $i=>$movie) {
                   <div class="d-flex justify-content-between align-items-center">
                   
                     <div class="card-title">
-                      <i class="mdi mdi-chart-line"></i> Latest Music
+                      Download Latest Music
                     </div>
                     <a 
                       class="mb-2 btn btn-outline-light btn-primary btn-info"
@@ -183,17 +183,29 @@ foreach ($movies as $i=>$movie) {
                   
                 </div>
                 <div class="card-body">
-                  <div class="row">
-                    
-                    <div class="col-xl-12">
-                      <div class="row">
+                  
                         <?php
                             foreach ($audios as $music) {
                               $image = $music["images"][0];
                               $short_url = $music["short_url"];
                               $commentCount = count($music["comments"]);
                                 echo<<<HTML
-                                    <div class="col-md-4 grid-margin stretch-card">
+                                    <a 
+                                        class="h3 font-weight-200 mb-1" 
+                                        href="/view/music/$short_url"
+                                        style="text-decoration:none; color: inherit"
+                                        >
+                                        <div
+                                        class="d-flex justify-content-start border-bottom mt-2 mb-2 shadow" 
+                                        style="cursor:pointer"
+                                        >
+                                         <h4 class=" d-inline font-weight-200 mb-0">
+                                              <img src="http://127.0.0.1:8090/$image" style="width:60px; height:60px" alt="" class="card-img d-inline">
+                                              <p class="d-inline ml-1 font-weight-bold text-primary">Download (MP3) - $music[music_name]</p>
+                                            </h4>
+                                        
+                                    </div></a>
+                                    <!-- <div class="col-md-4 grid-margin stretch-card">
                                       <div class="card card-rounded shadow music">
                                         <a href="/view/music/$short_url"
                                             class="text-decoration-none">
@@ -228,16 +240,15 @@ foreach ($movies as $i=>$movie) {
                                             </div>
                                         </div>
                                       </div>
-                                    </div>
+                                    </div> -->
                                 HTML;
                             }
                           ?>
-                      </div>
+                      
                       <div class="d-flex justify-content-center align-content-center mt-5 mb-0">
                         <a href="/pages/music.html" class="btn btn-info shadow">ALL MUSIC</a>
                       </div>
-                    </div>
-                  </div>
+                    
                 </div>
               </div>
               

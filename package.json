@@ -1,27 +1,27 @@
 {
-  "name": "World_Vision",
+  "name": "LeccelUI",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/johnexzy/movies4ufrontEnd.git"
   },
-  "author": "Leccel.net",
+  "author": "Oba John",
   "license": "ISC",
   "homepage": "",
+  "scripts": {
+    "make:commit": "./node_modules/.bin/cz"
+  },
   "dependencies": {
     "@mdi/font": "^3.6.95",
     "aos": "^2.3.4",
     "bootstrap": "^4.3.1",
+    "browser-sync": "^2.26.12",
     "jquery": "^3.4.1",
     "popper.js": "^1.15.0"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.7",
     "del": "^4.1.1",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
@@ -30,6 +30,15 @@
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
-    "merge-stream": "^2.0.0"
+    "merge-stream": "^2.0.0",
+    "commitizen": "^4.2.1",
+    "coveralls": "^3.1.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-emoji": "^1.2.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-emoji"
+    }
   }
 }

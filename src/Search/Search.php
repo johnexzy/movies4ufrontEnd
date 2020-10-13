@@ -239,7 +239,5 @@ class Search{
             </body>
           </html>               
         HTML;
-
-
     }
 }

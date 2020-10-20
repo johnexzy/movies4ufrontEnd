@@ -83,6 +83,9 @@
     color: $white;
     text-align: center;
   }
+  &.card-square{
+    border-radius: 0;
+  }
   &.card-img-holder {
     position: relative;
     .card-img-absolute {

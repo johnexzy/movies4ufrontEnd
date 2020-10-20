@@ -129,7 +129,7 @@ class getSeason{
                 <a href="#" class="mb-1 font-weight-bold pad2x text-decoration-none">$data[series_name]</a>&RightArrow;
                 <a href="#" class="mb-1 font-weight-bold pad2x text-decoration-none">$data[season_name]</a>
               </div>
-                <div class="card"  data-aos="fade-up">
+                <div class="card card-square"  data-aos="fade-up">
                       <div class="card-header">
                           <p class="font-weight-bold" style="text-align:center">
                               $name - $data[season_name]

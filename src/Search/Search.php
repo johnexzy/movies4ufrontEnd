@@ -22,8 +22,8 @@ class Search{
     }
     public static function makeRequest($query)
     {
-        if (self::is_url_exist("http://127.0.0.1:8090/api/v1/search/$query")) {
-          return \file_get_contents("http://127.0.0.1:8090/api/v1/search/$query");
+      if (self::is_url_exist("http://127.0.0.1:8090/api/v1/search/$query")) {
+        return \file_get_contents("http://127.0.0.1:8090/api/v1/search/$query");
       }
       
       else {
@@ -180,13 +180,13 @@ class Search{
                       <div class="col-sm-12">
                         <div class="mb-3 text-light">
                           <a href="/" class="mb-1 font-weight-bold pad2x text-decoration-none text-light">Home</a> &RightArrow; 
-                          <a href="#" class="mb-1 font-weight-bold pad2x text-decoration-none text-light">Search Result for ($this->query) </a>
+                          <a href="#" class="mb-1 font-weight-bold pad2x text-decoration-none text-light">Search Result for ($this->queryString) </a>
                         </div>
                         <div class="row">
                           <div class="col-md-12 grid-margin stretch-card">
-                            <div class="card">
+                            <div class="card card-square">
                               <div class="card-body dashboard-tabs p-0">
-                                <ul class="nav nav-tabs px-1" role="tablist">
+                                <ul class="nav nav-tabs" role="tablist">
                                   <li class="nav-item">
                                     <a class="nav-link active" id="overview-tab" data-toggle="tab" href="#music" role="tab" aria-controls="music" aria-selected="true">Music ($musicCount)</a>
                                   </li>

@@ -83,18 +83,21 @@ class getMovie{
                                         <img src='/assets/images/avatar.png' alt='banner' class='img-fluid img-rounded mr-3'>
                                     </div>
                                     <div>
-                                        <p class='fs-12 mb-1 line-height-xs'>
-                                        $time
-                                        </p>
+                                        
                                         <p class='fs-16 font-weight-600 mb-0 line-height-xs'>
                                             $coment[name]
                                         </p>
                                     </div>
                                 </div>
-
-                                <p class='fs-12 mt-3'>
-                                    $coment[comment]
+                                <div style='margin-left:3.8rem'>
+                                    <p class='fs-15'>
+                                        $coment[comment]
+                                    </p>
+                                </div>
+                                <p class='fs-12 font-weight-600 mb-1 line-height-xs line-coverage'>
+                                    $time
                                 </p>
+                                
                             </div>";
         }
         $nav = Layout::navBar();
@@ -137,7 +140,7 @@ class getMovie{
                       <a href="/pages/movies.html" class="mb-1 font-weight-bold pad2x text-decoration-none">Movies</a>&RightArrow;
                       <a href="#" class="mb-1 font-weight-bold pad2x text-decoration-none">Download</a>
                     </div>
-                      <div class="card" data-aos="fade-up">
+                      <div class="card card-square" data-aos="fade-up">
                             <div class="card-header">
                                 <p class="font-weight-bold" style="text-align:center">
                                     $name

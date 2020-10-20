@@ -34,7 +34,23 @@ class getMusic{
           )
         );
       }
+    }
+
+    public static function getRelated($query)
+    {
+      if (self::is_url_exist("http://127.0.0.1:8090/api/v1/search/".urlencode($query))) {
+        return \file_get_contents("http://127.0.0.1:8090/api/v1/search/".urlencode($query));
+      }
+    
+      else {
+        return \json_encode(
+          array(
+            "error" => 1
+          )
+        );
+      }
     } 
+    
     public function bodyParser()
     {
         $data = \json_decode(self::makeRequest($this->short_url), true);
@@ -44,12 +60,14 @@ class getMusic{
             $notFound
         HTML;
         }
+        
         $indicator = "";
         $item = "";
         $details = $data["music_details"];
         $name = $data["music_name"];
         $dataimg = $data["images"][0];
         $dataUrl = $this->short_url;
+        $cmcount = is_countable($data["comments"]) ? count($data["comments"]) : 0 ;
         $download = "";
         $url = $data["audio"][0]["song_url"];
         $player = "<audio class='d-block'
@@ -63,7 +81,80 @@ class getMusic{
           controls></audio>";
         
         $coment_section ="";
-        $cmcount = is_countable($data["comments"]) ? count($data["comments"]) : 0 ;
+        $relatedMusic = json_decode(self::getRelated(trim($data["artist"])), true);
+        $relatedMusicUi = count($relatedMusic["data"][0]["data"]) > 1 ? <<<HTML
+          <!-- <div class="d-block border-bottom border-top mb-4 mt-4 text-left">
+            <h3>See Also:</h3>
+          </div> -->
+        HTML : "";
+        
+        foreach ($relatedMusic["data"][0]["data"] as $key => $related) {
+          if ($related["id"] == $data["id"]) {
+            continue;
+          }
+          
+          $r_image = $related["images"][0];
+          $r_short_url = $related["short_url"];
+          $relatedMusicUi .= <<<HTML
+            <!-- <a 
+              class="h3 font-weight-200 mb-1" 
+              href="/view/music/$r_short_url"
+              style="text-decoration:none; color: inherit"
+              >
+              <div
+                class="d-flex justify-content-start border-bottom mt-2 mb-2 shadow" 
+                style="cursor:pointer"
+                >
+                <h4 class=" d-inline font-weight-200 mb-0">
+                    <img src="http://127.0.0.1:8090/$r_image" style="width:60px; height:60px" alt="" class="card-img d-inline">
+                    <p class="d-inline ml-1 font-weight-bold text-primary">Download (MP3) - $related[music_name]</p>
+                </h4>
+              
+              </div>
+            </a> -->
+            <div class="col-md-3 grid-margin stretch-card">
+              <div class="card card-rounded shadow music">
+              <a href="/view/music/$r_short_url"
+                  class="text-decoration-none">
+                  <div class="card-img-holder">
+                      <img src="http://127.0.0.1:8090/$r_image" alt="" class="card-img">
+                  </div>
+              </a>
+              
+              <div class="card-body p-2" style="background:#eee;">
+              <a 
+                  class="h3 mb-0" 
+                  href="/view/movies/$r_short_url"
+                  style="text-decoration:none; color: inherit"
+                  >
+                  <h3 class="font-weight-200 mb-2" style="color:#561529">
+                      (Download MP3) - $related[music_name]
+                  </h3>
+                  </a>
+                  <div class="d-flex justify-content-between">
+                      <p class="d-inline L5 mb-0">
+                          <i class="mdi mdi-artist"></i>
+                          <a 
+                              href="/view/search/$related[artist]"
+                              target="_blank" 
+                              class="fs-15 text-muted text-decoration-none">
+                              $related[artist]
+                              </a>
+                      </p>
+                      <p class="d-inline mb-0">
+                      <i class="mdi mdi-comment"></i>($cmcount)
+                      </p>
+                  </div>
+              </div>
+              </div>
+          </div>
+          HTML;
+          
+          if ($key == 10) break;
+                                    
+        }
+
+        
 
         //videos: usually one or $data['videos][0]
         
@@ -83,7 +174,6 @@ class getMusic{
              "<div class='carousel-item'>
                 <img class='d-block w-100' src='http://127.0.0.1:8090/$image' alt='slide $key'>
               </div>";
-             
         }
         //comments
         foreach ($data['comments'] as $key => $coment) {
@@ -122,22 +212,22 @@ class getMusic{
       <title>Leccel::$name</title>
       <!-- Primary Meta Tags -->
 
-<meta name="title" content="Leccel::$name">
-<meta name="description" content="$details">
+      <meta name="title" content="Leccel::$name">
+      <meta name="description" content="$details">
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://leccel.net/view/music/$dataUrl">
-<meta property="og:title" content="Leccel::$name">
-<meta property="og:description" content="$details">
-<meta property="og:image" content="http://127.0.0.1:8090/$dataimg">
+      <!-- Open Graph / Facebook -->
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://leccel.net/view/music/$dataUrl">
+      <meta property="og:title" content="Leccel::$name">
+      <meta property="og:description" content="$details">
+      <meta property="og:image" content="http://127.0.0.1:8090/$dataimg">
 
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://leccel.net/view/music/$dataUrl">
-<meta property="twitter:title" content="Leccel::$name">
-<meta property="twitter:description" content="$details">
-<meta property="twitter:image" content="https://leccel.net/assets/images/LECCEL1.png">
+      <!-- Twitter -->
+      <meta property="twitter:card" content="summary_large_image">
+      <meta property="twitter:url" content="https://leccel.net/view/music/$dataUrl">
+      <meta property="twitter:title" content="Leccel::$name">
+      <meta property="twitter:description" content="$details">
+      <meta property="twitter:image" content="https://leccel.net/assets/images/LECCEL1.png">
       <!-- plugin css for this page -->
       <link
         rel="stylesheet"
@@ -166,7 +256,7 @@ class getMusic{
                 <a href="/pages/music.html" class="mb-1 font-weight-bold pad2x text-decoration-none">Music</a>&RightArrow;
                 <a href="#" class="mb-1 font-weight-bold pad2x text-decoration-none">Download</a>
               </div>
-                <div class="card" data-aos="fade-up">
+                <div class="card card-square" data-aos="fade-up">
                       <div class="card-header">
                           <p class="font-weight-bold" style="text-align:center">
                               $name
@@ -217,7 +307,14 @@ class getMusic{
                             </div>
                             
                           </div>
+                          <div class="d-block border-bottom border-top mb-4 mt-4 text-left">
+                            <h3>You may also like:</h3>
+                          </div>
+                          <div class="row show-music">
+                            $relatedMusicUi
+                          </div>
                           
+                          <div class="border-bottom mt-4"></div>
                           <div class="row">
                               <div class="col-sm-6">
                                   <h1 class="mt-5 text-center mb-5">

@@ -9585,6 +9585,10 @@ a.text-dark:hover, a.text-dark:focus {
   text-align: center;
 }
 
+.card.card-square {
+  border-radius: 0;
+}
+
 .card.card-img-holder {
   position: relative;
 }
@@ -10866,6 +10870,51 @@ footer .footer-bottom {
 
 .search-container button:focus {
   outline: 0;
+}
+
+.dashboard-tabs .item {
+  border-bottom: 1px solid #e6e7e8;
+}
+
+@media (min-width: 577px) {
+  .dashboard-tabs .item {
+    border-bottom: 0;
+  }
+}
+
+.nav-tabs {
+  border: 1px solid #e6e7e8;
+}
+
+.nav-tabs .nav-link {
+  background: #f6f8fa;
+  color: #000000;
+  border-radius: 0;
+  border: 1px solid #e6e7e8;
+  padding: 1rem 1.5rem .2rem 1.5rem;
+}
+
+@media (max-width: 767px) {
+  .nav-tabs .nav-link {
+    padding: 1rem .5rem .2rem .5rem;
+  }
+}
+
+.nav-tabs .nav-item .nav-link {
+  border: 0;
+}
+
+.nav-tabs .nav-item .nav-link.active {
+  border: 0;
+  border-bottom: 4px solid #5646ff;
+  color: #470116ea;
+}
+
+@media (max-width: 300px) {
+  .container {
+    padding: 3px;
+    margin: 0;
+  }
 }
 
 /*# sourceMappingURL=maps/style.css.map */

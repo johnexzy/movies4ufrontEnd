@@ -138,7 +138,7 @@ class getEpisode{
                       <a href="/pages/movies.html" class="mb-1 font-weight-bold pad2x text-decoration-none">Movies</a>&RightArrow;
                       <a href="#" class="mb-1 font-weight-bold pad2x text-decoration-none">Download</a>
                     </div>
-                      <div class="card" data-aos="fade-up">
+                      <div class="card card-square" data-aos="fade-up">
                             <div class="card-header">
                                 <p class="font-weight-bold" style="text-align:center">
                                     $name

@@ -119,17 +119,17 @@ foreach ($movies as $i=>$movie) {
       <div class="content-wrapper">
         
         <div class="container">
-          <div class="d-flex justify-content-center text-light text-center m-3" data-aos="fade-down"><!--
+          <!-- <div class="d-flex justify-content-center text-light text-center m-3" data-aos="fade-down"><!--
             <h3 class="text-uppercase font-weight-600 shadow">
               Get the Latest Movies, Music and Series for Free on Leccel.net
-            </h3>-->
-          </div>
+            </h3>
+          </div> -->
           <div class="row">
             <div class="col-lg-4 grid-margin stretch-card">
               <!-- <div class="row">
                 
                 <div class="col-sm-12 grid-margin stretch-card"  data-aos="fade-down"> -->
-                  <div class="card shadow-lg">
+                  <div class="card shadow-lg"  style="border-radius: 0;">
                     <div class="card-header font-weight-bold">
                     <i class="mdi mdi-trending-up" ></i> Trending Music 
                     </div>
@@ -166,7 +166,7 @@ foreach ($movies as $i=>$movie) {
               
             
             <div class="col-lg-8  grid-margin" data-aos="fade-down">
-              <div class="card ">
+              <div class="card card-square">
                 <div class="card-header">
                   <div class="d-flex justify-content-between align-items-center">
                   
@@ -258,7 +258,7 @@ foreach ($movies as $i=>$movie) {
           <div class="row" data-aos="fade-right">
           
             <div class="col-sm-12 grid-margin">
-              <div class="card">
+              <div class="card card-square">
                 <div class="card-header">
                   <div class="d-flex justify-content-between align-items-center">
                     <p style="font-size: 17px; font-weight: bold;">
@@ -326,7 +326,7 @@ foreach ($movies as $i=>$movie) {
           <!--Tv Series -->
           <div class="row" data-aos="fade-right">
             <div class="col-sm-12 grid-margin">
-            <div class="card">
+            <div class="card card-square">
                 <div class="card-header">
                   <div class="d-flex justify-content-between align-items-center">
                     <p style="font-size: 17px; font-weight: bold;">

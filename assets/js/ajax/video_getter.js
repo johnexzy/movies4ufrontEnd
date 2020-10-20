@@ -83,7 +83,7 @@ $(function(){
         
         $.each(data, (key, video)=>{
             $(".show-popular").append(`
-                    <div class="col-md-4 grid-margin stretch-card">
+                    <div class=" col-sm-3 grid-margin stretch-card">
                         <div class="card card-rounded shadow music">
                         <a href="/view/movies/${video.short_url}"
                             class="text-decoration-none">
@@ -102,15 +102,17 @@ $(function(){
                                 (Download MP4) - ${video.video_name}
                             </h3>
                             </a>
-                            <div class="d-flex justify-content-between">
-                                <p class="d-inline L5 mb-0">
-                                    <i class="mdi mdi-movie"></i>
-                                    ${video.category}
-                                </p>
-                                <p class="d-inline mb-0">
-                                <i class="mdi mdi-comment"></i>(${video.comments.length})
-                                </p>
-                            </div>
+                            <!--
+                                <div class="d-flex justify-content-between">
+                                    <p class="d-inline L5 mb-0">
+                                        <i class="mdi mdi-movie"></i>
+                                        ${video.category}
+                                    </p>
+                                    <p class="d-inline mb-0">
+                                    <i class="mdi mdi-comment"></i>(${video.comments.length})
+                                    </p>
+                                </div>
+                            -->
                         </div>
                         </div>
                     </div>
@@ -156,7 +158,7 @@ $(function(){
             $(".show-video").html("")
             $.each(data.data, (key, video)=>{
                 $(".show-video").append(`
-                    <div class="col-md-4 grid-margin stretch-card">
+                    <div class="col-md-1 grid-margin stretch-card">
                         <div class="card card-rounded shadow music">
                         <a href="/view/movies/${video.short_url}"
                             class="text-decoration-none">

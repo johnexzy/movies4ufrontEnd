@@ -63,7 +63,7 @@ $albums = json_decode(file_get_contents("http://127.0.0.1:8090/api/v1/album/"), 
           </div>
           <div class="row">
               <div class="col-sm-12 grid-margin">
-                <div class="card">
+                <div class="card card-square">
                     <div class="card-header">
                         <h3 class="text-center">
                             SiteMap for Music
@@ -88,7 +88,7 @@ $albums = json_decode(file_get_contents("http://127.0.0.1:8090/api/v1/album/"), 
           </div>
           <div class="row">
               <div class="col-sm-12 grid-margin">
-                <div class="card">
+                <div class="card card-square">
                     <div class="card-header">
                         <h3 class="text-center">
                             SiteMap for Movies
@@ -113,7 +113,7 @@ $albums = json_decode(file_get_contents("http://127.0.0.1:8090/api/v1/album/"), 
           </div>
           <div class="row">
               <div class="col-sm-12 grid-margin">
-                <div class="card">
+                <div class="card card-square">
                     <div class="card-header">
                         <h3 class="text-center">
                             SiteMap for Series

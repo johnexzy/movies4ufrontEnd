@@ -21,9 +21,7 @@ $(function(){
       submitSearch()
     }
   })
-  $(".searchButton").on("click", function(){
-    submitSearch();
-  })
+  $(".searchButton").on("click", submitSearch)
 })
 function hoverShadow() {
   $(".music").hover(function(){

@@ -38,11 +38,6 @@ echo<<<HTML
                 <changefreq>daily</changefreq>
                 <priority>0.60</priority>
             </url>
-            <url>
-                <loc>https://leccel.net/pages/albums.html</loc>
-                <changefreq>weekly</changefreq>
-                <priority>0.50</priority>
-            </url>
             <?php
                 foreach ($movies as $key => $movie) {
                     $short = strip_tags(preg_replace("/&(?!#?[a-z0-9]+;)/", "&amp;", $movie["short_url"]));

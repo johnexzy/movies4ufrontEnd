@@ -31,4 +31,22 @@ function hoverShadow() {
       $(this).addClass("shadow")
     })
 }
+function SharePost(phead, ptext){
+  // console.log(phead+"\n"+ptext)
+  if(navigator.share){
+     //alert(phead)
+      navigator.share({
+          title:  phead,
+          text: ptext,
+          url: window.location.href
+      }).then(()=>{
+          alert('Thanks for Sharing');
+      }).catch(err =>{
+          alert('Couldnt share');
+      });
+  }
+  else{
+      alert('Web Share not suprted');
+  }
+};
 hoverShadow()

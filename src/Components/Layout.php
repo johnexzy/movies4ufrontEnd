@@ -17,9 +17,9 @@ class Layout
                     </a>
                     <div class="form-group" data-aos="fade-down">
                         <div class="input-group">
-                            <input type="text" class="form-control searchInput border-info shadow" style="border-radius:20px 10px 10px 20px; height:40px; " placeholder="Search here">
+                            <input type="text" class="form-control searchInput border-info shadow" style="border-radius:20px; height:40px; " placeholder="Search here">
                             <div class="input-group-append">
-                                <button class="btn btn-sm btn-info btn-icon-text searchButton text-center" style="border-radius:0 20px 20px 0; margin-left:-20px; z-index:1000; width:60px" type="button">
+                                <button class="btn btn-sm btn-info btn-icon-text searchButton text-center" style="border-radius:0 20px 20px 0; margin-left:-20px; z-index:1000; max-width:10%" type="button">
                                 <i class="mdi mdi-search-web"></i> 
                                 </button>
                             </div>

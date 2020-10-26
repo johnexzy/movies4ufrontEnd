@@ -305,7 +305,13 @@ class getMusic{
                             <div class="embed-responsive">
                             $player
                             </div>
-                            
+                          </div>
+                          <div class="d-block text-center">
+
+                            <button type="button" class="btn btn-primary btn-icon-text" onclick="SharePost('$name', '$details')">
+                              <i class="mdi mdi-share btn-icon-prepend"></i>
+                              Share
+                            </button>
                           </div>
                           <div class="d-block border-bottom border-top mb-4 mt-4 text-left">
                             <h3>You may also like:</h3>

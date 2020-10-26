@@ -207,42 +207,6 @@ foreach ($movies as $i=>$movie) {
                                   <h4 class="d-inline ml-1 font-weight-bold text-primary">Download (MP3) - $music[music_name]</h4>
                                 </div>
                             </a>
-                            <!-- <div class="col-md-4 grid-margin stretch-card">
-                              <div class="card card-rounded shadow music">
-                                <a href="/view/music/$short_url"
-                                    class="text-decoration-none">
-                                    <div class="card-img-holder">
-                                      <img src="http://127.0.0.1:8090/$image" alt="" class="card-img">
-                                    </div>
-                                </a>
-                                
-                                <div class="card-body p-2" style="background:#eee;">
-                                <a 
-                                  class="h3 mb-0" 
-                                  href="/view/music/$short_url"
-                                  style="text-decoration:none; color: inherit"
-                                  >
-                                    <h3 class="font-weight-200 mb-2" style="color:#561529">
-                                      (Download MP3) - $music[music_name]
-                                    </h3>
-                                    </a>
-                                    <div class="d-flex justify-content-between">
-                                      <p class="d-inline L5 mb-0">
-                                        <i class="mdi mdi-artist"></i>
-                                        <a 
-                                          href="/view/search/$music[artist]"
-                                          target="_blank" 
-                                          class="fs-15 text-muted text-decoration-none">
-                                          $music[artist]
-                                          </a>
-                                      </p>
-                                      <p class="d-inline mb-0">
-                                        <i class="mdi mdi-comment"></i>($commentCount)
-                                      </p>
-                                    </div>
-                                </div>
-                              </div>
-                            </div> -->
                         HTML;
                     }
                   ?>
